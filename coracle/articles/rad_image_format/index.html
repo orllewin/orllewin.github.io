@@ -31,7 +31,7 @@
             <br>
             <p><img src="001.png" style="width:256px;height: auto;"></p>
             <br>
-            <p>This is how some old image formats worked, see <a href="https://en.m.wikipedia.org/wiki/Netpbm">NetPBM</a> and <a href="https://en.m.wikipedia.org/wiki/X_PixMap">X PixMap</a>, but there's a lot of repetition with this basic representation. We can improve the size by using X for black/off, W for white/on, and Xn or Wn for black/off n-pixels and white/on n-pixels, eg. X4 which is equivalent to 0000 above. We need to substitute W for 1 and X for 0 so the encoded image can be read; you couldn't know if 0111 was supposed to represent one hundred and eleven 'off' pixels or 1 off pixel followed by 3 on. Using the new system gives:</p>
+            <p>This is how some old image formats worked, see <a href="https://en.m.wikipedia.org/wiki/Netpbm">NetPBM</a> and <a href="https://en.m.wikipedia.org/wiki/X_PixMap">X PixMap</a>, but there's a lot of repetition with this basic representation. We can improve the size by using X for black, W for white, and Xn or Wn for black n-pixels and white n-pixels, eg. X4 which is equivalent to 0000 above. We need to substitute W for 1 and X for 0 so the encoded image can be read; you couldn't know if 0111 was supposed to represent one hundred and eleven 'off' pixels or 1 off pixel followed by 3 on. Using the new system gives:</p>
             <br>
             <p style="font-family:courier, monospace;font-size: 12px;word-wrap: break-word;">XW2XW3XW2X3WX2WX3WXWXWXWXWXWXWX3WXWXW2X2W3XWX3WXWXWXWXWXWX2W2XW3XWXWXWXWX18W2XWX3W3X5WX3WX3WX7WX3WX3W3X5WX3WX3WX8W2XW3XW3X85</p>
             <br>
