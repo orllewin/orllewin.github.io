@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orllewin</title>
+    <link href="../../style.css" rel="stylesheet" />
+    <style>
+      #container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+      #title{
+        margin-left: 0px;
+      }
+
+      #nav{
+        position: absolute;
+        z-index: 10;
+      }
+
+      #coracle_canvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+
+</head>
+    <body>
+      <header>
+        <img id="logo" src="../../orllewin_logo.svg">
+        <nav>
+          <a href="../../coracle/">Coracle</a><a href="../">Android</a>
+        </nav>
+      </header>
+      <article>
+        <section>
+          <h1>Seren</h1>
+          <p>Seren ('star' in Welsh) is an Android browser for the <a href="https://en.wikipedia.org/wiki/Gemini_(protocol)">Gemini Protocol</a>.</p>
+          <br>
+          <img src="./seren_screenshots.png"><br>
+          <br>
+          <p><a class="primary_link" href="https://play.google.com/store/apps/details?id=orllewin.seren">Google Play</a></p>
+          <br>
+          <p>There are a lot of text-based Gemini clients for desktop computers which are popular with technical people, Seren is designed for everyone else with ease of use and accessibility being the main design goals.</p>
+          <br>
+          <p>The Gemini Protocol is a few years old now and while it has grown considerably the content in ‘Geminispace’ is still mostly tech people talking about tech and unfortunately a lot of posts about Gemini itself. There is a lot of activity about other niche interests if you hunt around for it though, using search engines instead of feed aggregators.</p>
+          <br>
+          <p>Free alternatives to Seren are <a href="https://play.google.com/store/apps/details?id=ca.snoe.deedum">Deedum</a> and Lagrange (available via <a href="https://f-droid.org/">F-Droid</a>).</p>
+        </section>
+        <hr>
+        <section>
+          <h1>Seren History</h1>
+          <p>Seren is the continuation of an earlier program called Ariane. Ariane used a non-standard software license (a hippocratic/far-left license) which attracted a lot of vitriol from the FOSS community.</p>
+          <br>
+          <h2>Ariane 1</h2>
+          <p>Ariane 1 was created when I discovered Gemini and found that the only other Android browser was a project called Deedum which was written in Flutter, and some other proof-of-concept app which was never published but which also rendered Gemtext in a single TextView using Spans - this felt inefficient to me so I started a project that rendered Gemtext in a RecyclerView and had comprehensive accessibility features built-in from day 1. This earlier version was licensed under the EUPL</p>
+          <br>
+          <h2>Ariane 2</h2>
+          <p>Ariane 2 added more and more features and became quite a successful app. There were a large number of language contributions and a couple of minor bugfix code contributions.</p>
+          <p>There are a few forks of Ariane 2 floating around, which is fine, but the code was terrible - it'd be easier to start afresh.</p>
+          <br>
+          <h2>Ariane 3 </h2>
+          <p>Ariane 3 was supposed to be a big refactor of the messy codebase which had grown organically but instead was abandoned for Ariane 4</p>
+          <br>
+          <h2>Ariane 4</h2>
+          <p>Ariane 4 was a complete rewrite with the only shared code from Ariane 1-2 being the RecyclerView. Ariane 4 was licensed under a 'copy-far-left' license which attracted regular fairly nasty hate mail. When I posted about this publicly that just led to a lot of vocal criticism from some corners of the open source world.</p>
+          <br>
+          <p>As it was a clean rewrite none of the original language contributions were used but a URI resolver dependency was included. This resolver always existed as a separate repo under EUPL but as it had a 3rd party bugfix Ariane 4 should have included attribution (as soon as this was pointed out I fixed the issue, but not before the contributer publicly criticised me on Antenna (a Gemini feed aggregator, you know, instead of emailing me) - that was manna from heaven for some people and led to a fairly sustained influx of hate mail and posts in Geminispace for a while.</p>
+          <br>
+          <p>There has never been any 'relicensing' or 'license washing' of this class as claimed in some corners of Geminispace, <b>it was ALWAYS at codeberg.org/oppenlab/OppenURI and still is (check the commit history...)</b>, it was a tiny unremarkable error but some people were drawing comparisons to the Muse Group takeover of Audacity... </p>
+          <br>
+          <p>If you forked Ariane 4 before I closed source it you must keep derivative works licensed under the same copy-far-left licence. It cannot be relicensed as GPL or any other regular open source licence.</p>
+          <br>
+          <h2>Seren</h2>
+          <p>Ariane 4 was closed-source, some features removed and the scope reduced, and renamed Seren.</p>
+        </section>
+      </article>   
+     </body>
+</html>

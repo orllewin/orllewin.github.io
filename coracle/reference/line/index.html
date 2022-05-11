@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../../prism.css" rel="stylesheet" />
+    <link href="../../style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            height: 450px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../"><img id="logo" src="../../coracle.svg"></a>
+            <nav>
+                <a href="../../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <canvas id="coracle_canvas"></canvas>
+    <h1>Line</h1>
+    <p><a href="https://github.com/orllewin/coracle/blob/main/coraclecore/src/main/kotlin/drawings/reference/ReferenceLine.kt">Source code for above example</a></p>
+    <section>
+        <h2>Syntax</h2>
+        <h3>Constructors</h3>
+        <p><code class="language-kotlin">val line = Line(x1, y1, x2, y2)</code></p>
+        <p><code class="language-kotlin">val line = Line()</code> - creates a zero length line with all coordinates at 0</p>
+        <p><code class="language-kotlin">val line = Line(pA, pB)</code> - create a line from two <code class="language-kotlin">Point</code> objects</p>
+        <h3>Methods</h3>
+        <p><code class="language-kotlin">line.draw()</code> - draws the line in the current stroke colour</p>
+        <p><code class="language-kotlin">line.midpoint()</code> - <code class="language-kotlin">Point</code> at the middle of the line</p>
+        <p><code class="language-kotlin">line.update(p1, p2)</code> - update line coordinates from two <code class="language-kotlin">Point</code> objects</p>
+        <p><code class="language-kotlin">val a = line.angle()</code> - <code class="language-kotlin">Float</code></p>
+        <p><code class="language-kotlin">val p = line.intersects(other)</code> - <code class="language-kotlin">Point</code> at which lines intersect or <code class="language-kotlin">null</code></p>
+    </section>
+        </article>  
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../prism.js"></script>
+    </body>
+</html>

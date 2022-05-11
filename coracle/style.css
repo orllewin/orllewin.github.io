@@ -1,0 +1,306 @@
+:root {
+  --background: #f5f2f0;
+  --light_warm: #eeeae4;
+  --purple: #9da7cb;
+  --grey_blue: #a9c2d2;
+  --sea_blue: #77bbd2;
+  --lavender: #c3bdd4;
+  --pink: #ebb9ce;
+  --pale_pink: #f1d4dc;
+  --violet: #cbb0cc;
+  --green_blue: #bde4df;
+}
+
+*{
+  margin: 0px;
+}
+
+body{
+  background-color: #f5f2f0;
+  font-family: sans-serif;
+  color: #1d1d1d;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+header{
+  display: flex;
+  background: #ffffff;
+  height: 68px;
+  align-items: center;
+  padding-left: 24px;
+  border-bottom: 1px solid #bcbcbc;
+}
+
+#logo{
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);
+} 
+
+nav{
+  position: absolute;
+  right: 24px;
+}
+
+nav a {
+  color: #1d1d1d;
+  text-decoration: none;
+  padding-right: 24px;
+}
+
+a{
+  color: #1d1d1d;
+  line-height: 1;
+}
+
+a.primary_link{
+  background-color: #000000;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+a.primary_link_null{
+  background-color: #d3d3d3;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+h1{
+  padding-top: 20px;
+  color: #1d1d1d;
+  font-weight: 200;
+  font-size: 26px;
+  margin-bottom: 0px;
+  margin-left: 24px;
+}
+
+h2{
+  padding-top: 20px;
+  color: #000000;
+  font-weight: 200;
+  margin-left: 24px;
+}
+
+h3{
+  padding-top: 20px;
+  color: #000000;
+  font-weight: 200;
+  margin-left: 24px;
+}
+
+pre[class*="language-"] {
+  background: #f5f2f0;
+  padding-left: 24px;
+  padding-top: 0px;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  color: #1d1d1d;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+.aside{
+  width: 800px;
+  padding: 16px;
+  margin-left: 16px;
+  margin-top: 16px;
+  background: #dddddd;
+}
+
+@media (prefers-color-scheme: light) {
+  body{
+    background-color: #f5f2f0;
+    color: #1d1d1d;
+  }
+
+  header{
+    background: #ffffff;
+  }
+
+  #logo{
+    filter: brightness(1) invert(0);
+  } 
+
+  nav a {
+    color: #1d1d1d;
+  }
+
+  h1,h2,h3{
+    color: #1d1d1d;
+  }
+
+  a{
+    color: #1d1d1d;
+  }
+
+  a.primary_link{
+    background-color: #000000;
+    color: white;
+  }
+
+  a.primary_link_null{
+    background-color: #d3d3d3;
+    color: white;
+  }
+
+  pre[class*="language-"] {
+    background: #f5f2f0;
+  }
+
+  code[class*="language-"], pre[class*="language-"] {
+    color: #1d1d1d;
+  }
+
+  :not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: #f5f2f0;
+  }
+
+  .aside{
+    background: #dddddd;
+    color: #1d1d1d;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body{
+    background-color: #1d1d1d;
+    color: #efefef;
+  }
+
+  header{
+    background: #1d1d1d;
+  }
+
+  #logo{
+    filter: brightness(0) invert(1);
+  } 
+
+  nav a {
+    color: #efefef;
+  }
+
+  h1,h2,h3{
+    color: #efefef;
+  }
+
+  a{
+    color: #e4de9c;
+  }
+
+  a.primary_link{
+    background-color: #27292b;
+    color: white;
+  }
+
+  a.primary_link_null{
+    background-color: #4e4e4e;
+    color: rgb(31, 31, 31);
+  }
+
+  pre[class*="language-"] {
+    background: #2d2d2d;
+  }
+
+  code[class*="language-"], pre[class*="language-"] {
+    color: #efefef;
+  }
+
+  :not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: #1d1d1d;
+  }
+
+  .aside{
+    background: #444444;
+    color: #efefef;
+  }
+}
+
+img{
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+article{
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-left:0-24px;
+}
+
+p{
+  max-width: 1100px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.small{
+  font-size: 12px;
+}
+
+.inline_example{
+  background: #ff00cc;
+}
+
+#coracle_canvas {
+  margin-left: 24px;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(175, 175, 175);
+}
+
+.syntax{
+  background: #f5f2f0;
+}
+  
+#title{
+    font-size: 48px;
+    color: var(--blue);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    margin-left: 0px;
+}
+
+code{
+  font-size: 12px;
+}
+
+hr {
+  background: var(--violet);
+  height: 1px;
+  border: 0px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  margin-right: 0px;
+}
+
+#coracle_canvas {
+  margin-left: 24px;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(175, 175, 175);
+}
+
+@media only screen and (orientation:portrait) {
+  #coracle_canvas {
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  article{
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+}

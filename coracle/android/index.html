@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../prism.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
+</head>
+    <body>
+        <header>
+            <a href="../"><img id="logo" src="../coracle.svg"></a>
+            <nav>
+                <a href="../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <h1>Android</h1>
+        <p>The Android Coracle renderer and is a very lightweight way of getting complex animations into your Android app with minimal dependencies.</p>
+        <h2>Getting Started - Library</h2>
+        <ul>
+            <li>Create a new project in <a href="https://developer.android.com/studio"></a>Android Studio</a></li>
+            <li>Download the <a href="./coraclelib-release_1_0_0.aar">latest .aar library file</a> to your project app/lib/ directory</li>
+            <li>Follow the <a href="https://developer.android.com/studio/projects/android-library#psd-add-aar-jar-dependency">Add your AAR or JAR as a dependency</a> guide.<br><p class="aside">Note: The Android Studio dialog for adding the .aar is unhelpful and doesn't have a file chooser, if you have problems add the full path to the .aar eg. /Users/orllewin/CoracleLibraryTest/app/libs/coraclelib-release_1_0_0.aar</p></li>
+            <li>Add a CoracleView to your layout:
+                <pre><code>
+&lt;orllewin.coraclelib.CoracleView
+    android:id=&quot;@+id/coracle_view&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;/&gt;
+                </code></pre>
+            </li>
+            <li>Create a Drawing instance, initialise with the Android Renderer and pass the CoracleView:</li>
+                <pre><code>
+class MainActivity: AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        DemoCoracleDrawing()
+            .renderer(AndroidRenderer(findViewById(R.id.coracle_view), object: AndroidRenderer.Printer{
+                override fun print(message: String) {
+                    println(message)
+                }
+            }))
+            .start()
+    }
+}
+                </code></pre>
+            </li>
+            <li>Export app .apk as normal: Build > generate signed bundle / APK</li>
+        </ul>
+        <hr>
+        <h2>Getting Started - Project Development/Standalone</h2>
+        <p>If you want to use the built-in demo project to distribute your drawings follow the steps below:</p>
+        <ul>
+            <li><a href="https://github.com/orllewin/coracle">Clone the repository</a></li>
+            <li>Open the Android project in <a href="https://developer.android.com/studio">Android Studio</a></li>
+            <li>Develop your drawing</li>
+            <li>Change the demo project applicationId, edit: coracle/coracleandroid/app/build.gradle and change "orllewin.coracleandroid" to your own unique package identifier</li>
+            <li>Export .apk as normal: Build > generate signed bundle / APK</li>
+        </ul>
+        <hr>
+        <h2>Versions</h2>
+        <h3>1.0.0</h3>
+        <p><a href="coraclelib-release_1_0_0.aar">coraclelib-release_1_0_0.aar</a></p>
+        <ul>
+            <li>Initial release</li>
+            <li>Not implemented: Interactive mode</li>
+            <li>Not implemented: noLoop()</li>
+            <li>Not implemented: text(string, x, y, size)</li>
+            <li>Not implemented: loadImage(), image() methods</li>
+            <li>Not implemented: loadPixels(), pixel(x, y)</li>
+        </ul>
+    </article>
+        <script src="CoracleWeb.js"></script>
+        <script src="../prism.js"></script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../../prism.css" rel="stylesheet" />
+    <link href="../../style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            height: 450px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../"><img id="logo" src="../../coracle.svg"></a>
+            <nav>
+                <a href="../../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+    <canvas id="coracle_canvas"></canvas>
+    <h1>Bezier</h1>
+    <p>A <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bézier Curve</a></p>
+    <p><a href="https://github.com/orllewin/coracle/blob/main/coraclecore/src/main/kotlin/drawings/reference/ReferenceBezier.kt">Source code for above example</a></p>
+    <section>
+        <h2>Syntax</h2>
+        <p><code class="language-kotlin">val bezier = Bezier(anchor1, control1, control2, anchor2)</code></p>
+        <p><code class="language-kotlin">val bezier = Bezier(anchor1, control1, control2, anchor2, detail)</code></p>
+        <p><code class="language-kotlin">val bezier = Bezier(x1, y1, x2, y2, x3, y3, x4, y4)</code></p>
+        <p><code class="language-kotlin">val bezier = Bezier(x1, y1, x2, y2, x3, y3, x4, y4, detail)</code></p>
+        <p><br>Bezier has a builtin <code>draw()</code> method: <code class="language-kotlin">bezier.draw()</code></p>
+        <br>
+        <p>The raw lines are also available if you want more control:</p>
+        <pre><code class="language-kotlin">
+val colourA = Color.random()
+val colourB = Color.random()
+bezier.lines.forEachIndexed { index, line ->
+    stroke(Color.lerp(colourA, colourB, (index.toFloat()/bezier.lines.size)))
+    line(line)
+}
+</code></pre>
+    </section>
+        </article>  
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../prism.js"></script>
+    </body>
+</html>

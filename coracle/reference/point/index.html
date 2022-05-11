@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../../prism.css" rel="stylesheet" />
+    <link href="../../style.css" rel="stylesheet" />
+    <style>
+        #logo{
+            padding-left: 24px;
+        } 
+        header {
+            padding-left: 0px;
+        }
+        #coracle_canvas {
+            margin:0px;
+            height: 450px;
+        }
+        article{
+            padding-top: 0px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../"><img id="logo" src="../../coracle.svg"></a>
+            <nav>
+                <a href="../../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <canvas id="coracle_canvas"></canvas>
+    <h1>Point</h1>
+    <p><a href="https://github.com/orllewin/coracle/blob/main/coraclecore/src/main/kotlin/drawings/reference/ReferencePoint.kt">Source code for above example</a></p>
+    <section>
+        <h2>Syntax</h2>
+        <h3>Constructors</h3>
+        <p><code class="language-kotlin">val point = Point()</code> - creates a point at 0,0</p>
+        <p><code class="language-kotlin">val point = Point(x, y)</code> - creates a point at x,y</p>
+        <h3>Methods</h3>
+        <p><code class="language-kotlin">val plotPoint = point.plot(angle, distance)</code> - returns a point at the angle and distance from the current point</p>
+        <p><code class="language-kotlin">val.copy = point.copy()</code></p>
+        <p><code class="language-kotlin">point.draw()</code> - draws the Point with the current stroke colour</p>
+  </section>
+        </article>  
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../prism.js"></script>
+    </body>
+</html>

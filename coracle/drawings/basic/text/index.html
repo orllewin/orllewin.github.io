@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../../../prism.css" rel="stylesheet" />
+    <link href="../../../style.css" rel="stylesheet" />
+    <style>
+
+        #coracle_canvas {
+            margin:0px;
+            height: 450px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../../"><img id="logo" src="../../../coracle.svg"></a>
+            <nav>
+                <a href="../../../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <canvas id="coracle_canvas"></canvas>
+    <h1>Text</h1>
+    <p>Note. text rendering on the web is blurry due to limitations with the canvas.</p>
+    <pre><code class="language-kotlin">
+import coracle.Drawing
+import kotlin.math.cos
+import kotlin.math.sin
+
+class TextDrawing: Drawing() {
+
+    var segmentCount = 200
+    var step = 0
+    var plotRadius = 0f
+
+    override fun setup() {
+        size(500, 450)
+        noStroke()
+        plotRadius  = (width * .75f)/2
+    }
+
+    override fun draw() {
+        background(0xf5f2f0)
+        if (step == segmentCount) step = -1
+        step++
+        val angle = (step * TWO_PI / segmentCount).toFloat()
+
+        fill(0x9da7cb)
+
+        text(
+            text = "Hello",
+            x = width/2 - 40 + (cos(angle) * plotRadius).toInt(),
+            y = height/2 + (sin(angle) * plotRadius).toInt(),
+            size = 30
+        )
+
+        fill(0xebb9ce)
+        text("Coracle", 140, height/2, 55)
+    }
+}
+    </code></pre>
+    </article>
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../../prism.js"></script>
+    </body>
+</html>

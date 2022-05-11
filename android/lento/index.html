@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orllewin</title>
+    <link href="../../style.css" rel="stylesheet" />
+    <style>
+      #container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+      #title{
+        margin-left: 0px;
+      }
+
+      #nav{
+        position: absolute;
+        z-index: 10;
+      }
+
+      #coracle_canvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+
+</head>
+    <body>
+      <header>
+        <img id="logo" src="../../orllewin_logo.svg">
+        <nav>
+          <a href="../../coracle/">Coracle</a><a href="../">Android</a>
+        </nav>
+      </header>
+      <article>
+        <h1>Lento</h1>
+        <p>Lento is a film simulation camera for Android that also works with anamorphic lenses. I’ve been using it daily for both anamorphic landscapes and family snaps with beautiful results. It’s a bit quirky, but I love using it and hope you will too.</p>
+        <p><a class="primary_link" href="https://play.google.com/store/apps/details?id=orllewin.lento">Google Play</a></p>
+        <br>
+        <h2>Lento2</h2>
+        <p>A new improved version of Lento is under development using Google's latest CameraX API. Check progress at <a href="https://github.com/orllewin/lento2">github.com/orllewin/lento2</a></p>
+       
+        <section>
+          <img src="./stracka_desqueezed_1636797233-2048x866.jpg" loading="lazy">
+          <p class="small">Martindale, Cumbria, taken with Lento and the Moment Anamorphic lens</p>
+          <br>
+          <p>Lento is fantastic for both dramatic landscape photos as well as portraits. Google's cutting-edge 'computational photography' in the standard Google camera creates technically brilliant photos that are somehow sterile and uninteresting. Lento produces images that feel natural, closer to traditional film photos.</p>
+          <br>
+          <img src="./lento_contact_sheet-1-2048x1554.png" loading="lazy">
+          <p class=small>A contact sheet of photos taken using the monochrome AGFA APX 25 film simulation LUT</p>
+          <br>
+          <h2>Film Simulation</h2>
+          <p>Lento includes look-up-tables (<a href="https://en.wikipedia.org/wiki/3D_lookup_table">LUTs</a>) that simulate the colours and tone of various famous camera films. LUTs map a colour from a source photograph to the colour that would be expected from these real-life film types. This together with Lento’s lack of constant auto-focus (you can touch the screen to select a focus point) produces photos that really do look like they were taken with a traditional film camera.</p>
+          <br>
+          <h2>Anamorphic Lenses</h2>
+          <p>Anamorphic lenses take a wide aspect and squeeze the photo onto the phone sensor, this then needs readjusting giving a much wider photo than would normally be possible without expensive professional hardware. If you shoot with the default 4:3 Lento will produce 16:9 photos, most Android devices also have a native 16:9 ‘sensor crop’ option, when using this Lento will output a cinematic 2.4:1 photo. If you want to get into anamorphic photography with your phone I recommend Moment’s phone cases and lenses which work brilliantly with Lento.</p>
+          <br>
+          <img src="anamorphic_desqueezed_1629471607-2048x861.jpg" loading="lazy">
+          <p class="small">Derwent Water, Cumbria. taken with Lento and the Moment Anamorphic lens, post-processed in Snapseed</p>
+         <img src="PXL_20211027_120617169-2048x1479.jpg" loading="lazy">
+          <p class="small">The Moment anamorphic lens on a Pixel 5</p>
+          <img src="tirwedd_pixel_6_1638272647-2048x866.jpg" loading="lazy"> 
+          <p class="small">Bottom of Sourhall Road, Todmorden, taken using built-in film simulation</p>
+          <p>
+            <br>
+            <h2>Features</h2>
+            <ul>
+              <li>Film simulation LUTs - around a dozen built in, but you can load as many as you like from Luts Explorer</li>
+              <li>Anamorphic Lens support. Most lenses requires 1.33 horizontal scaling, but 1.5 lenses do exist so the value can be overridden in the settings screen</li>
+              <li>Letterboxing option in black or white when shooting in anamorphic. Instagram has a maximum ratio of 16:9 so adding bars to ‘square’ an anamorphic photo is required so you don’t lose the edges of the photo</li>
+              <li>Easy aspect ratio toggle. Quickly toggle between 4:3 and 16:9 in standard mode and 16:9 and 2.4:1 in anamorphic mode</li>
+              <li>Zoom toggle. Lento only allows 1x (no zoom) or 2x zoom, this prevents photos scaled by the OS software if the device has a dedicated 2x lens (as in the later Pixel phones). Software scaling never looks good.</li>
+              <li>Flash: on, off, or auto</li>
+              <li>A permanent on-screen ‘spirit’ level! My biggest challenge with photography is holding my phone level so this is a crucial feature. If you don’t need it it’s easily turned off in the main overflow menu</li>
+            </ul>
+          </p>
+        </section>
+      </article>
+    </body>
+</html>

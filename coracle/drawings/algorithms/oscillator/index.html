@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../../../prism.css" rel="stylesheet" />
+    <link href="../../../style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            height: 150px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../../"><img id="logo" src="../../../coracle.svg"></a>
+            <nav>
+                <a href="../../../../">från Orllewin</a>
+            </nav>
+        </header>
+        <article>
+            <canvas id="coracle_canvas"></canvas>
+        <h1>Oscillator</h1>
+    <pre><code class="language-kotlin">
+import coracle.Drawing
+import kotlin.math.sin
+
+class OscillatorDrawing: Drawing() {
+
+    var theta = 0.0f
+
+    override fun setup() {
+        size(450, 150)
+        translate(width/2, height/2)
+        noStroke()
+        fill(0xbde4df)
+    }
+
+    override fun draw() {
+        background(0xf5f2f0)
+
+        theta += 0.02f
+        circle(sin(theta) * 100f, 0, 30)
+    }
+}
+    </code></pre>
+    </article>
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../../prism.js"></script>
+    </body>
+</html>

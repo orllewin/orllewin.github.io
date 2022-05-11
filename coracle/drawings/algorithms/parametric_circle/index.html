@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../../../prism.css" rel="stylesheet" />
+    <link href="../../../style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            height: 450px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../../"><img id="logo" src="../../../coracle.svg"></a>
+            <nav>
+                <a href="../../../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <canvas id="coracle_canvas"></canvas>
+        <h1>Circle</h1>
+    <pre><code class="language-kotlin">
+import coracle.Drawing
+import kotlin.math.cos
+import kotlin.math.sin
+
+class CircleDrawing: Drawing() {
+
+    var segmentCount = 80
+    var step = 0
+    var plotRadius = 0f
+
+    override fun setup() {
+        size(450, 450)
+        plotRadius  = (width * .75f)/2
+        noStroke()
+    }
+
+    override fun draw() {
+        translate(width/2, height/2)
+
+        val angle = (step * TWO_PI / segmentCount).toFloat()
+
+        fill(0xdcaa88)
+        circle(cos(angle) * plotRadius, sin(angle) * plotRadius, 7)
+
+        if (step == segmentCount) step = -1
+        step++
+
+        translate(0, 0)
+        fill(0xdeefff, 0.10f)
+        rect(0, 0, width, height)
+    }
+}
+    </code></pre>
+    </article>
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../../prism.js"></script>
+    </body>
+</html>

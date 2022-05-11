@@ -1,0 +1,83 @@
+*{
+  margin: 0px;
+}
+body {
+background-color: #f5f2f0;
+color: black;
+font-family: sans-serif;
+font-size: 16px;
+line-height: 1.4;
+margin: 0px;
+}
+
+#title{
+  font-size: 50px;
+  color: #000000;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+article{
+  padding-left: 24px;
+}
+
+pre{
+  margin: 0px;
+}
+
+.language-kotlin{
+  margin: 0px;
+}
+
+#coracle_canvas {
+  margin:0px;
+}
+
+h1{
+  padding-top: 20px;
+  color: #000000;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+h2{
+  padding-top: 20px;
+  color: #000000;
+  font-weight: 200;
+}
+
+h3{
+  color: #000000;
+  padding-top: 20px;
+  font-weight: 200;
+}
+
+hr {
+  background: deeppink;
+  height: 1px;
+  border: 0px;
+}
+
+code{
+font-size: 12px;
+}
+
+a.primary_link{
+  background-color: #000000;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+a.primary_link_null{
+  background-color: #d3d3d3;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}

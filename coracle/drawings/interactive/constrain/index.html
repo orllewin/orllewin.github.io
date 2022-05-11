@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coracle</title>
+    <link href="../../../../prism.css" rel="stylesheet" />
+    <link href="../../../style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            height: 400px;
+        }
+        #out_area{
+            margin-left: 16px;
+            font-size: 12px;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <a href="../../../"><img id="logo" src="../../../coracle.svg"></a>
+            <nav>
+                <a href="../../../../">från Orllewin</a>
+            </nav>
+        </header>
+        <article>
+            <canvas id="coracle_canvas"></canvas><br>
+        <h1>Constrain</h1>
+    <p class="info">A port of Processing's <a href="https://processing.org/examples/constrain.html">Constrain</a> example sketch.</p>
+    <br>
+    <pre><code class="language-kotlin">
+import coracle.Drawing
+import coracle.Math.constrain
+import kotlin.math.abs
+
+class ConstrainDrawing: Drawing() {
+
+    var mx = 0f
+    var my = 0f
+    var easing = 0.05f
+    var radius = 24
+    var margin = 100
+    var inner = margin + radius
+
+    override fun setup() {
+        size(450, 450)
+        interactiveMode()
+        noStroke()
+    }
+
+    override fun draw() {
+        background(0xf5f2f0)
+
+        stroke(0x000000)
+        noFill()
+        rect(0, 0, width, height)
+
+        when {
+            abs(mouseX - mx) > 0.1 -> mx += (mouseX - mx) * easing
+        }
+        when {
+            abs(mouseY - my) > 0.1 -> my += (mouseY - my) * easing
+        }
+
+        mx = constrain(mx, inner.toFloat(), (width - inner).toFloat())
+        my = constrain(my, inner.toFloat(), (height - inner).toFloat())
+
+        noStroke()
+        fill(0xff7676)
+        rect(margin, margin, width - (margin*2), height - (margin*2))
+        fill(0xffffff)
+        circle(mx, my, radius)
+    }
+}
+    </code></pre>
+</article>
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../../prism.js"></script>
+    </body>
+</html>
