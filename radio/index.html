@@ -67,6 +67,7 @@
       function play(url) {
         console.log("Play url: "  + url)
         audio.pause();
+        audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
         audio = new Audio(url);
         audio.play();
       }
