@@ -176,6 +176,15 @@ hr {
 a{
   color: var(--blue);
   line-height: 1;
+  text-decoration: none;
+}
+
+a:hover {
+  -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+  color: rgb(243, 138, 138);
 }
 
 a.primary_link{
