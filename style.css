@@ -115,6 +115,10 @@ p{
   font-size: 12px;
 }
 
+.tiny{
+  font-size: 10px;
+}
+
 .inline_example{
   background: #ff00cc;
 }

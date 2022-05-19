@@ -19,9 +19,30 @@
         position: fixed;
         background: #ffeeee;
         padding: 12px;
-        bottom:8px;
-        right:8px;
+        bottom:0px;
+        right:0px;
       }
+
+      #stations{
+        position: relative;
+        padding-bottom: 300px;
+      }
+
+      #instructions{
+        position: fixed;
+        background: #ffeeee;
+        padding: 12px;
+        bottom:0px;
+        left:0px;
+      }
+
+      @media only screen and (max-width: 835px) {
+        #instructions{
+          visibility: hidden;
+        }
+      }
+
+      
 
       .cell{
         width: 200px;
@@ -124,18 +145,21 @@
                    
         <nav>
           <a id="fran_orllewin" href="../">från Orllewin</a>
-          
         </nav>
       </header>
         <br>
         <p>Web test of the <a href="../android/radio/">Radio project</a> feed</p>
-        <p>Note: not all stations operate 24/7</p>
-        <p class="small">To make your own host a json file somewhere and add as a query string (<a href="https://orllewin.github.io/radio/index.html?https://orllewin.uk/default_stations.json">example</a>)</p>
+        <p class="tiny">Note: not all stations operate 24/7</p>
         <br>
         <div id="stations"></div>
 
+        <div id="instructions">
+          <p class="tiny">To make your own host a json file somewhere and add as a query string (<a href="https://orllewin.github.io/radio/index.html?https://orllewin.uk/default_stations.json">example</a>)</p>
+          
+        </div>
+
         <div id="controls">
           <span id="now_playing"></span>  <button class="stop_button" onclick="stop()">■ Stop</button>
-      </div>
+        </div>
     </body>
 </html>
