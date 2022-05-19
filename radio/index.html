@@ -58,7 +58,17 @@
     </style>
     <script>
       var audio = new Audio();
-      $.getJSON('https://orllewin.uk/default_stations.json', function(data) {
+
+      var url = location.search;
+      
+      if(url.length == 0){
+        url = "https://orllewin.uk/default_stations.json";
+      }else{
+        url = url.substring(1)//Drop the ?
+      }
+
+      console.log("Using url: " + url);
+      $.getJSON(url, function(data) {
         var cells = [];
         var index = 0;
         var row = 0;
@@ -120,6 +130,7 @@
         <br>
         <p>Web test of the <a href="../android/radio/">Radio project</a> feed</p>
         <p>Note: not all stations operate 24/7</p>
+        <p class="small">To make your own host a json file somewhere and add as a query string (<a href="https://orllewin.github.io/radio/index.html?https://orllewin.uk/default_stations.json">example</a>)</p>
         <br>
         <div id="stations"></div>
 
