@@ -36,18 +36,32 @@
         left:0px;
       }
 
-      @media only screen and (max-width: 850px) {
-        #instructions{
-          visibility: hidden;
-        }
-      }
-
       .cell{
         width: 200px;
         height: 280px;
         float: left;
         margin-left: 24px;;
       }
+
+      @media (orientation: portrait) {
+        #instructions, #nav, #subtitle_1, #subtitle_2{
+          display: none;
+        }
+        .cell{
+          width: min(calc(100% / 2.25), 200px);
+          height: 280px;
+          float: left;
+          margin-left: 24px;;
+        } 
+      }
+
+      @media only screen and (max-width: 850px) {
+        #instructions{
+          display: none;
+        }
+      }
+
+
 
       #title{
         margin-left: 0px;
@@ -94,6 +108,8 @@
         var cells = [];
         var index = 0;
         var row = 0;
+
+        let cellDiam = 200;
         
         $.each( data.defaultStations, function( key, station ) {
           $('#controls').hide();
@@ -101,7 +117,7 @@
           let website = station.website;
           let stream = station.streamUrl;
           let image = station.logoUrl;
-          cells.push("<div class=\"cell\"><a href=\"#\" onclick=\"play('" + title + "','" + stream + "');\"><img style=\"width:200px;height:auto;\" src=\"" + image + "\"></a><br><a href=\"" + website + "\" target=\"_blank\">" + title + "</a><hr></div>")
+          cells.push("<div class=\"cell\"><a href=\"#\" onclick=\"play('" + title + "','" + stream + "');\"><img style=\"width:" + cellDiam + "px;height:auto;\" src=\"" + image + "\"></a><br><a href=\"" + website + "\" target=\"_blank\">" + title + "</a><hr></div>")
         });
  
         $( "<div/>", {
@@ -142,13 +158,13 @@
           <path d="M54.6424 16.156C56.0621 16.156 57.0337 15.6206 57.5572 14.5499C58.0886 13.4712 58.3543 12.2736 58.3543 10.957C58.3543 9.76735 58.1639 8.79974 57.7832 8.0542C57.1804 6.88037 56.1414 6.29346 54.6662 6.29346C53.3576 6.29346 52.4058 6.79313 51.811 7.79247C51.2161 8.7918 50.9187 9.99736 50.9187 11.4091C50.9187 12.7654 51.2161 13.8956 51.811 14.7997C52.4058 15.7039 53.3496 16.156 54.6424 16.156ZM54.7257 4.42564C56.3675 4.42564 57.7555 4.9729 58.8896 6.06742C60.0238 7.16193 60.5909 8.77198 60.5909 10.8976C60.5909 12.9518 60.0912 14.649 59.0919 15.9894C58.0925 17.3298 56.542 18 54.4402 18C52.6874 18 51.2954 17.4091 50.2644 16.2274C49.2333 15.0377 48.7178 13.4435 48.7178 11.4448C48.7178 9.30337 49.2611 7.59815 50.3477 6.32915C51.4342 5.06015 52.8936 4.42564 54.7257 4.42564Z" fill="black"/>
           </svg>
                    
-        <nav>
+        <nav id="nav">
           <a id="fran_orllewin" href="../">från Orllewin</a>
         </nav>
       </header>
         <br>
-        <p>Web test of the <a href="../android/radio/">Radio project</a> feed</p>
-        <p class="tiny">Note: not all stations operate 24/7</p>
+        <p id="subtitle_1">Web test of the <a href="../android/radio/">Radio project</a> feed</p>
+        <p id="subtitle_2" class="tiny">Note: not all stations operate 24/7</p>
         <br>
         <div id="stations"></div>
 
