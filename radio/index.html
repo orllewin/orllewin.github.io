@@ -24,8 +24,7 @@
       }
 
       #stations{
-        position: relative;
-        padding-bottom: 300px;
+        padding-top: 24px;
       }
 
       #instructions{
@@ -44,14 +43,14 @@
       }
 
       @media (orientation: portrait) {
-        #instructions, #nav, #subtitle_1, #subtitle_2{
+        #intro{
           display: none;
         }
         .cell{
-          width: min(calc(100% / 2.25), 200px);
-          height: 280px;
+          width: 100px;
+          height: 165px;
           float: left;
-          margin-left: 24px;;
+          margin-left: 24px;
         } 
       }
 
@@ -109,7 +108,7 @@
         var index = 0;
         var row = 0;
 
-        let cellDiam = 200;
+        let cellDiam = Math.min(200, window.window/2.25);
         
         $.each( data.defaultStations, function( key, station ) {
           $('#controls').hide();
@@ -162,10 +161,13 @@
           <a id="fran_orllewin" href="../">från Orllewin</a>
         </nav>
       </header>
-        <br>
-        <p id="subtitle_1">Web test of the <a href="../android/radio/">Radio project</a> feed</p>
-        <p id="subtitle_2" class="tiny">Note: not all stations operate 24/7</p>
-        <br>
+        <div id="intro">
+          <br>
+          <p>Web test of the <a href="../android/radio/">Radio project</a> feed</p>
+          <p class="tiny">Note: not all stations operate 24/7</p>
+          <br>
+        </div>
+
         <div id="stations"></div>
 
         <div id="instructions">
