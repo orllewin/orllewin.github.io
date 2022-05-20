@@ -42,6 +42,11 @@
         margin-left: 24px;;
       }
 
+      #nav{
+        position: absolute;
+        z-index: 10;
+      }
+
       @media (orientation: portrait) {
         #intro{
           display: none;
@@ -52,6 +57,9 @@
           float: left;
           margin-left: 24px;
         } 
+        #instructions, #nav{
+          display: none;
+        }
       }
 
       @media only screen and (max-width: 850px) {
@@ -64,11 +72,6 @@
 
       #title{
         margin-left: 0px;
-      }
-
-      #nav{
-        position: absolute;
-        z-index: 10;
       }
 
       .stop_button {
@@ -122,6 +125,10 @@
         $( "<div/>", {
           "class": "radio_stations", html: cells.join( "" )
         }).appendTo( "#stations" );
+
+        if(window.innerWidth < window.innerHeight){
+          console.log("PORTRAIT - runnin gon phone (probably)");
+        }
 
       }).fail(function() { 
         $('#controls').hide();
