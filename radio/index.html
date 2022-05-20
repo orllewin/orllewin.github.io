@@ -36,13 +36,11 @@
         left:0px;
       }
 
-      @media only screen and (max-width: 900px) {
+      @media only screen and (max-width: 850px) {
         #instructions{
           visibility: hidden;
         }
       }
-
-      
 
       .cell{
         width: 200px;
@@ -80,39 +78,40 @@
     <script>
       var audio = new Audio();
 
-      var url = location.search;
+      let url = location.search;
       
       if(url.length == 0){
         url = "https://orllewin.uk/default_stations.json";
       }else{
+        console.log("Query string: " + url)
         url = url.substring(1)//Drop the ?
       }
+
+      
 
       console.log("Using url: " + url);
       $.getJSON(url, function(data) {
         var cells = [];
         var index = 0;
         var row = 0;
-        $('#controls').hide();
+        
         $.each( data.defaultStations, function( key, station ) {
+          $('#controls').hide();
           let title = station.title;
           let website = station.website;
           let stream = station.streamUrl;
           let image = station.logoUrl;
-
-
           cells.push("<div class=\"cell\"><a href=\"#\" onclick=\"play('" + title + "','" + stream + "');\"><img style=\"width:200px;height:auto;\" src=\"" + image + "\"></a><br><a href=\"" + website + "\" target=\"_blank\">" + title + "</a><hr></div>")
-
-
         });
  
         $( "<div/>", {
           "class": "radio_stations", html: cells.join( "" )
         }).appendTo( "#stations" );
 
+      }).fail(function() { 
+        $('#controls').hide();
+        $('#stations').append("<p>That didn't work, make sure <a href=\"" + url + "\">" + url + "</a> is correct and the server is setting the <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin\">CORS header</a> to *</p>");
       });
-
-      
 
       function stop(){
         audio.pause();
@@ -154,7 +153,7 @@
         <div id="stations"></div>
 
         <div id="instructions">
-          <p class="tiny">To make your own host a json file somewhere (watch out for <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">CORS</a>) and add as a query string: <a href="https://orllewin.github.io/radio/?https://orllewin.uk/default_stations.json">example</a></p>
+          <p class="tiny">To make your own host a json file somewhere and add as a query string: <a href="https://orllewin.github.io/radio/?https://orllewin.uk/default_stations.json">example</a></p>
           
         </div>
 
