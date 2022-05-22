@@ -41,7 +41,7 @@
         width: 200px;
         height: 280px;
         float: left;
-        margin-left: 24px;;
+        margin-left: 24px;
       }
 
       #nav{
@@ -106,26 +106,31 @@
       }
     </style>
     <script>
-      var audio = new Audio();
+      var audio = new Audio()
 
-      let url = location.search;
+      let url = location.search
       
       if(url.length == 0){
-        url = "https://orllewin.uk/default_stations.json";
+        if (localStorage.getItem("customUrl") === null) {
+          url = "https://orllewin.uk/default_stations.json"
+          console.log("Using default url")
+        }else{
+          url = localStorage.getItem("customUrl")
+          console.log("Using url from local storage: " + url)
+        }
       }else{
-        console.log("Query string: " + url)
         url = url.substring(1)//Drop the ?
+        localStorage.setItem("customUrl", url)
+        console.log("Using query string url, storing to local storage: " + url)
       }
 
-      
-
-      console.log("Using url: " + url);
+      console.log("Using url: " + url)
       $.getJSON(url, function(data) {
-        var cells = [];
-        var index = 0;
-        var row = 0;
+        var cells = []
+        var index = 0
+        var row = 0
 
-        let cellDiam = Math.min(200, window.window/2.25);
+        let cellDiam = Math.min(200, window.window/2.25)
         
         $.each( data.defaultStations, function( key, station ) {
           $('#controls').hide();
@@ -138,32 +143,32 @@
  
         $( "<div/>", {
           "class": "radio_stations", html: cells.join( "" )
-        }).appendTo( "#stations" );
+        }).appendTo( "#stations" )
 
         if(window.innerWidth < window.innerHeight){
-          console.log("PORTRAIT - runnin gon phone (probably)");
+          console.log("PORTRAIT - running on phone (maybe, probably)")
         }
 
       }).fail(function() { 
         $('#controls').hide();
-        $('#stations').append("<p>That didn't work, make sure <a href=\"" + url + "\">" + url + "</a> is correct and the server is setting the <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin\">CORS header</a> to *</p>");
+        $('#stations').append("<p>That didn't work, make sure <a href=\"" + url + "\">" + url + "</a> is correct and the server is setting the <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin\">CORS header</a> to *</p>")
       });
 
       function stop(){
-        audio.pause();
-        audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
-        $('#controls').fadeOut();
+        audio.pause()
+        audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA='
+        $('#controls').fadeOut()
       }
 
       function play(title, url) {
         console.log("Play url: "  + url)
-        audio.pause();
-        audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
-        audio = new Audio(url);
-        audio.play();
+        audio.pause()
+        audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA='
+        audio = new Audio(url)
+        audio.play()
 
-        $('#now_playing').text('Now playing: ' + title);
-        $('#controls').fadeIn();
+        $('#now_playing').text('Now playing: ' + title)
+        $('#controls').fadeIn()
       }
     </script>
 
