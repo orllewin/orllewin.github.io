@@ -128,9 +128,10 @@ section#grid_holder {
         position: fixed;
         justify-content: space-around;
         width: 100%;
-        padding: unset;
         padding-left: 12px;
         padding-right: 12px;
+        padding-bottom: 12px;
+        padding-top: 0px;
         bottom: 0px;
         height:80px;
     }
@@ -149,6 +150,6 @@ section#grid_holder {
 
     .right{
         margin-left: 6px;
-        margin-right: 12px;
+        margin-right: 6px;
     }
 }
