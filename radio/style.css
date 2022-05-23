@@ -26,8 +26,17 @@ header{
     height: 22px;
 }
 
-#settings_button{
+#github_link{
     margin-left: auto;
+    padding-right: 8px;
+}
+
+#github_icon{
+    height: 22px;
+    width: auto; 
+}
+
+#settings_button{
     border: none;
     background-color: #ffeeee00;
     cursor: pointer;
@@ -137,6 +146,7 @@ section#grid_holder {
     #now_playing_icon{
         display: none;
     }
+
     #controls{
         display: flex;
         position: fixed;
@@ -165,5 +175,13 @@ section#grid_holder {
     .right{
         margin-left: 6px;
         margin-right: 6px;
+    }
+
+    #github_link{
+        visibility: hidden;
+    }
+    
+    #github_icon{
+        visibility: hidden;
     }
 }
