@@ -5,6 +5,7 @@ body{
 
 header{
     display: flex;
+    position: relative;
     height: 110px;
     align-items: center;
     padding-left: 12px;
@@ -125,7 +126,7 @@ footer{
 
     #controls{
         display: flex;
-        position: absolute;
+        position: fixed;
         justify-content: space-around;
         width: 100%;
         padding: unset;
