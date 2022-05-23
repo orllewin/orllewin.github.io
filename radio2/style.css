@@ -81,6 +81,13 @@ section#grid_holder {
     cursor: pointer;
 }
 
+#now_playing_icon{
+    width: auto;
+    height: 43px;
+    vertical-align: bottom;
+    padding-right: 4px;
+}
+
 #url_input{
     height: 36px;
     margin-right: 8px;
@@ -112,7 +119,7 @@ section#grid_holder {
 @media (orientation: portrait) {
 
     url_input{
-        width: 100%;
+        width: 90%;
     }
     section#grid_holder {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -123,6 +130,9 @@ section#grid_holder {
         padding-bottom: 48px;
     }
 
+    #now_playing_icon{
+        display: none;
+    }
     #controls{
         display: flex;
         position: fixed;
