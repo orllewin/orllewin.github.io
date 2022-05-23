@@ -28,14 +28,30 @@
     </script>
 </head>
 <body>
- <header><img id="logo" src="logo.svg" alt="Radio"/><button id="settings_button" onclick="#"><img src="overflow.svg"></button></header>
+<header>
+    <button id="back_button">
+        <img src="back.svg">
+    </button>
+    <img id="logo" src="logo.svg" alt="Radio"/>
+    <button id="settings_button">
+        <img src="overflow.svg">
+    </button>
+</header>
 
- <section id="grid_holder"></section>
- <footer id="footer">
-     <div id="controls">
-         <button id="website_button" class="control_button website_button left" onclick="stop()">Website</button><button id="stop_button" class="control_button right" onclick="stop()">■ Stop</button>
-     </div>
- </footer>
+<section id="settings" class="settings">
+    <h2>Settings</h2>
+    <p>Set station feed url</p>
+    <input type="text" id="url_input" name="url">
+    <button id="save_url_button" class="control_button">Save</button>
+</section>
+
+<section id="grid_holder" class="grid_holder"></section>
+
+<footer id="footer">
+    <div id="controls">
+        <button id="website_button" class="control_button website_button left" onclick="stop()">Website</button><button id="stop_button" class="control_button right" onclick="stop()">■ Stop</button>
+    </div>
+</footer>
 
 <script src="Radio.js"></script>
 </body>
