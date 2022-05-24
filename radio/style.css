@@ -8,7 +8,7 @@ body{
     font-family: monospace;
     position: relative;
     overflow-x: hidden;
-    overscroll-behavior: none;
+    scroll-padding-bottom: 0;
 }
 
 header{
