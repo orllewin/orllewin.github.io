@@ -8,6 +8,7 @@ body{
     font-family: monospace;
     position: relative;
     overflow-x: hidden;
+    max-width: 100%;
     scroll-padding-bottom: 0;
 }
 
@@ -75,6 +76,7 @@ section#grid_holder {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1em;
+    padding-bottom: 100px;
 }
 
 .station {
@@ -167,7 +169,7 @@ section#grid_holder {
         padding: unset;
         padding-left: 12px;
         padding-right: 12px;
-        padding-bottom: 12px;
+        padding-bottom: 0px;
         padding-top: 0px;
         bottom: 0px;
         height:80px;
