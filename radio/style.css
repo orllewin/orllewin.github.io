@@ -189,7 +189,7 @@ section#grid_holder {
 
     .right{
         margin-left: 6px;
-        margin-right: 6px;
+        margin-right: 0px;
     }
 
     #github_link{
