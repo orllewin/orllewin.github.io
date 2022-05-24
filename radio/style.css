@@ -1,3 +1,8 @@
+*{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
 body{
     background: #f5f2f0;
     font-family: monospace;
@@ -69,7 +74,6 @@ section#grid_holder {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1em;
-    padding-bottom: 65px;
 }
 
 .station {
@@ -86,16 +90,16 @@ section#grid_holder {
     visibility: hidden;
     display: block;
     position: fixed;
-    background: #ffeeee;
+    background: #f5f2f0;
     padding: 12px;
     bottom:0px;
     right:0px;
 }
 
 .control_button {
-    background-color: rgb(234, 129, 175);
+    background-color: #f7e082;
     border: none;
-    color: white;
+    color: #1d1d1d;
     padding: 12px 16px;
     font-size: 16px;
     cursor: pointer;
@@ -122,7 +126,7 @@ section#grid_holder {
     -o-transition: all .3s linear;
     -webkit-transition: all .3s linear;
     transition: all .3s linear;
-    background-color: rgb(130, 169, 133);
+    background-color: #cecece;
 }
 
 .right:hover {
@@ -130,11 +134,11 @@ section#grid_holder {
     -o-transition: all .3s linear;
     -webkit-transition: all .3s linear;
     transition: all .3s linear;
-    background-color: rgb(185, 93, 93);
+    background-color: #f4e4a4;
 }
 
 .website_button{
-    background: rgb(130, 123, 123);
+    background: #ffffff;
 }
 @media (orientation: portrait) {
 
