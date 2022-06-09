@@ -23,15 +23,6 @@ body{
   line-height: 1.6;
 }
 
-header{
-  display: flex;
-  background: #f7e082;
-  height: 48px;
-  align-items: center;
-  padding-left: 24px;
-  border-bottom: 1px solid #bcbcbc;
-}
-
 #logo{
   height: 18px;
   width: auto;
@@ -125,10 +116,6 @@ code[class*="language-"], pre[class*="language-"] {
     color: #1d1d1d;
   }
 
-  header{
-    background: #f7e082;
-  }
-
   #logo{
     filter: brightness(1) invert(0);
   } 
@@ -187,10 +174,6 @@ code[class*="language-"], pre[class*="language-"] {
   body{
     background-color: #1d1d1d;
     color: #efefef;
-  }
-
-  header{
-    background: #1d1d1d;
   }
 
   #logo{
