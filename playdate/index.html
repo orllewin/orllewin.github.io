@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <meta name="theme-color" content="#f7e082" />
+    <title>Orllewin</title>
+    <link href="../style.css" rel="stylesheet" />
+    <style>
+      #container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+      #title{
+        margin-left: 0px;
+      }
+
+      #nav{
+        position: absolute;
+        z-index: 10;
+      }
+
+      #coracle_canvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      p{
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+
+      h1{
+        margin-left: 0px;
+      }
+
+      .playdate{
+        display: inline;
+        width: 392px;
+        height: auto;
+      }
+    </style>
+
+</head>
+    <body>
+      <header>
+        <a href="../"><img id="logo" src="../orllewin_logo.svg"></a>
+        <nav>
+          <a id="fran_orllewin" href="../">från Orllewin</a>
+        </nav>
+      </header>
+      <article>
+        <h1>Playdate</h1>
+        <p><iframe width="800" height="560" src="https://www.youtube.com/embed/wuV3T28aUDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        
+        <br>
+        <p>A port of <a href="https://orllewin.github.io/coracle/">Coracle</a> to <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)">Lua</a> to work with the <a href="https://play.date/dev/">Playdate SDK</a>:</p>
+        <p><a class="primary_link" href="https://github.com/orllewin/coracle_playdate">Coracle Playdate</a></p>
+        <br>
+        <p><img class="playdate" src="./images/playdate_coracle_perlin_flow_field.gif" >&nbsp;&nbsp;<img class="playdate" src="./images/playdate_coracle_gravity_tails.gif"> </p>
+        <br>
+        <p>Coracle offers a quick and easy way to develop drawings/sketches to run on the Playdate, all that's needed is to learn some basic Lua. Unfortunately Lua has no 1st class class syntax, object orientation is spoofed by various means and there are several 3rd party solutions if you do some research. Coracle uses <a href="https://github.com/bartbes/love-misc-libs/tree/master/SECL">SECL</a> for creating ad-hoc custom classes for each drawing. For any in-built objects (currently just Vector) Coracle uses the <a href="http://lua-users.org/wiki/SimpleLuaClasses">SimpleLuaClasses</a> example structure</p>
+        <br> 
+        <p><img class="playdate" src="./images/playdate_coracle_avoid_closest.gif" >&nbsp;&nbsp;<img class="playdate" src="./images/playdate_coracle_shapes.png"> </p>
+        <p><img class="playdate" src="./images/playdate_coracle_hello_coracle.png" >&nbsp;&nbsp;<img class="playdate" src="./images/playdate_coracled_self_organising.gif"> </p>
+        
+        <hr>
+      </article>
+    </body>
+</html>
