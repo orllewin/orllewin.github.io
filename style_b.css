@@ -1,0 +1,158 @@
+*{
+  margin: 0px;
+}
+
+body{
+  background-color: #ffffff;
+  color: #1d1d1d;
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/*
+  Playdate
+*/
+
+.playdate_yellow{
+  color: #f8ce5c;
+}
+
+.playdate_background{
+  background: #f8c954;
+}
+
+.playdate_image{
+  display: inline;
+  width: 400px;
+  height: auto;
+  border-radius: 15px;
+}
+
+article{
+  max-width: 1000px;
+  padding: 12px;
+}
+
+section{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+h1{
+  color: #000000;
+  font-weight: 200;
+  font-size: 26px;
+  margin-top: 12px;
+  margin-Bottom: 12px;
+}
+
+h2{
+  color: #000000;
+  font-weight: 200;
+  font-size: 22px;
+  margin-top: 12px;
+  margin-Bottom: 12px;
+}
+
+h3{
+  color: #000000;
+  font-weight: 200;
+  font-size: 18px;
+  margin-top: 12px;
+  margin-Bottom: 12px;
+}
+
+nav{
+  position: absolute;
+  right: 0px;
+}
+
+nav a {
+  color: #1d1d1d;
+  text-decoration: none;
+  padding-right: 24px;
+}
+
+img{
+  width: 100%;
+}
+
+p{
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.small{
+  font-size: 12px;
+}
+
+.tiny{
+  font-size: 10px;
+}
+
+.inline_example{
+  background: #ff00cc;
+}
+
+#coracle_canvas {
+  margin:0-24px;
+}
+
+.syntax{
+  background: #f5f2f0;
+}
+
+pre[class*="language-"]{
+  padding-left: 24px;
+  padding-top: 0px;
+}
+  
+#title{
+    font-size: 48px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    margin-left: 0px;
+}
+
+code{
+  font-size: 12px;
+}
+
+hr {
+  background: #1d1d1d;
+  height: 1px;
+  border: 0px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  margin-right: 0px;
+}
+
+a{
+  text-decoration: underline;
+}
+
+a:visited{
+  color: #1d1d1d;
+  text-decoration: underline;
+}
+
+a.primary_link{
+  background-color: #000000;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+a.primary_link_null{
+  background-color: #d3d3d3;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}

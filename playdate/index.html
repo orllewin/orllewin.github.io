@@ -5,71 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
     <meta name="theme-color" content="#f7e082" />
     <title>Orllewin</title>
-    <link href="../style_header.css" rel="stylesheet" />
-    <link href="../style.css" rel="stylesheet" />
-    <style>
-      #container{
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-      #title{
-        margin-left: 0px;
-      }
-
-      #nav{
-        position: absolute;
-        z-index: 10;
-      }
-
-      #coracle_canvas{
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      p{
-        margin-left: 12px;
-        margin-right: 12px;
-      }
-
-      h1{
-        margin-left: 12px;
-      }
-
-      .playdate{
-        display: inline;
-        width: 380px;
-        height: auto;
-      }
-    </style>
-
+    <link href="../prism.css" rel="stylesheet" />
+    <link href="../style_b.css" rel="stylesheet" />
 </head>
-    <body>
-      <header>
-        <a href="../"><img id="logo" src="../orllewin_logo.svg"></a>
-        <nav>
-          <a id="fran_orllewin" href="../">från Orllewin</a>
-        </nav>
-      </header>
-      <article>
-        <h1>Playdate</h1>
-        <br>
-        <p><iframe width="442" height="386" src="https://www.youtube.com/embed/E43yRinqNGA?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-        <br>
-        <p>A port of <a href="https://orllewin.github.io/coracle/">Coracle</a> to <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)">Lua</a> to work with the <a href="https://play.date/dev/">Playdate SDK</a>:</p>
-        <p><a class="primary_link" href="https://github.com/orllewin/coracle_playdate">Github</a></p>
-        <br>
-        <p>Coracle offers a quick and easy way to develop drawings/sketches for the <a href="https://play.date">Playdate</a>, all that's needed is to learn some basic Lua. Unfortunately Lua has no 1st-class class syntax, object orientation is spoofed by various means and there are several 3rd party solutions if you do some research. Playdate has a class system as part of the SDK but Coracle also uses <a href="https://github.com/bartbes/love-misc-libs/tree/master/SECL">SECL</a> for creating ad-hoc custom classes in some places. For any in-built objects (currently just Vector) Coracle uses the <a href="http://lua-users.org/wiki/SimpleLuaClasses">SimpleLuaClasses</a> example structure.</p>
-        <br>
-        <p><img class="playdate" src="./images/playdate_coracle_perlin_flow_field.gif" >&nbsp;&nbsp;<img class="playdate" src="./images/playdate_coracle_gravity_tails.gif"> </p> 
-        <br>
-        <p><img class="playdate" src="./images/playdate_coracle_avoid_closest.gif" >&nbsp;&nbsp;<img class="playdate" src="./images/playdate_coracle_shapes.png"> </p>
-        <br>
-        <p><img class="playdate" src="./images/playdate_coracle_hello_coracle.png" >&nbsp;&nbsp;<img class="playdate" src="./images/playdate_coracled_self_organising.gif"> </p>
-        <br>
-        <hr>
+<body class="playdate_background">
+<article>
+<h1>Coracle for Playdate</h1>
+<img class="playdate_image" src="images/sourhall_coracle_header.gif"><br>
+A port of <a href="https://orllewin.github.io/coracle/">Coracle</a> to <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)">Lua</a> to work with the <a href="https://play.date/dev/">Playdate SDK</a>. Coracle offers a quick and easy way to develop drawings/sketches for the <a href="https://play.date">Playdate</a>, all that's needed is to learn some basic Lua.       
+<br>
+<a class="primary_link" href="https://github.com/orllewin/coracle_playdate">Github</a>
+<hr>
+<h2>Lifecycle</h2>
+Coracle uses the Playdate SDK's in-built class system. Create an instance of your game in `main.lua` and update it in the game loop:
+<pre><code class="language-lua">
+import 'games/todmorden/TodmordenGame'
+
+local game = TodmordenGame()
+
+function playdate.update()	
+  game:draw()
+end
+</code></pre>
+<h2>Game Class</h2>  
+A game extends the Game class and should contain one or more Drawings:
+<pre><code class="language-lua">
+import 'games/todmorden/splash/SplashDrawing'
+
+class('TodmordenGame').extends(Game)
+
+local splashDrawing = SplashDrawing()
+
+function TodmordenGame:draw()
+  splashDrawing:draw()
+end
+</code></pre>   
+<h2>Navigation</h2>  
+To push and pop different levels/screens in a game pass callbacks and manage them in your Game class:
+<pre><code class="language-lua">
+import 'coracle/Coracle'
+import 'games/todmorden/splash/SplashDrawing'
+import 'games/todmorden/levels/Level1Drawing'
+import 'games/todmorden/levels/Level2Drawing'
+
+class('TodmordenGame').extends(Game)
+
+Screens = {splash = "0", level1 = "1", level2 = "2"}
+screen = Screens.splash
+
+local splashDrawing = SplashDrawing(onNext)
+local level1Drawing = Level1Drawing(onNext)
+local level2Drawing = Level1Drawing(onNext)
+
+onNext = function()
+  if(screen == Screens.splash)then
+    screen = Screens.level1
+  elseif(screen == Screens.level1)then
+    screen = Screens.level2
+end
+
+function TodmordenGame:draw()
+  if(screen == Screens.splash)then
+    splashDrawing:draw()
+  elseif(screen == Screens.level1)then
+    level1Drawing:draw()
+  elseif(screen == Screens.level2)then
+    level2Drawing:draw()
+  end
+end
+</code></pre> 
+<hr>
+<h2>Coracle Demos</h2>
+Coracle for Playdate allows easy porting of <a href="https://orllewin.github.io/coracle/">Coracle Kotlin</a> Drawings by including most of the same methods and the Vector class (careful; the Playdate SDK also includes a Vector class with some similar operations)
+<br>
+<img class="playdate_image" src="./images/playdate_coracle_perlin_flow_field.gif">
+<img class="playdate_image" src="./images/playdate_coracle_gravity_tails.gif">
+<img class="playdate_image" src="./images/playdate_coracle_avoid_closest.gif">
+<img class="playdate_image" src="./images/playdate_coracle_shapes.png">
+<img class="playdate_image" src="./images/playdate_coracle_hello_coracle.png">
+<img class="playdate_image" src="./images/playdate_coracled_self_organising.gif">
       </article>
+      <script src="../prism.js"></script>
     </body>
 </html>
