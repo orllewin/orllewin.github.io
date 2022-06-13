@@ -5,24 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
     <meta name="theme-color" content="#f7e082" />
     <title>Orllewin</title>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="./style_b.css" rel="stylesheet" />
     <link href="./style_header.css" rel="stylesheet" />
     <style>
-      #container{
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-      #title{
-        margin-left: 0px;
-      }
-
-      #nav{
-        position: absolute;
-        z-index: 10;
-      }
-
       #coracle_canvas{
         width: 100%;
         height: 100%;
@@ -33,16 +18,16 @@
 
 </head>
     <body>
-      <header>
-        <img id="logo" src="./orllewin_logo.svg">
-        <nav>
-          <a href="./coracle/">Coracle</a><a href="./android/">Android</a><a href="./playdate/">Playdate</a><a href="./radio/">Radio</a>
-        </nav>
-      </header>
+      <img id="logo" src="./orllewin_logo.svg" style="padding: 24px;">
       <canvas id="coracle_canvas"></canvas>
+      <hr>
       <article>
-        <p>Orllewin is an independent software developer mainly creating software for Android. Listen to a <a href="./radio/">radio station</a>, Install an <a href="./android/">Android program</a><sup>*</sup>, explore <a href="./coracle/">Coracle demos</a>, view the intermittent <a href="https://orllewinsolar.pagekite.me/">solar website</a>, look at some <a href="https://maenhir.neocities.org/">old stones</a>, read the <a href="./privacypolicy/">privacy policy</a>, send me an email: orllewin (AT) fastmail.uk</p>
-        <br>
+       
+       <nav>
+        <a class="primary_link" href="./coracle/">Coracle</a>&nbsp;<a class="primary_link" href="./android/">Android</a>&nbsp;<a class="primary_link" href="./playdate/">Playdate</a>&nbsp;<a class="primary_link" href="./radio/">Radio</a>
+      </nav>
+        
+Orllewin is an independent software developer mainly creating software for Android. Listen to a <a href="./radio/">radio station</a>, Install an <a href="./android/">Android program</a><sup>*</sup>, explore <a href="./coracle/">Coracle demos</a>, view the intermittent <a href="https://orllewinsolar.pagekite.me/">solar website</a>, look at some <a href="https://maenhir.neocities.org/">old stones</a>, read the <a href="./privacypolicy/">privacy policy</a>, send me an email: orllewin (AT) fastmail.uk
         <p class="small"><sup>*</sup> - 'app' is an awful word, so I refer to software that runs on mobiles as a 'program', the original term for all software.</p>
       </article>
     <script src="CoracleWeb.js"></script>
