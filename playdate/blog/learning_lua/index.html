@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <meta name="theme-color" content="#f7e082" />
+    <title>Orllewin</title>
+    <link href="../../../prism.css" rel="stylesheet" />
+    <link href="../../../style_b.css" rel="stylesheet" />
+</head>
+<body class="playdate_background">
+<article>
+<h1>Coracle for Playdate - Learning Lua</h1>
+<img class="playdate_image" src="images/playdate_test_card_colour.png"><br>
+Coracle for Lua has so far been developed without properly learning how Lua works by hacking things together as best I can. Hopefully it's not too terrible but Lua is a strange language and there are some things I really need to get a full understanding of if I plan to work with it for any length of time.
+<h2>No OO</h2>
+Lua doesn't have an explicit object orientated class structure like most high-level languages, but you can approximate it with some difficulty. Pretty much everything else in the language behaves with few surprises, but field scope/object references are definitely quirky and it's here where I'll focus my learning - what even is a metatable?
+<h2>Variable Scope</h2>
+A quick note on scope: you can define a variable <b>anywhere</b> and it'll be visible <b>everywhere</b>:
+<pre><code>
+-- visible everywhere:
+a = 10
+
+function hello()
+    -- also visible everywhere:
+    b = 20
+end
+</code></pre>
+<br>
+The <code>local</code> keyword limits field visibility to the current block:
+<pre><code>
+-- visible everywhere:
+a = 10
+
+function hello()
+    -- scope limited to hello():
+    local b = 20
+end
+    </code></pre>
+</pre>
+<h2>Tables</h2>
+Tables are Lua's defining characteristic. The official documention: <a href="https://www.lua.org/pil/2.5.html">2.5 – Tables</a> and <a href="https://www.lua.org/pil/3.6.html">3.6 – Table Constructors</a>
+</body>
+</html>
