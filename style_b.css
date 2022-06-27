@@ -47,6 +47,10 @@ section{
   padding-bottom: 24px;
 }
 
+ul{
+  padding-left: 16px;
+}
+
 h1{
   color: #000000;
   font-weight: 200;
