@@ -17,65 +17,6 @@ A port of <a href="https://orllewin.github.io/coracle/">Coracle</a> to <a href="
 <br>
 <a class="primary_link" href="https://github.com/orllewin/coracle_playdate">Github</a>
 <hr>
-<h2>Lifecycle</h2>
-Coracle uses the Playdate SDK's in-built class system. Create an instance of your game in `main.lua` and update it in the game loop:
-<pre><code class="language-lua">
-import 'games/todmorden/TodmordenGame'
-
-local game = TodmordenGame()
-
-function playdate.update()	
-  game:draw()
-end
-</code></pre>
-<h2>Game Class</h2>  
-A game extends the Game class and should contain one or more Drawings:
-<pre><code class="language-lua">
-import 'games/todmorden/splash/SplashDrawing'
-
-class('TodmordenGame').extends(Game)
-
-local splashDrawing = SplashDrawing()
-
-function TodmordenGame:draw()
-  splashDrawing:draw()
-end
-</code></pre>   
-<h2>Navigation</h2>  
-To push and pop different levels/screens in a game pass callbacks and manage them in your Game class:
-<pre><code class="language-lua">
-import 'coracle/Coracle'
-import 'games/todmorden/splash/SplashDrawing'
-import 'games/todmorden/levels/Level1Drawing'
-import 'games/todmorden/levels/Level2Drawing'
-
-class('TodmordenGame').extends(Game)
-
-Screens = {splash = "0", level1 = "1", level2 = "2"}
-screen = Screens.splash
-
-local splashDrawing = SplashDrawing(onNext)
-local level1Drawing = Level1Drawing(onNext)
-local level2Drawing = Level1Drawing(onNext)
-
-onNext = function()
-  if(screen == Screens.splash)then
-    screen = Screens.level1
-  elseif(screen == Screens.level1)then
-    screen = Screens.level2
-end
-
-function TodmordenGame:draw()
-  if(screen == Screens.splash)then
-    splashDrawing:draw()
-  elseif(screen == Screens.level1)then
-    level1Drawing:draw()
-  elseif(screen == Screens.level2)then
-    level2Drawing:draw()
-  end
-end
-</code></pre> 
-<hr>
 <h2>Coracle Demos</h2>
 Coracle for Playdate allows easy porting of <a href="https://orllewin.github.io/coracle/">Coracle Kotlin</a> Drawings by including most of the same methods and the Vector class (careful; the Playdate SDK also includes a Vector class with some similar operations).<br>
 <br>
