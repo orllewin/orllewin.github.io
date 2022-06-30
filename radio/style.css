@@ -4,7 +4,7 @@
 }
 
 body{
-    background: #f5f2f0;
+    background: #1d1d1d;
     font-family: monospace;
     position: relative;
     overflow-x: hidden;
@@ -15,8 +15,8 @@ body{
 header{
     display: flex;
     position: relative;
-    background: #22ffc1;
-    height: 50px;
+    background: #3affed;
+    height: 150px;
     align-items: center;
     padding-left: 24px;
     padding-right: 6px;
@@ -37,17 +37,7 @@ header{
 }
 
 #logo {
-    height: 22px;
-}
-
-#github_link{
-    margin-left: auto;
-    padding-right: 8px;
-}
-
-#github_icon{
-    height: 22px;
-    width: auto;
+    height: 85px;
 }
 
 #settings_button{
@@ -55,6 +45,8 @@ header{
     background-color: #ffeeee00;
     cursor: pointer;
     border-radius: 50%;
+        margin-left: auto;
+        padding-right: 8px;
 }
 
 section#settings {
@@ -191,9 +183,4 @@ section#grid_holder {
         margin-left: 6px;
         margin-right: 0px;
     }
-
-    #github_link{
-        visibility: hidden;
-    }
-
 }
