@@ -3,51 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <meta name="theme-color" content="#f7e082" />
+    <meta name="theme-color" content="#1d1d1d" />
     <title>Coracle</title>
     <link href="../prism.css" rel="stylesheet" />
     <link href="../style_header.css" rel="stylesheet" />
-    <link href="./style.css" rel="stylesheet" />
+    <link href="../style_b.css" rel="stylesheet" />
     <style>
         #coracle_canvas{
-            height: 450px;
+            width: 100%;
+            height: 100%;
             padding: 0px;
             margin: 0px;
             border: none;
+            position: absolute;
+            z-index: -1;
         }
 
         article{
             padding-top: 0px;
-        }
-
-        #boid_colour{
-            visibility: hidden;
-            background: #1d1d1d;
-        }
-
-        @media (prefers-color-scheme: light) {
-            #boid_colour{
-                background: #1d1d1d;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            #boid_colour{
-                background: #efefef;
-            }
+            position: relative;
         }
     </style>
 </head>
     <body>
-    <header>
-        <img id="logo" src="coracle.svg">
-        <nav>
-            <a href="../">från Orllewin</a>
-        </nav>
-    </header>
-    <article>
         <canvas id="coracle_canvas"></canvas>
-        <p></p>
+    <article>
+        
+        <br>
         <p>Coracle is a portable generative/art/sketch playground written in Kotlin</p>
         <p><a href="./drawings/" class="primary_link">Web Demos</a>&nbsp;&nbsp;<a href="./android/demo.html" class="primary_link">Android Demo</a>&nbsp;&nbsp;<a href="./articles/" class="primary_link">Articles</a></p>
         <hr />
@@ -55,16 +37,15 @@
         <p>Everything happens in <a href="https://www.jetbrains.com/idea/">Jetbrains IDEA</a>, clone the Coracle repository and open the web or Android project.</p>
         <p class="small">Note. There did used to be a Korge implementation but it was flawed and inefficient so I've removed it, but if you have a little time creating a JVM implementation of the Coracle Renderer should be straightforward.</p>
         <p><a href="https://github.com/orllewin/coracle" class="primary_link">Coracle Repository</a></p>
+        <br>
         <h3>Platforms</h3>
         <p>Choose a platform:</p>
         <p><a href="web/" class="primary_link">Web</a>&nbsp;&nbsp;<a href="android/" class="primary_link">Android</a></p>
-        <hr />
-        <p><img src="./assets/nake1.png" loading="lazy"></p>
-        <p class="small">Computer art pioneer <a href="https://en.wikipedia.org/wiki/Frieder_Nake">Frieder Nake</a></p>
+
         <hr />
         <h1>Reference</h1>
         <h2>Structure</h2>
-        <p>Coracle uses the same basic sketch pattern as <a href="https://processing.org/">Processing</a>, you initialise state in <code class="language-kotlin">setup()</code>, then mutate values and update the screen in <code class="language-kotlin">draw()</code></p>
+        <p class="normal">Coracle uses the same basic sketch pattern as <a href="https://processing.org/">Processing</a>, you initialise state in <code class="language-kotlin">setup()</code>, then mutate values and update the screen in <code class="language-kotlin">draw()</code></p>
         <pre><code class="language-kotlin">
     class MyDrawing: Drawing() {
     
@@ -77,51 +58,27 @@
         }
     }
         </code></pre>
-        <p><code class="language-kotlin">size(width, height)</code> - set the window size, this should be the first line in <code class="language-kotlin">setup()</code>: <code class="language-kotlin">size(300, 200)</code>. Ignored on Android which uses the width and height of the CoracleView.</p>
-        <p><code class="language-kotlin">matchWidth()</code> - use within <code class="language-kotlin">draw()</code> drawing width will fill the containing layout/window (especially useful for the web for building banners)
-        <p><code class="language-kotlin">matchHeight()</code> - use within <code class="language-kotlin">draw()</code> drawing height will fill the containing layout/window
-        <p><code class="language-kotlin">matchWindow()</code> - use within <code class="language-kotlin">draw()</code> drawing will fill the containing layout/window, useful for fullscreen mobile web apps.
-        <p><code class="language-kotlin">background(colour)</code> - clears the window, usually the first line in the draw loop: <code class="language-kotlin">background(0xffffff)</code></p>
-        <p><code class="language-kotlin">background()</code> - clears the window, using the host/parent layout/screen/window background colour. With this method your Drawings can match any light/dark theming changes in your Android or Web program.</p>
-        <p><code class="language-kotlin">foreground(colour, alpha)</code> - draws over the window, use at the end of the draw loop without calling background: <code class="language-kotlin">foreground(0xffffff, 0.1f)</code></p>
-        <p><code class="language-kotlin">noLoop()</code> - not all drawings animate, this cancels the draw loop, call at the end of <code class="language-kotlin">draw()</code> when you're done.</p>
-              
+        <hr />
         <h2>Primitives</h2>
         <h3>Inbuilt Objects</h3>
-        <p><a href="reference/line/" class="primary_link">Line</a>&nbsp;&nbsp;<a href="reference/circle/" class="primary_link">Circle</a>&nbsp;&nbsp;<a href="reference/point/" class="primary_link">Point</a>&nbsp;&nbsp;<a href="reference/bezier/" class="primary_link">Bezier</a>&nbsp;&nbsp;<a href="#" class="primary_link_null">CatmullRomSpline</a>&nbsp;&nbsp;<a href="#" class="primary_link_null">Colour</a>&nbsp;&nbsp;<a href="#" class="primary_link_null">Polyline</a>&nbsp;&nbsp;<a href="#" class="primary_link_null">Rect</a></p>
-        <h3>Direct Draw Methods</h3>
-        <p><code class="language-kotlin">circle(x, y, r)</code> - draws a circle centred at x,y with radius r: <code class="language-kotlin">circle(width/2, height/2, 200)</code></p>
-        <p><code class="language-kotlin">line(x1, y1, x2, y2)</code> - draws a line in the current stroke colour: <code class="language-kotlin">line(0, 0, width, height)</code></p>
-        <p><code class="language-kotlin">point(x, y)</code> - draws a point in the current stroke colour at the given coordinate: <code class="language-kotlin">point(width/2, height/2)</code></p>
-        <p><code class="language-kotlin">text(text, x, y, size)</code> - draws text in the current fill colour: <code class="language-kotlin">text("Hello, Coracle", width/2, height/2, 22)</code></p>
-        <h2>Colour</h2>
-        <p>Coracle uses integers in hexadecimal notation, eg. black: <code class="language-kotlin">0x000000</code>, white: <code class="language-kotlin">0xffffff</code>, magenta: <code class="language-kotlin">0xff00cc</code></p>
-        <p>There's also a <code class="language-kotlin">Colour</code> primitive for more complex use-cases (with an interchangeable <code class="language-kotlin">Color</code> type alias for people who spell colour incorrectly).</p>
-        <h3>Setting</h3>
-        <p><code class="language-kotlin">fill(colour)</code> - sets the fill colour and turns fill mode on: <code class="language-kotlin">fill(0xff00cc)</code></p>
-        <p><code class="language-kotlin">fill(colour, alpha)</code> - sets the fill colour with transparency and turns fill mode on: <code class="language-kotlin">fill(0xff00cc, 0.5f)</code></p>
-        <p><code class="language-kotlin">noFill()</code> - turns off fill mode, primitives will draw with a wireframe border</p>
-        <p><code class="language-kotlin">stroke(colour)</code> - sets the stroke colour and turns stroke mode on: <code class="language-kotlin">stroke(0x00ff00)</code></p>
-        <p><code class="language-kotlin">stroke(colour, alpha)</code> - sets the stroke colour and transparency and turns stroke mode on: <code class="language-kotlin">stroke(0x00ff00, 0.25f)</code></p>
-        <p><code class="language-kotlin">noStroke()</code> - turns off stroke, primitives will only draw using the fill colour</p>
-        <h3>Creating</h3>
-        <p><code class="language-kotlin">color(r, g, b)</code> - returns a colour integer: <code class="language-kotlin">val blue = colour(0, 0, 255)</code></p>
-        <p><code class="language-kotlin">Colour(c)</code> - returns a colour object: <code class="language-kotlin">val blue = Colour(0x0000ff)</code></p>
-        <p><code class="language-kotlin">Colour(r, g, b)</code> - returns a colour object: <code class="language-kotlin">val blue = Colour(0, 0, 255)</code></p>
+        <p><a href="reference/line/" class="primary_link">Line</a>&nbsp;&nbsp;<a href="reference/circle/" class="primary_link">Circle</a>&nbsp;&nbsp;<a href="reference/point/" class="primary_link">Point</a>&nbsp;&nbsp;<a href="reference/bezier/" class="primary_link">Bezier</a></p>
+        <br>
+        <p class="normal">Also: CatmullRomSpline, Colour, Polyline, Rect</p>
+        <hr />
         <h2>Why not just use Processing?</h2>
-        <p>I think in Kotlin and I wanted something ridiculously lightweight that could still be used to create advanced animations.</p>
+        <p class="normal">I think in Kotlin and I wanted something ridiculously lightweight that could still be used to create advanced animations.</p>
         <h2>Goals/Non Goals</h2>
-        <p>
+        <p class="normal">
             <ul>
                 <li>Goals: Have fun, experiment.</li>
                 <li>Non Goals: performance, correctness, everything else. </li>
             </ul>
         </p>
         <h2>License</h2>
-        <p>You probably don't want to use this, it was an itch I needed to scratch and there will be no support whatsoever.</p>
-        <p>I've not decided on a license yet, but if you think it was okay for the FSF to readmit Richard Stallman you can't use it.</p>
+        <p class="normal">You probably don't want to use this, it was an itch I needed to scratch and there will be no support whatsoever.</p>
+        <p class="normal">I've not decided on a license yet, but if you think it was okay for the FSF to readmit Richard Stallman you can't use it.</p>
         <h3>Important</h3>
-        <p>Trans rights are human rights, this framework kills fascists</p>
+        <p class="normal">Trans rights are human rights, this framework kills fascists</p>
         <br>
         <p class="small">Made by <a href="https://orllewin.uk/">Orllewin</a></p>
         <p></p>
