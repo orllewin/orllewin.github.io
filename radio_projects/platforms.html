@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../style_b.css" rel="stylesheet" />
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+@media screen and (min-width: 800px) {
+    .column {
+        float: left;
+        width: 30%;
+        margin: 10px;
+        padding: 6px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .column {
+        margin: 10px;
+        padding: 6px;
+    }
+}
+
+img{
+ width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+<h2 style="padding: 12px;">Radio</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#000;">
+    <h2>Web</h2>
+    <p>A progressive web app written with KotlinJS<br><button onclick="location.href='../radio/';">Launch PWA</button>&nbsp;<button onclick="location.href='https://github.com/orllewin/radio_web';">Project Repo</button></p>
+    
+    <img src="assets/web.png" >
+  </div>
+  <div class="column" style="background-color:#000;">
+    <h2>MacOS</h2>
+    <p>A native MacOS app written with SwiftUI<br><button onclick="location.href='../radio/';">Download page</button>&nbsp;<button onclick="location.href='https://github.com/orllewin/radio_macos';">Project Repo</button></p>
+    <img src="assets/macos.png" >
+  </div>
+  <div class="column" style="background-color:#000;">
+    <h2>Android</h2>
+    <p>An Android app with full Android Auto integration written with Jetpack Compose<br><button onclick="location.href='../radio/';">Download page</button>&nbsp;<button onclick="location.href='https://github.com/orllewin/radio_macos';">Project Repo</button></p>
+    <img src="assets/android.png" >
+  </div>
+</div>
+</body>
+</html>
