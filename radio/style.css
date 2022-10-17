@@ -64,6 +64,10 @@ p{
     padding-right: 24px;
 }
 
+a{
+    color: black;
+}
+
 section#grid_holder {
     width: 100%;
     display: grid;
@@ -109,6 +113,7 @@ section#grid_holder {
 
 #url_input{
     height: 36px;
+    width: 225px;
     margin-right: 8px;
 }
 
