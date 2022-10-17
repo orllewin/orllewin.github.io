@@ -15,7 +15,7 @@ body{
 header{
     display: flex;
     position: relative;
-    background: #EBDDC3;
+    background: #c3deeb;
     height: 72px;
     align-items: center;
     padding-left: 24px;
@@ -129,7 +129,7 @@ section#grid_holder {
     -o-transition: all .3s linear;
     -webkit-transition: all .3s linear;
     transition: all .3s linear;
-    background-color: #EBDDC3;
+    background-color: #c3deeb;
 }
 
 .website_button{
