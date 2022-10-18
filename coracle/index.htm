@@ -13,23 +13,12 @@
   <h1>Coracle</h1>
   <p>A portable generative/art/sketch playground written in Kotlin</p>
   <h2>Platforms</h2>
+  <p>All development is done in <a href="https://www.jetbrains.com/idea/">Jetbrains IDEA</a>, clone the <a href="https://github.com/orllewin/coracle">Coracle repository</a> and open the web or Android project.</p>
   <ul>
     <li>Web: <a href="web/">Getting Started</a> | <a href="drawings/">Demos</a></li>
-    <li>Android: <a href="../radio/">Website</a> | <a href="https://github.com/orllewin/radio_web">Code</a></li>
+    <li>Android: <a href="android/">Getting Started</a> | <a href="./android/demo.html">Demo .apk</a></li>
   </ul>
   <hr>
-        <p><a href="./drawings/" class="primary_link">Web Demos</a>&nbsp;&nbsp;<a href="./android/demo.html" class="primary_link">Android Demo</a>&nbsp;&nbsp;<a href="./articles/" class="primary_link">Articles</a></p>
-        <hr />
-        <h2>Getting Started</h2>
-        <p>Everything happens in <a href="https://www.jetbrains.com/idea/">Jetbrains IDEA</a>, clone the Coracle repository and open the web or Android project.</p>
-        <p class="small">Note. There did used to be a Korge implementation but it was flawed and inefficient so I've removed it, but if you have a little time creating a JVM implementation of the Coracle Renderer should be straightforward.</p>
-        <p><a href="https://github.com/orllewin/coracle" class="primary_link">Coracle Repository</a></p>
-        <br>
-        <h3>Platforms</h3>
-        <p>Choose a platform:</p>
-        <p><a href="web/" class="primary_link">Web</a>&nbsp;&nbsp;<a href="android/" class="primary_link">Android</a></p>
-
-        <hr />
         <h1>Reference</h1>
         <h2>Structure</h2>
         <p>Coracle uses the same basic sketch pattern as <a href="https://processing.org/">Processing</a>, you initialise state in <code class="language-kotlin">setup()</code>, then mutate values and update the screen in <code class="language-kotlin">draw()</code></p>
@@ -52,8 +41,6 @@
         <br>
         <p>Also: CatmullRomSpline, Colour, Polyline, Rect</p>
         <hr />
-        <h2>Why not just use Processing?</h2>
-        <p>I think in Kotlin and I wanted something ridiculously lightweight that could still be used to create advanced animations.</p>
         <h3>Goals/Non Goals</h3>
         <p>
             <ul>
