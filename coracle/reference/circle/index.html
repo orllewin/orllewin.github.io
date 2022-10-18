@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <title>Coracle</title>
+    <link href="../../../prism.css" rel="stylesheet" />
+    <link href="../../style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            height: 450px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../"><img id="logo" src="../../coracle.svg"></a>
+            <nav>
+                <a href="../../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <canvas id="coracle_canvas"></canvas>
+    <h1>Circle</h1>
+    <p><a href="https://github.com/orllewin/coracle/blob/main/coraclecore/src/main/kotlin/drawings/reference/ReferenceCircle.kt">Source code for above example</a></p>
+    <section>
+        <h2>Syntax</h2>
+        <p><code class="language-kotlin">val circle = Circle(x, y, radius)</code></p>
+        <p><br><code class="language-kotlin">circle.draw()</code> - draws the circle with the current fill and stroke properties</p>
+        <p><br><code class="language-kotlin">circle.origin()</code> - <code class="language-kotlin">Point</code> at center of circle</p>
+        <p><code class="language-kotlin">circle.contains(point)</code> - <code class="language-kotlin">Boolean</code>, true if point is within the circle circumference</p>
+        <p><code class="language-kotlin">circle.collides(otherCircle)</code> - <code class="language-kotlin">Boolean</code>, true if there's a collision</p>
+        <p><code class="language-kotlin">val d = circle.originDistance(otherCircle)</code> - <code class="language-kotlin">Float</code>, distance from x,y to other circle origin</p>
+        <p><code class="language-kotlin">val d = circle.edgeDistance(otherCircle)</code> - <code class="language-kotlin">Float</code>, distance the edge of this circe to the edge of another, or 0f if they're touching</p>
+        <p><code class="language-kotlin">val p = circle.edgePoint(otherPoint)</code> - <code class="language-kotlin">Point</code> on circumference between circle origin and another point</p>
+        <br>
+    </section>
+        </article>  
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../prism.js"></script>
+    </body>
+</html>

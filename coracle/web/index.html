@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CORACLE WEB</title>
+  <meta name="description" content="Orllewin Coracle">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <p class="small"><a href="../../">Home</a> / <a href="../">Coracle</a> / Web</p>
+  <h1>Web: Getting Started</h1>
+  <p>The web is currently the most developed Coracle renderer and is used to generate all the examples on this website.</p>
+  <ul>
+    <li><a href="https://github.com/orllewin/coracle">Clone the repository</a></li>
+    <li>Open the web project in <a href="https://www.jetbrains.com/idea/">Jetbrains IDEA</a></li>
+    <li>Open the Coracle.kt file and choose an example drawing to work with:
+<pre><code class="language-kotlin">import examples.basics.HelloCoracleDrawing
+
+fun main() {
+    HelloCoracleDrawing()
+        .renderer(WebRenderer("coracle_canvas"))
+        .start()
+}
+</code></pre>
+    </li>
+    <li>Create a new Gradle debug/run configuration, click <b>Edit configurations...</b> and click the <b>+</b> icon, choose Gradle from the dropdown type list</li>
+    <li>In the <b>Name</b> field enter <b>Browser Run</b> and in the <b>Tasks and arguments</b> field enter: <b>browserRun</b>, click <b>OK</b></li>
+    <li>Click the main run icon, or keyboard shortcut (Linux: <code>ctrl-R</code> MacOS: <code>⌃R</code>) to compile the drawing and open in your default browser</li>
+  </ul>
+  <hr>
+  <h2>Distribute</h2>
+  <ul>
+    <li>Select <b>Build</b> then <b>Build Project</b></li>
+    <li>Once built copy <b>CoracleWeb.js</b> from <code>/coracle/coracleweb/build/distributions</code></li>
+    <li>Make sure your live canvas name matches the one you used in dev, the default is <code>coracle_canvas</code></li>
+  </ul>
+</body>
+</html>

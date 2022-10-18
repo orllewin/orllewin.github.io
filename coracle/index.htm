@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CORACLE</title>
+  <meta name="description" content="Orllewin Coracle">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <p class="small"><a href="../">Home</a> / Coracle</p>
+  <h1>Coracle</h1>
+  <p>A portable generative/art/sketch playground written in Kotlin</p>
+  <h2>Platforms</h2>
+  <ul>
+    <li>Web: <a href="web/">Getting Started</a> | <a href="drawings/">Demos</a></li>
+    <li>Android: <a href="../radio/">Website</a> | <a href="https://github.com/orllewin/radio_web">Code</a></li>
+  </ul>
+  <hr>
+        <p><a href="./drawings/" class="primary_link">Web Demos</a>&nbsp;&nbsp;<a href="./android/demo.html" class="primary_link">Android Demo</a>&nbsp;&nbsp;<a href="./articles/" class="primary_link">Articles</a></p>
+        <hr />
+        <h2>Getting Started</h2>
+        <p>Everything happens in <a href="https://www.jetbrains.com/idea/">Jetbrains IDEA</a>, clone the Coracle repository and open the web or Android project.</p>
+        <p class="small">Note. There did used to be a Korge implementation but it was flawed and inefficient so I've removed it, but if you have a little time creating a JVM implementation of the Coracle Renderer should be straightforward.</p>
+        <p><a href="https://github.com/orllewin/coracle" class="primary_link">Coracle Repository</a></p>
+        <br>
+        <h3>Platforms</h3>
+        <p>Choose a platform:</p>
+        <p><a href="web/" class="primary_link">Web</a>&nbsp;&nbsp;<a href="android/" class="primary_link">Android</a></p>
+
+        <hr />
+        <h1>Reference</h1>
+        <h2>Structure</h2>
+        <p>Coracle uses the same basic sketch pattern as <a href="https://processing.org/">Processing</a>, you initialise state in <code class="language-kotlin">setup()</code>, then mutate values and update the screen in <code class="language-kotlin">draw()</code></p>
+        <pre><code class="language-kotlin">
+    class MyDrawing: Drawing() {
+    
+        override fun setup() {
+            //Setup state
+        }
+    
+        override fun draw() {
+            //Draw in the main draw loop
+        }
+    }
+        </code></pre>
+        <hr />
+        <h2>Primitives</h2>
+        <h3>Inbuilt Objects</h3>
+        <p><a href="reference/line/" class="primary_link">Line</a>&nbsp;&nbsp;<a href="reference/circle/" class="primary_link">Circle</a>&nbsp;&nbsp;<a href="reference/point/" class="primary_link">Point</a>&nbsp;&nbsp;<a href="reference/bezier/" class="primary_link">Bezier</a></p>
+        <br>
+        <p>Also: CatmullRomSpline, Colour, Polyline, Rect</p>
+        <hr />
+        <h2>Why not just use Processing?</h2>
+        <p>I think in Kotlin and I wanted something ridiculously lightweight that could still be used to create advanced animations.</p>
+        <h3>Goals/Non Goals</h3>
+        <p>
+            <ul>
+                <li>Goals: Have fun, experiment.</li>
+                <li>Non Goals: performance, correctness, everything else. </li>
+            </ul>
+        </p>
+        <h2>License</h2>
+        <p>You probably don't want to use this, it was an itch I needed to scratch and there will be no support whatsoever.</p>
+        <p>I've not decided on a license yet, but if you think it was okay for the FSF to readmit Richard Stallman you can't use it.</p>
+    </article>
+    </body>
+</html>

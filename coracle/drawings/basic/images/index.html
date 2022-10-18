@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <title>Coracle</title>
+    <link href="../../../../prism.css" rel="stylesheet" />
+    <link href="../../../../style_b.css" rel="stylesheet" />
+</head>
+    <body>
+
+    <article>
+        <canvas id="coracle_canvas"></canvas>
+        <h1>Image Loading</h1>
+    <pre><code class="language-kotlin">
+import coracle.Drawing
+import coracle.Image
+
+class BasicImage: Drawing() {
+
+    lateinit var testImage: Image
+
+    var x = 0
+
+    override fun setup() {
+        size(450, 550)
+
+        x = width
+
+        testImage = loadImage("input_image")
+    }
+
+    override fun draw() {
+        image(testImage, x, 0)
+        x--
+
+        image(testImage, 0, 275, width, height/2)
+
+        if(x < 0) noLoop()
+    }
+}
+    </code></pre>
+    <img id="input_image" src="./test.png" style="display: none;" />
+    </article>
+        <script src="CoracleWeb.js"></script>
+        <script src="../../../../prism.js"></script>
+    </body>
+</html>
