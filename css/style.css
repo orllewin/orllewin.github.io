@@ -1,0 +1,19 @@
+body {
+    background: #ffffff;
+    font-size: 12pt;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    color: #000000;
+    line-height: 14pt;
+    padding-left: 0pt;
+    padding-right: 0pt;
+    padding-top: 0pt;
+}
+
+.small{
+    font-size: 8pt;
+}
+
+a{
+    color: black;
+}
+  

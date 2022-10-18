@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RADIO</title>
+  <meta name="description" content="Orllewin portal">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <p class="small"><a href="../">Home</a> / Radio</p>
+  <h1>Radio</h1>
+  
+  <p>A simple net radio system.</p>
+  <h2>Versions</h2>
+  <ul>
+    <li>MacOS: <a href="Radio_1_0_4.zip">Install MacOS</a> | <a href="https://github.com/orllewin/radio_macos">Code</a></li>
+    <li>Web/PWA: <a href="../radio/">Website</a> | <a href="https://github.com/orllewin/radio_web">Code</a></li>
+  </ul>
+  <hr>
+  <h2>Specification</h2>
+  <p>Client implementations read a users station list from a JSON feed, this can be remote, or imported from a local file:</p>
+  <pre><code>{
+  "stations": [
+    {
+      "title": "Do!! You!!",
+      "website": "https://doyou.world",
+      "streamUrl": "https://doyouworld.out.airtime.pro/doyouworld_a",
+      "logoUrl": "https://orllewin.uk/rad/rad_doyou_256.png",
+      "colour": "#f4de7f"
+    },
+    {
+      "title": "Netil Radio",
+      "website": "https://www.netilradio.com/",
+      "streamUrl": "https://netilradio.out.airtime.pro/netilradio_a",
+      "logoUrl": "https://orllewin.uk/rad/netil_radio_256.png",
+      "colour": "#407eee"
+    },
+    {
+      "title": "NTS 1",
+      "website": "https://www.nts.live/",
+      "streamUrl": "https://stream-relay-geo.ntslive.net/stream",
+      "logoUrl": "https://orllewin.uk/rad/rad_nts_256.png",
+      "colour": "#c99dc4"
+    },
+    {
+      "title": "NTS 2",
+      "website": "https://www.nts.live/",
+      "streamUrl": "https://stream-relay-geo.ntslive.net/stream2",
+      "logoUrl": "https://orllewin.uk/rad/rad_nts_256.png",
+      "colour": "#8E81A6"
+    }
+  ]
+}</code></pre>
+<p>A client displays the station list, eg. MacOS version and the installed Chrome <a href="https://web.dev/progressive-web-apps/">PWA</a>:</p>
+<img src="./radio_screenshot.png" style="width:50%;height:auto;">
+</body>
+</html>
