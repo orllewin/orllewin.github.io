@@ -9,6 +9,15 @@ body {
     padding-top: 0pt;
 }
 
+img{
+    max-width: 720px;
+}
+
+code {
+    font-size: 8pt;
+    line-height: 8pt;
+}
+
 .small{
     font-size: 8pt;
 }
