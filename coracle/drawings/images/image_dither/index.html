@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
     <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+    <link href="../../../../css/style.css" rel="stylesheet" />
     <style>
 #input_image {
-  margin-left: 24px;
   border-style: solid;
   border-width: thin;
   border-color: rgb(175, 175, 175);
@@ -24,15 +22,12 @@
 }
     </style>
 </head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas><br>
-        <img id="input_image" src="./salts_mill.png" style="width: 550px;height: 414px;" />
-        <h1>Floyd Steinberg Dither</h1>
-        <p>Quick (as in hacked together) Floyd Steinberg dither.</p>
-<pre><code class="language-kotlin">
-import coracle.Drawing
+<body>
+  <h1>Floyd Steinberg Dither</h1>
+  <canvas id="coracle_canvas"></canvas><br>
+  <img id="input_image" src="./salts_mill.png" style="width: 550px;height: 414px;" />
+  <p>Quick (as in hacked together) Floyd Steinberg dither.</p>
+  <pre><code class="language-kotlin">import coracle.Drawing
 import coracle.Image
 
 class ImageDither: Drawing() {
@@ -81,9 +76,7 @@ class ImageDither: Drawing() {
         }
     }
 }
-    </code></pre>
-    </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+  </code></pre>
+  <script src="CoracleWeb.js"></script>
+</body>
 </html>
