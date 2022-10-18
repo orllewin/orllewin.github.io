@@ -27,6 +27,10 @@ header{
     margin-bottom: 12px;
 }
 
+#radio_logo{
+    fill: #13715b;
+}
+
 #back_button{
     display: none;
     margin-right: 16px;
