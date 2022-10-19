@@ -19,38 +19,22 @@
     <li>Android: <a href="android/">Getting Started</a> | <a href="./android/demo.html">Demo .apk</a></li>
   </ul>
   <hr>
-        <h1>Reference</h1>
-        <h2>Structure</h2>
-        <p>Coracle uses the same basic sketch pattern as <a href="https://processing.org/">Processing</a>, you initialise state in <code class="language-kotlin">setup()</code>, then mutate values and update the screen in <code class="language-kotlin">draw()</code></p>
-        <pre><code class="language-kotlin">
-    class MyDrawing: Drawing() {
+  <h2>Drawing Structure</h2>
+  <p>Coracle uses the same basic sketch pattern as <a href="https://processing.org/">Processing</a>, you initialise state in <code class="language-kotlin">setup()</code>, then mutate values and update the screen in <code class="language-kotlin">draw()</code></p>
+  <pre><code class="language-kotlin">class MyDrawing: Drawing() {
     
-        override fun setup() {
-            //Setup state
-        }
-    
-        override fun draw() {
-            //Draw in the main draw loop
-        }
-    }
-        </code></pre>
-        <hr />
-        <h2>Primitives</h2>
-        <h3>Inbuilt Objects</h3>
-        <p><a href="reference/line/" class="primary_link">Line</a>&nbsp;&nbsp;<a href="reference/circle/" class="primary_link">Circle</a>&nbsp;&nbsp;<a href="reference/point/" class="primary_link">Point</a>&nbsp;&nbsp;<a href="reference/bezier/" class="primary_link">Bezier</a></p>
-        <br>
-        <p>Also: CatmullRomSpline, Colour, Polyline, Rect</p>
-        <hr />
-        <h3>Goals/Non Goals</h3>
-        <p>
-            <ul>
-                <li>Goals: Have fun, experiment.</li>
-                <li>Non Goals: performance, correctness, everything else. </li>
-            </ul>
-        </p>
-        <h2>License</h2>
-        <p>You probably don't want to use this, it was an itch I needed to scratch and there will be no support whatsoever.</p>
-        <p>I've not decided on a license yet, but if you think it was okay for the FSF to readmit Richard Stallman you can't use it.</p>
-    </article>
-    </body>
+  override fun setup() {
+    //Setup state
+  }
+
+  override fun draw() {
+    //Draw in the main draw loop
+  }
+}
+  </code></pre>
+  <hr />
+  <h2>License</h2>
+  <p>You probably don't want to use this, it was an itch I needed to scratch and there will be no support whatsoever.</p>
+  <p>I've not decided on a license yet, but if you think it was okay for the FSF to readmit Richard Stallman you can't use it.</p>
+</body>
 </html>
