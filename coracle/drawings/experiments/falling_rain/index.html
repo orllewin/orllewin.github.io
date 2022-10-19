@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
-    <style>
-        .primary_link{
-            margin-left:24px;
-        }
-    </style>
-</head>
-    <body>
-
-
-
-    <article>
-        <canvas id="coracle_canvas"></canvas><br>
-        <a class="primary_link" href="#" onclick="window.location.reload();">Redraw</a>
-        <h1 id="titl">Falling Rain</h1>
-        <p><a href="./fullscreen/">Fullscreen version for mobiles</a></p>
-    <pre><code class="language-kotlin">
-import coracle.Drawing
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+      <title>Coracle</title>
+      <link href="../../../../css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Falling Rain</h1>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Falling Rain</p>
+    <canvas id="coracle_canvas"></canvas><br>
+    <p><a class="primary_link" href="#" onclick="window.location.reload();">Redraw</a> | <a href="./fullscreen/">Fullscreen version for mobiles</a></p>
+    <pre><code class="language-kotlin">import coracle.Drawing
 import coracle.Vector
 import coracle.random
 import coracle.shapes.Circle
@@ -142,8 +131,6 @@ class FallingRain: Drawing() {
     }
 }
     </code></pre>
-        </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>

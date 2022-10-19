@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+      <title>Coracle</title>
+      <link href="../../../../css/style.css" rel="stylesheet" />
     <style>
         #coracle_canvas {
-            margin:0px;
+            margin-left:-8px;
             height: 550px;
             border-style: none;
         }
-        article{
-            padding-top: 0px;
-        }
     </style>
-</head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-        <h1>Orllewin Home</h1>
-        <p>Drawing used at <a href="https://orllewin.github.io/">orllewin.github.io</a></p>
-        <pre><code class="language-kotlin">
+  </head>
+  <body>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Orllewin Home</p>
+    <h1>Orllewin Home</h1>
+    <canvas id="coracle_canvas"></canvas>    
+    <p>Drawing that used to be at the Orllewin homepage</p>
+    <pre><code class="language-kotlin">
 import coracle.*
 
 class OrllewinDrawing: Drawing() {
@@ -145,8 +140,6 @@ class OrllewinDrawing: Drawing() {
     }
 }
     </code></pre>
-</article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>
