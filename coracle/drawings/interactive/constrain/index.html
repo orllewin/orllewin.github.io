@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
-    <style>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+      <title>Coracle</title>
+      <link href="../../../../css/style.css" rel="stylesheet" />
+      <style>
         #coracle_canvas {
             height: 400px;
         }
@@ -14,17 +13,14 @@
             margin-left: 16px;
             font-size: 12px;
         }
-    </style>
-    </head>
-    <body>
-
-        <article>
-            <canvas id="coracle_canvas"></canvas><br>
-        <h1>Constrain</h1>
+      </style>
+  </head>
+  <body>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Constrain</p>
+    <h1>Constrain</h1>
+    <canvas id="coracle_canvas"></canvas><br>
     <p class="info">A port of Processing's <a href="https://processing.org/examples/constrain.html">Constrain</a> example sketch.</p>
-    <br>
-    <pre><code class="language-kotlin">
-import coracle.Drawing
+    <pre><code class="language-kotlin">import coracle.Drawing
 import coracle.Math.constrain
 import kotlin.math.abs
 
@@ -68,8 +64,6 @@ class ConstrainDrawing: Drawing() {
     }
 }
     </code></pre>
-</article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>
