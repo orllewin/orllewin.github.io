@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
-    <style>
-        .primary_link{
-            margin-left:24px;
-        }
-    </style>
+    <title>CORACLE: RAD IMAGE CREATOR</title>
+    <link href="../../../../css/style.css" rel="stylesheet" />
 </head>
     <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-        <textarea id="out_area" style="width:512px;height:512px"></textarea>
-        <h1>RAD Image Creator</h1>
-        <p><a href="https://orllewin.github.io/coracle/articles/rad_image_format/">Read the article</a> for more information</p>
-    <pre><code class="language-kotlin">
-import coracle.CoracleEventListener
+      <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Spatial Hash/Circle Packing - Reversed</p>
+      <h1>RAD Image Creator</h1>
+      <canvas id="coracle_canvas"></canvas><textarea id="out_area" style="width:512px;height:72px"></textarea>
+      <p><a href="https://orllewin.github.io/coracle/articles/rad_image_format/">Read the article</a> for more information</p>
+    <pre><code class="language-kotlin">import coracle.CoracleEventListener
 import coracle.Drawing
 import kotlin.math.floor
 import kotlin.math.min
@@ -200,8 +191,6 @@ class RADArtGenerator: Drawing() {
     }
 }
     </code></pre>
-</article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>
