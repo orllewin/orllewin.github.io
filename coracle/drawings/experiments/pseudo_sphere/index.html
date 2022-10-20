@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
-</head>
-    <body>
-
-    <article>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+      <title>CORACLE: PSEUDO 3D SPHERES</title>
+      <link href="../../../../css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Oldschool Pseudo-3D Floating Spheres</p>
+    <h1>Oldschool Pseudo-3D Floating Spheres</h1>
         <canvas id="coracle_canvas"></canvas>
-        <h1>Oldschool Pseudo-3D Floating Spheres</h1>
-        <p class="hwhite">Adapted from <a class="hwhite" href="https://gist.github.com/volfegan/98044f8ebba0e728fabfcfc3ca2dea59">volfegan/Pseudo3D_floating_spheres.pde</a></p>
-        <br>
-        <pre><code class="language-kotlin">
-import coracle.Drawing
+        <p>Adapted from <a href="https://gist.github.com/volfegan/98044f8ebba0e728fabfcfc3ca2dea59">volfegan/Pseudo3D_floating_spheres.pde</a></p>
+        <pre><code class="language-kotlin">import coracle.Drawing
 import kotlin.math.cos
 import kotlin.math.sin
 
 /*
-    Adapted from https://gist.github.com/volfegan/98044f8ebba0e728fabfcfc3ca2dea59
-    See: https://www.dwitter.net/d/11965
-    */
+  Adapted from https://gist.github.com/volfegan/98044f8ebba0e728fabfcfc3ca2dea59
+  See: https://www.dwitter.net/d/11965
+*/
 class PseudoSpheres: Drawing() {
 
     var t = 0f
@@ -58,8 +54,6 @@ class PseudoSpheres: Drawing() {
     }
 }
     </code></pre>
-        </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>

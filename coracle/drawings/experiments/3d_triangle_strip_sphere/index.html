@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+      <title>CORACLE: TRIANGLE STRIP SPHERE</title>
+      <link href="../../../../css/style.css" rel="stylesheet" />
     <style>
         #coracle_canvas {
             height: 450px;
@@ -13,14 +12,11 @@
     </style>
 </head>
     <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-        <h1>Triangle Strip Sphere</h1>
-        <p class="hwhite">Successfully rendering a sphere using a <a class="hwhite" href="https://en.wikipedia.org/wiki/Triangle_strip">triangle strip</a>. See <a class="hwhite" href="../3d_bad_sphere_mesh/">older broken mesh drawing</a>.</p>
-         <br>
-        <pre><code class="language-kotlin">
-import coracle.*
+      <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Triangle Strip Sphere</p>
+      <h1>Triangle Strip Sphere</h1>
+      <canvas id="coracle_canvas"></canvas>  
+      <p>Successfully rendering a sphere using a <a href="https://en.wikipedia.org/wiki/Triangle_strip">triangle strip</a>. See <a href="../3d_bad_sphere_mesh/">older broken mesh drawing</a>.</p>
+        <pre><code class="language-kotlin">import coracle.*
 import coracle.shapes.Point
 import coracle.shapes3d.Triangle3D
 import coracle.shapes3d.TriangleStrip
@@ -73,8 +69,6 @@ class TriangleStripSphere: Drawing() {
     }
 }
     </code></pre>
-        </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>
