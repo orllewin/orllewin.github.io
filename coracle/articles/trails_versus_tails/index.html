@@ -1,33 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../prism.css" rel="stylesheet" />
-    <link href="../../../style_header.css" rel="stylesheet" />
-    <link href="../../style.css" rel="stylesheet" />
-    <style>
-        #coracle_canvas_a {
-            margin-left:24px;
-        }
-    </style>
-</head>
-    <body>
-        <header>
-            <a href="../../"><img id="logo" src="../../coracle.svg"></a>
-            <nav>
-                <a href="../../../">från Orllewin</a>
-            </nav>
-        </header>
-
-    <article>
-        <canvas id="coracle_canvas_a" style="border:1px solid #ababab"></canvas>&nbsp;&nbsp;
-        <canvas id="coracle_canvas_b" style="border:1px solid #ababab"></canvas>
-        <h1>'trails' versus 'tails'</h1>
-        <p>Years ago (18 to 20 years!) I remember someone uploaded a sketch to the old <a href="https://processing.org/">Processing.org</a> forums that used a technique to add trails to a moving object that was very simple and effective. With just a couple of lines of code your sketches suddenly had a cool new effect. Processing syntax:</p>
-        <pre><code class="language-kotlin">
-void draw() {
+    <title>CORACLE: TRAILS VERSUS TAILS</title>
+    <link href="../../../css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <p class="small"><a href="../../../">Home</a> / <a href="../../">Coracle</a> / <a href="../">Articles</a> / 'trails' versus 'tails'</p>
+    <h1>'trails' versus 'tails'</h1>
+    <canvas id="coracle_canvas_a" style="border:1px solid #ababab"></canvas>&nbsp;&nbsp;
+    <canvas id="coracle_canvas_b" style="border:1px solid #ababab"></canvas>
+    <p>Years ago (18 to 20 years!) I remember someone uploaded a sketch to the old <a href="https://processing.org/">Processing.org</a> forums that used a technique to add trails to a moving object that was very simple and effective. With just a couple of lines of code your sketches suddenly had a cool new effect. Processing syntax:</p>
+    <pre><code class="language-kotlin">void draw() {
   x++;
   if(x > width) x = 0;
 
@@ -40,14 +25,11 @@ void draw() {
   fill(200, 200, 200, 25);
   rect(0, 0, width, height);
 }
-</code></pre>
-        <br />
-        <h2>Trails</h2>
-        <p>The trick is to simply not clear the canvas at the start of the draw iteration (most sketches have a <code>background(colour)</code> call as the first line in the draw loop to clear the canvas), and then draw a semi-transparent rectangle over the entire canvas at the end. This gives the canvas a memory of objects previous positions that fades over a second or so, depending on the transparency level. </p>
-        <br />
-        <p>This has been added to the Coracle API, call <code class="language-kotlin">foreground(colour, alpha)</code> at the end of the draw method:</p>
-        <pre><code class="language-kotlin">
-override fun draw() {
+    </code></pre>
+    <h2>Trails</h2>
+    <p>The trick is to simply not clear the canvas at the start of the draw iteration (most sketches have a <code>background(colour)</code> call as the first line in the draw loop to clear the canvas), and then draw a semi-transparent rectangle over the entire canvas at the end. This gives the canvas a memory of objects previous positions that fades over a second or so, depending on the transparency level. </p>
+    <p>This has been added to the Coracle API, call <code class="language-kotlin">foreground(colour, alpha)</code> at the end of the draw method:</p>
+    <pre><code class="language-kotlin">override fun draw() {
 
     //draw moving objects
     ...
@@ -57,8 +39,7 @@ override fun draw() {
     </code></pre>
     <h2>Tails</h2>
     <p>Tails is the name I've given to the process of storing an objects previous position so a 'tail' can be drawn each frame. This was adapted from some very efficient code in a Processing example sketch called <a href="https://processing.org/examples/storinginput.html">Storing Input</a>. The benefit of explicity drawing the tail is you have more control over how it's rendered and you don't have that tell-tale blurry effect. The drawback is some minor added complexity, and for certain drawings, a massively increased number of draw operations.</p>
-    <pre><code class="language-kotlin">
-var frame = 0
+    <pre><code class="language-kotlin">var frame = 0
 
 override fun draw() {
     background(backgroundColour)
@@ -99,9 +80,7 @@ inner class Tadpole(){
     }
 }
     </code></pre>
-    </article>
-        <script src="CoracleWeb_Foreground.js"></script>
-        <script src="CoracleWeb_Tails.js"></script>
-        <script src="../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb_Foreground.js"></script>
+    <script src="CoracleWeb_Tails.js"></script>
+  </body>
 </html>
