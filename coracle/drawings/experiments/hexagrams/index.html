@@ -1,29 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
-    <style>
-        body {
-            background-color: #1d1d1d;
-        }
-        #coracle_canvas {
-            margin-top: 24px;
-            height: 400px;
-            border-style: none;
-        }
-    </style>
-</head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-        <h1>Hexagrams</h1>
-    <pre><code class="language-kotlin">
-import coracle.Coord
+    <title>CORACLE: HEXAGRAMS</title>
+    <link href="../../../../css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Hexagrams</p>
+    <h1>Hexagrams</h1>
+    <canvas id="coracle_canvas"></canvas>
+    <pre><code class="language-kotlin">import coracle.Coord
 import coracle.Drawing
 import coracle.random
 import kotlin.math.cos
@@ -91,8 +78,6 @@ class HexagramsDrawing: Drawing() {
     }
 }
     </code></pre>
-</article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>

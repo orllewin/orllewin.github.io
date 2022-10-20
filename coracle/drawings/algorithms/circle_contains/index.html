@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    
-    <link href="../../../../style_b.css" rel="stylesheet" />
+    <title>CORACLE: CIRCLE CONTAINS</title>
+    <link href="../../../../css/style.css" rel="stylesheet" />
     <style>
         #coracle_canvas{
             height: 450px;
         }
     </style>
-</head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
+  </head>
+  <body>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Circle Contains</p>
     <h1>Circle Contains</h1>
-    <p class="info">Check if a point is inside the bounds of a circle</p>
-    <br>    
-    <pre><code class="language-kotlin">
-import coracle.Drawing
+    <canvas id="coracle_canvas"></canvas>
+    <p class="info">Check if a point is inside the bounds of a circle</p> 
+    <pre><code class="language-kotlin">import coracle.Drawing
 import coracle.Math
 import coracle.TWO_PI
 import coracle.random
@@ -31,9 +26,6 @@ import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.sqrt
 
-/*
-    Calculate if a point is inside a circle
-    */
 class CircleBoundaryDrawing: Drawing() {
 
     lateinit var boundary: Boundary
@@ -92,8 +84,6 @@ class CircleBoundaryDrawing: Drawing() {
     }
 }
     </code></pre>
-        </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>

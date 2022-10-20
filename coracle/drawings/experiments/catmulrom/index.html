@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+    <title>CORACLE: CATMULL ROM SPLINE</title>
+    <link href="../../../../css/style.css" rel="stylesheet" />
     <style>
         #coracle_canvas {
             height: 450px;
-            margin-left: 0px;
+            margin-left: -8px;
             border-style: none;
         }
-        .primary_link{
-            margin-left:24px;
-        }
-        article{
-            padding-top: 0px;
-        }
     </style>
-</head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas><br>
-        <a class="primary_link" href="#" onclick="window.location.reload();">Redraw</a>
-        <h1>Catmull–Rom Spline</h1>
-    <pre><code class="language-kotlin">
-import coracle.*
+  </head>
+  <body>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Catmull–Rom Spline</p>
+    <h1>Catmull–Rom Spline</h1>
+    <canvas id="coracle_canvas"></canvas>
+    <p><a href="#" onclick="window.location.reload();">Redraw</a></p>
+    <pre><code class="language-kotlin">import coracle.*
 import coracle.Math.deg
 import coracle.shapes.CatmullRomSpline
 import kotlin.math.cos
@@ -102,8 +93,6 @@ class CatmulRomDrawing: Drawing() {
     private fun mapX(x: Float, min: Float, max: Float): Float = Math.map(x, min, max, 20f, width - 20f)
 }
     </code></pre>
-</article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="CoracleWeb.js"></script>
+  </body>
 </html>
