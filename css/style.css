@@ -7,10 +7,17 @@ body {
     padding-right: 0pt;
     padding-top: 0pt;
     max-width: 720px;
+    margin: auto;
 }
 
 img{
     max-width: 720px;
+}
+
+.smallImage{
+  max-width: 350px;
+  padding: 5px;
+  border-radius: 15px;
 }
 
 code {
