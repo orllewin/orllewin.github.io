@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORLLEWIN: Monochromify</title>
+  <meta name="description" content="Orllewin portal">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <p class="small"><a href="../../">Home</a> / Monochromify</p>
+  <h1>Monochromify</h1>
+  <p>A Firefox plugin/add-on and Greasemonkey script that removes colour from Mastodon avatars.</p>
+  <p><a href="https://merveilles.town">merveilles.town</a> has mandatory monochrome avatars for its own users which makes browsing the local feed very calming (that and the general loveliness of everyone in the community).</p>
+  <ul>
+    <li>If you're a merveilles.town user you can install the <a href="https://addons.mozilla.org/en-GB/firefox/addon/monochrome-home-for-merveilles/">'Monochrome Home for Merveilles' Firefox add-on</a> to force avatars from other instances to also render in monochrome in the home and federated feeds.</li>
+    <li>Users on any other instance can install <a href="https://addons.mozilla.org/en-GB/firefox/addon/greasemonkey/">Greasemonkey</a> and add the user script below</li>
+  </ul>
+  <p class="small">Note: this doesn't work with the 'advanced' multiple column mode. That mode is sensory overload though and you shouldn't use it.</p>
+  <pre><code>
+// ==UserScript==
+// @name    Mastodon Avatar Monochromify
+// @match   https://merveilles.town/*
+// @version 1.0.0
+// @grant   none
+// ==/UserScript==
+
+window.addEventListener('load', function () {
+    const observer = new MutationObserver(function (mutations_list) {
+        mutations_list.forEach(function (mutation) {
+            mutation.addedNodes.forEach(function (added_node) {
+                monochromify()
+            });
+        });
+    });
+
+    var mainColumn = document.querySelectorAll('.columns-area__panels__main');
+
+    observer.observe(document.querySelector(".columns-area__panels__main"), { subtree: true, childList: true })
+}, false);
+
+function monochromify() {
+    var avatars = document.body.getElementsByClassName("account__avatar");
+    for (var i = 0; i < avatars.length; i++) {
+        avatars[i].style.cssText += 'filter: grayscale(100%);'
+    }
+
+    var avatarsSmallBase = document.body.getElementsByClassName("account__avatar-overlay-base");
+    for (var i = 0; i < avatarsSmallBase.length; i++) {
+        avatarsSmallBase[i].style.cssText += 'filter: grayscale(100%);'
+    }
+
+    var avatarsSmallOverlay = document.body.getElementsByClassName("account__avatar-overlay-overlay");
+    for (var i = 0; i < avatarsSmallOverlay.length; i++) {
+        avatarsSmallOverlay[i].style.cssText += 'filter: grayscale(100%);'
+    }
+}
+
+  </code></pre>
+</body>
+</html>
