@@ -16,8 +16,11 @@
   <ul>
     <li>If you're a merveilles.town user you can install the <a href="https://addons.mozilla.org/en-GB/firefox/addon/monochrome-home-for-merveilles/">'Monochrome Home for Merveilles' Firefox add-on</a> to force avatars from other instances to also render in monochrome in the home and federated feeds.</li>
     <li>Users on any other instance can install <a href="https://addons.mozilla.org/en-GB/firefox/addon/greasemonkey/">Greasemonkey</a> and add the user script below</li>
+    <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/styl-us/">Stylus</a> is a CSS-only alternative to Greasemonkey - see code at bottom of this page, also published at <a href="https://userstyles.world/style/7265/merveilles-town-11-11-2022-19-13-58">userstyles.world</a> (thanks @maya@occult.institute for telling me about Stylus)</li>
   </ul>
   <p class="small">Note: this doesn't work with the 'advanced' multiple column mode. That mode is sensory overload though and you shouldn't use it.</p>
+  <hr>
+  <h3>Greasemonkey</h3>
   <pre><code>
 // ==UserScript==
 // @name    Mastodon Avatar Monochromify
@@ -55,6 +58,23 @@ function monochromify() {
     }
 }
 
+  </code></pre>
+  <hr>
+  <h3>Stylus</h3>
+  <pre><code>
+/* ==UserStyle==
+@name           merveilles.town - 11/11/2022, 19:13:58
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("merveilles.town") {    
+    .account__avatar, .account__avatar-overlay-base, .account__avatar-overlay-overlay{
+        filter: grayscale(100%);
+    }
+}
   </code></pre>
 </body>
 </html>
