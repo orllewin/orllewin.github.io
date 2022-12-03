@@ -8,11 +8,16 @@
   --nav_coracle_bg: #8B80A2;
   --nav_coracle_fg: #b3ceec;
 
-  --nav_dart_when_fg: #9b6c5e;
-  --nav_dart_when_bg: #E3B8AE;
+  --nav_playdate_fg: #aa6b3e;
+  --nav_playdate_bg: #F4D766;
 
-  --nav_reactive_fg: #cfffc5;
-  --nav_reactive_bg: #37BB7D;
+  --nav_site_fg: #efefef;
+  --nav_site_bg: #8E7478;
+
+  --nav_misc_fg: #efefef;
+  --nav_misc_bg: #99BB98;
+  
+  
 }
 
 body {
@@ -131,22 +136,32 @@ a{
   color: white;
 }
 
-.nav_dart_when{
-  color: var(--nav_dart_when_fg);
-  background: var(--nav_dart_when_bg);
+.nav_misc{
+  color: var(--nav_misc_fg);
+  background: var(--nav_misc_bg);
 }
 
-.nav_dart_when:hover{
+.nav_misc:hover{
   transition: all 0.5s;
   color: white;
 }
 
-.nav_reactive{
-  color: var(--nav_reactive_fg);
-  background: var(--nav_reactive_bg);
+.nav_playdate{
+  color: var(--nav_playdate_fg);
+  background: var(--nav_playdate_bg);
 }
 
-.nav_reactive:hover{
+.nav_playdate:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.nav_site{
+  color: var(--nav_site_fg);
+  background: var(--nav_site_bg);
+}
+
+.nav_site:hover{
   transition: all 0.5s;
   color: white;
 }
