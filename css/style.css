@@ -1,4 +1,7 @@
 :root {
+  --nav_about_bg: #B58585;
+  --nav_about_fg: #ffcbeb;
+
   --nav_radio_bg: #C29EC0;
   --nav_radio_fg: #ffd5ef;
 
@@ -79,9 +82,34 @@ a{
   align-items: center;
 }
 
+.box:after {
+  content:'\A';
+  position:absolute;
+  width:100%; height:100%;
+  top:0; left:0;
+  background:rgba(255,255,255,0.2);
+  opacity:0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.4s;
+  border-radius: 7px;
+}
+.box:hover:after {
+  opacity:1.5;
+}
+
 .box_contents{
   width: 70px;
   overflow-wrap: break-word;
+}
+
+.nav_about{
+  color: var(--nav_about_fg);
+  background: var(--nav_about_bg);
+}
+
+.nav_about:hover{
+  transition: all 0.5s;
+  color: white;
 }
 
 .nav_radio{
@@ -89,9 +117,19 @@ a{
   background: var(--nav_radio_bg);
 }
 
+.nav_radio:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
 .nav_coracle{
   color: var(--nav_coracle_fg);
   background: var(--nav_coracle_bg);
+}
+
+.nav_coracle:hover{
+  transition: all 0.5s;
+  color: white;
 }
 
 .nav_dart_when{
@@ -99,9 +137,19 @@ a{
   background: var(--nav_dart_when_bg);
 }
 
+.nav_dart_when:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
 .nav_reactive{
   color: var(--nav_reactive_fg);
   background: var(--nav_reactive_bg);
+}
+
+.nav_reactive:hover{
+  transition: all 0.5s;
+  color: white;
 }
 
 
