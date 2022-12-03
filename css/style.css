@@ -1,3 +1,7 @@
+:root {
+  --nav_radio: #C29EC0;
+}
+
 body {
   background: #FAF7FA;
   font-size: 12pt;
@@ -68,10 +72,6 @@ a{
 .box_contents{
   width: 70px;
   overflow-wrap: break-word;
-}
-
-.nav_radio{
-  color: #C29EC0;
 }
 
 
