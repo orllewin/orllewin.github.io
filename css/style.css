@@ -7,6 +7,9 @@
 
   --nav_dart_when_fg: #9b6c5e;
   --nav_dart_when_bg: #E3B8AE;
+
+  --nav_reactive_fg: #cfffc5;
+  --nav_reactive_bg: #37BB7D;
 }
 
 body {
@@ -94,6 +97,11 @@ a{
 .nav_dart_when{
   color: var(--nav_dart_when_fg);
   background: var(--nav_dart_when_bg);
+}
+
+.nav_reactive{
+  color: var(--nav_reactive_fg);
+  background: var(--nav_reactive_bg);
 }
 
 
