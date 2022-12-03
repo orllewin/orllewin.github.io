@@ -48,7 +48,7 @@ text-decoration: none;
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(77px, 1113fr));
 grid-gap: 0.2rem;
-padding-top: 32px;
+padding-top: 12px;
 }
 .box {
   background: rgb(210, 103, 103);
