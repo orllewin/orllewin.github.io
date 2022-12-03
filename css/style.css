@@ -41,15 +41,16 @@ a{
 }
 
 .nav{
-text-decoration: none;
+  text-decoration: none;
 }
 
 .grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(90px, 1113fr));
-grid-gap: 0.2rem;
-padding-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1113fr));
+  grid-gap: 0.2rem;
+  padding-top: 6px;
 }
+
 .box {
   background: rgb(210, 103, 103);
   position: relative;
@@ -59,15 +60,14 @@ padding-top: 12px;
   border-radius: 7px;
   font-size: 10pt;
   line-height: 1;
-  
   color: white;
   display: flex;
-align-items: center;
+  align-items: center;
 }
 
 .box_contents{
-width: 70px;
-overflow-wrap: break-word;
+  width: 70px;
+  overflow-wrap: break-word;
 }
 
 
