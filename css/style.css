@@ -1,6 +1,12 @@
 :root {
-  --nav_radio: #C29EC0;
+  --nav_radio_bg: #C29EC0;
   --nav_radio_fg: #ffd5ef;
+
+  --nav_coracle_bg: #8B80A2;
+  --nav_coracle_fg: #b3ceec;
+
+  --nav_dart_when_fg: #9b6c5e;
+  --nav_dart_when_bg: #E3B8AE;
 }
 
 body {
@@ -73,6 +79,21 @@ a{
 .box_contents{
   width: 70px;
   overflow-wrap: break-word;
+}
+
+.nav_radio{
+  color: var(--nav_radio_fg);
+  background: var(--nav_radio_bg);
+}
+
+.nav_coracle{
+  color: var(--nav_coracle_fg);
+  background: var(--nav_coracle_bg);
+}
+
+.nav_dart_when{
+  color: var(--nav_dart_when_fg);
+  background: var(--nav_dart_when_bg);
 }
 
 
