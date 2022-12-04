@@ -11,6 +11,39 @@ window.onload = function(e){
   xhr.send();
 }
 
+function toggleNav(){
+  console.log("toggleNav()...")
+  const navBoxes = document.getElementsByClassName("nav")
+  console.log("toggleNav() nav boxes count: " + navBoxes.length)
+  var visible = true
+  Array.from(navBoxes).forEach(
+    function(navBox, index, array) {
+      let display = window.getComputedStyle(navBox, null).getPropertyValue("display");
+      console.log("toggleNav() nav boxes index: " + index + " display: " + display + " id: " + navBox.id)
+      if(navBox.id !== "nav_toggle"){
+        if(display === "block"){
+          console.log("toggleNav() hiding element")
+          navBox.style.display = 'none';
+          visible = false
+        }else{
+          navBox.style.display = 'block';
+          visible = true
+        }
+      }
+
+    }
+  );
+
+  const toggleNav = document.getElementById("nav_toggle_box")
+
+  if(visible){
+    toggleNav.innerHTML = "↖ Close"
+  }else{
+    toggleNav.innerHTML = "↘ Open Menu"
+  }
+
+}
+
 function pastel() {
   var min = 220
   var max = 255

@@ -16,6 +16,9 @@
 
   --nav_misc_fg: #efefef;
   --nav_misc_bg: #99BB98;
+
+  --nav_toggle_fg: #efefef;
+  --nav_toggle_bg: #98a9bb;
   
   
 }
@@ -79,7 +82,7 @@ a{
 .box {
   background: rgb(210, 103, 103);
   position: relative;
-  
+  display: block;
   padding-left: 6px;
   padding-right: 6px;
   padding-top: 10px;
@@ -90,6 +93,7 @@ a{
   font-size: 8pt;
   line-height: 1.2;
   color: white;
+  text-transform: uppercase;
 }
 
 .box:after {
@@ -168,6 +172,16 @@ a{
 }
 
 .nav_site:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.nav_toggle{
+  color: var(--nav_toggle_fg);
+  background: var(--nav_toggle_bg);
+}
+
+.nav_toggle:hover{
   transition: all 0.5s;
   color: white;
 }
