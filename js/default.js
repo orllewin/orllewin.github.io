@@ -9,6 +9,15 @@ window.onload = function(e){
       document.getElementById('nav').innerHTML= this.responseText;
   };
   xhr.send();
+
+  setTimeout(function(){ 
+    hideNav();
+  }, 2500)
+}
+
+function hideNav(){
+  console.log("hideNav()...")
+  toggleNav()
 }
 
 function toggleNav(){
