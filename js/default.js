@@ -10,9 +10,9 @@ window.onload = function(e){
   };
   xhr.send();
 
-  setTimeout(function(){ 
-    hideNav();
-  }, 2500)
+  // setTimeout(function(){ 
+  //   hideNav();
+  // }, 2500)
 }
 
 function hideNav(){
