@@ -32,6 +32,10 @@ body {
   line-height: 1.5;
 }
 
+canvas{
+  border-radius: 16px;
+}
+
 img{
   max-width: 720px;
 }
