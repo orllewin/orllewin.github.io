@@ -7,12 +7,16 @@ window.onload = function(e){
       if (this.readyState!==4) return;
       if (this.status!==200) return;
       document.getElementById('nav').innerHTML= this.responseText;
+
+      toggleNav()
   };
   xhr.send();
 
   // setTimeout(function(){ 
   //   hideNav();
   // }, 2500)
+
+
 }
 
 function hideNav(){
