@@ -38,8 +38,11 @@ function toggleNav(){
 
   if(visible){
     toggleNav.innerHTML = "↖ Close"
+    toggleNav.style.height = '90px'
   }else{
     toggleNav.innerHTML = "↘ Open Menu"
+    toggleNav.style.height = '18px'
+    
   }
 
 }
