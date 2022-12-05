@@ -68,8 +68,8 @@ function animate() {
       x += barWidth
     }
 
-    context.lineWidth = 2;
-    context.strokeStyle = '#000000';
+    context.lineWidth = 3;
+    context.strokeStyle = '#ffd5ef';
     context.stroke();
 
     requestAnimationFrame(animate);
