@@ -40,6 +40,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 canvas{
   border-radius: 16px;
+  border-style: dotted;
+  border-width: 2px;
 }
 
 img{
