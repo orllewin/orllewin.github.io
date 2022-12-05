@@ -61,6 +61,21 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+function logMax(){
+  var max = 0;
+  for (let i = 0; i < bufferLength; i++) {
+    var barHeight = dataArray[i];
+
+    if(barHeight > max){
+      max = barHeight
+    }
+    
+}
+
+console.log("max height: " + max)
+
+}
+
 
 function fetchRadioStations(){
   var xhr= new XMLHttpRequest();
