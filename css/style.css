@@ -34,14 +34,14 @@ body {
   line-height: 1.5;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, li {
   max-width: 720px;
 }
 
 canvas{
   border-radius: 16px;
   border-style: dotted;
-  border-width: 2px;
+  border-width: 1px;
 }
 
 img{
