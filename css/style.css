@@ -45,6 +45,11 @@ canvas{
   border-color: tan;
 }
 
+#audio_canvas{
+  background: #eeaaaa;
+  border-style: none;
+}
+
 img{
   max-width: 720px;
 }
