@@ -8,15 +8,12 @@ window.onload = function(e){
       if (this.status!==200) return;
       document.getElementById('nav').innerHTML= this.responseText;
 
-      toggleNav()
+      if(window.location.pathname !== "/"){
+        toggleNav()
+      }
+      
   };
   xhr.send();
-
-  // setTimeout(function(){ 
-  //   hideNav();
-  // }, 2500)
-
-
 }
 
 function hideNav(){
