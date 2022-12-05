@@ -10,6 +10,7 @@ window.onload = function(e){
 
       if(window.location.pathname !== "/"){
         toggleNav()
+      }else{
         fetchRadioStations()
       }
       
