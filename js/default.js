@@ -63,7 +63,7 @@ function animate() {
       x += barWidth
     }
 
-    context.lineWidth = 1;
+    context.lineWidth = 2;
     context.strokeStyle = '#000000';
     context.stroke();
 
