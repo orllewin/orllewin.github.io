@@ -52,7 +52,7 @@ function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height)
     analyser.getByteFrequencyData(dataArray);
     for (let i = 0; i < bufferLength; i++) {
-        var barHeight = dataArray[i];
+        var barHeight = map(dataArray[i], 0, 255, 0, canvas.height)//max 255
         context.fillStyle = "white";
         context.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
         x += barWidth;
@@ -61,20 +61,9 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-function logMax(){
-  var max = 0;
-  for (let i = 0; i < bufferLength; i++) {
-    var barHeight = dataArray[i];
-
-    if(barHeight > max){
-      max = barHeight
-    }
-    
-}
-
-console.log("max height: " + max)
-
-}
+function map(n, start1, stop1, start2, stop2) {
+  return (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+};
 
 
 function fetchRadioStations(){
