@@ -12,7 +12,6 @@ window.onload = function(e){
         toggleNav()
       }else{
         fetchRadioStations()
-        audioSparkline()
       }
       
   };
@@ -111,6 +110,7 @@ function play(streamUrl){
   var audio = document.getElementById('aud')
   audio.src = streamUrl;
   audio.play();
+  audioSparkline();
 }
 
 function toggleNav(){
