@@ -39,7 +39,7 @@ function fetchRadioStations(){
 
         const node = document.createElement("div")
         node.classList.add("box", "nav_radio")
-        node.innerHTML = "Radio: " + station.title
+        node.innerHTML = "Radio: " + station.title + " 〜"
 
         link.appendChild(node)
         grid.appendChild(link)
