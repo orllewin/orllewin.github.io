@@ -106,6 +106,7 @@ function fetchRadioStations(){
         link.onclick = new Function('event', "play(\"" + station.streamUrl + "\", \"" + nodeId + "\")")
 
         const node = document.createElement("div")
+        node.id = nodeId
         node.classList.add("box", "nav_radio")
         node.innerHTML = "Radio: " + station.title + " 〜"
 
