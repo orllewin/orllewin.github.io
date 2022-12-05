@@ -35,11 +35,11 @@ function fetchRadioStations(){
         var link = document.createElement("a")
         link.classList.add("nav")
         link.href = "#"
-        link.onclick = new Function('event', "play(\"" + station.streamUrl + "\")");
+        link.onclick = new Function('event', "play(\"" + station.streamUrl + "\")")
 
-        const node = document.createElement("div");
+        const node = document.createElement("div")
         node.classList.add("box", "nav_radio")
-        node.innerHTML = station.title
+        node.innerHTML = "Radio: " + station.title
 
         link.appendChild(node)
         grid.appendChild(link)
