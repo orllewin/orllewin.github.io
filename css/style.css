@@ -51,6 +51,12 @@ canvas{
   height: 35px;
 }
 
+.aud_canvas{
+  border-style: none;
+  width: 75px;
+  height: 35px;
+}
+
 img{
   max-width: 720px;
 }

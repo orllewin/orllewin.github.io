@@ -33,6 +33,7 @@ function audioSparkline(nodeId){
 
   const radioContainer = document.getElementById(nodeId)
   canvas = document.createElement("canvas")
+  canvas.classList.add("aud_canvas")
 
   radioContainer.appendChild(canvas)
   context = canvas.getContext("2d")
