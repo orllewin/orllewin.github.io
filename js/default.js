@@ -1,6 +1,6 @@
 window.onload = function(e){ 
   //document.body.style.backgroundColor = "rgb(" + pastel() + ", " + pastel() + ", " + pastel() + ")";
-
+  fetchRadioStations()
   var xhr= new XMLHttpRequest();
   xhr.open('GET', '/nav.html', true);
   xhr.onreadystatechange= function() {
@@ -25,15 +25,34 @@ function fetchRadioStations(){
       if (this.status!==200) return;
       console.log(this.responseText)
 
+      var grid = document.getElementById('grid_holder')
       const stationsJson = JSON.parse(this.responseText);
-      const stationsArray = stationsJson.stations
-      for (var i = 0; i < stationsArray.length; i++){
-        var station = stationsArray[i];
+      const stations = stationsJson.stations
+      for (var i = 0; i < stations.length; i++){
+        var station = stations[i];
         console.log("Station:" + station.title)
+        var link = document.createElement("a")
+        link.classList.add("nav")
+        link.href = "#"
+        link.onclick = new Function('event', "play(\"" + station.streamUrl + "\")");
+
+        const node = document.createElement("div");
+        node.classList.add("box", "nav_radio")
+        node.innerHTML = station.title
+
+        link.appendChild(node)
+        grid.appendChild(link)
       }
       
   };
   xhr.send();
+}
+
+function play(streamUrl){
+  console.log("Play station: " + streamUrl)
+  var audio = document.getElementById('aud')
+  audio.src = streamUrl;
+  audio.play();
 }
 
 function toggleNav(){
