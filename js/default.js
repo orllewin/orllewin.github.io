@@ -53,8 +53,8 @@ function animate() {
     analyser.getByteFrequencyData(dataArray);
     for (let i = 0; i < bufferLength; i++) {
         var barHeight = dataArray[i];
-        ctx.fillStyle = "white";
-        ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+        context.fillStyle = "white";
+        context.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
         x += barWidth;
     }
 
