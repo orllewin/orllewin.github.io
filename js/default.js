@@ -54,7 +54,7 @@ function animate() {
     context.beginPath();
     context.moveTo(0, 0);
     for (let i = 0; i < bufferLength; i++) {
-        context.lineTo(x, map(dataArray[i], 255, 0, 0, canvas.height));
+        context.lineTo(x, map(dataArray[i], 255, 0, 0, canvas.height - 5));
         x += barWidth
     }
 
