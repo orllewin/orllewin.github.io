@@ -26,11 +26,16 @@ var barWidth = 1.0;
 var bufferLength;
 var x = 0;
 
-function audioSparkline(){
+function audioSparkline(nodeId){
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
   const aud = document.getElementById("aud")
-  canvas = document.getElementById("audio_canvas")
-  context = canvas.getContext("2d")
+  //canvas = document.getElementById("audio_canvas")
+
+  const radioContainer = document.getElementById("nodeId")
+  canvas = document.createElement("canvas")
+
+  radioContainer.appendChild(canvas)
+  context = nodeCanvas.getContext("2d")
   var audioSource = audioContext.createMediaElementSource(aud);
   analyser = audioContext.createAnalyser();
   
@@ -85,13 +90,20 @@ function fetchRadioStations(){
       var grid = document.getElementById('grid_holder')
       const stationsJson = JSON.parse(this.responseText);
       const stations = stationsJson.stations
+
+      var radId = 0
+
       for (var i = 0; i < stations.length; i++){
         var station = stations[i];
         console.log("Station:" + station.title)
         var link = document.createElement("a")
         link.classList.add("nav")
         link.href = "#"
-        link.onclick = new Function('event', "play(\"" + station.streamUrl + "\")")
+
+        var nodeId = "rad" + radId
+        radId++
+
+        link.onclick = new Function('event', "play(\"" + station.streamUrl + "\", \"" + nodeId + "\")")
 
         const node = document.createElement("div")
         node.classList.add("box", "nav_radio")
@@ -105,12 +117,12 @@ function fetchRadioStations(){
   xhr.send();
 }
 
-function play(streamUrl){
-  console.log("Play station: " + streamUrl)
+function play(streamUrl, nodeId){
+  console.log("Play station: " + streamUrl + " nodeId: " + nodeId)
   var audio = document.getElementById('aud')
   audio.src = streamUrl;
   audio.play();
-  audioSparkline();
+  audioSparkline(nodeId);
 }
 
 function toggleNav(){
