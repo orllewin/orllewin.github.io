@@ -49,22 +49,17 @@ function audioSparkline(){
 
 function animate() {
     x = 0;
-    var lastX = 0
-    var lastY = 0
     context.clearRect(0, 0, canvas.width, canvas.height)
     analyser.getByteFrequencyData(dataArray);
+    context.moveTo(0, 0);
     for (let i = 0; i < bufferLength; i++) {
-        var barHeight = map(dataArray[i], 0, 255, 0, canvas.height)//max 255
-        context.moveTo(lastX, lastY);
-        context.lineTo(x, barHeight);
-        context.lineWidth = 1;
-        context.strokeStyle = '#000000';
-        context.stroke();
-  
-        lastX = x
-        lastY = barHeight
+        context.lineTo(x, map(dataArray[i], 255, 0, 0, canvas.height));
         x += barWidth
     }
+
+    context.lineWidth = 1;
+    context.strokeStyle = '#000000';
+    context.stroke();
 
     requestAnimationFrame(animate);
 }
