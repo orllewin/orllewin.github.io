@@ -1,6 +1,6 @@
 window.onload = function(e){ 
   //document.body.style.backgroundColor = "rgb(" + pastel() + ", " + pastel() + ", " + pastel() + ")";
-  fetchRadioStations()
+
   var xhr= new XMLHttpRequest();
   xhr.open('GET', '/nav.html', true);
   xhr.onreadystatechange= function() {
