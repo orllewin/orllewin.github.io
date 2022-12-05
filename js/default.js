@@ -25,12 +25,21 @@ var dataArray = null;
 var barWidth = 1.0;
 var bufferLength;
 var x = 0;
+var animating = false
 
 function audioSparkline(nodeId){
+  animating = false
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
   const aud = document.getElementById("aud")
   //canvas = document.getElementById("audio_canvas")
 
+
+  const playingSparklines = document.querySelectorAll('.aud_canvas');
+  playingSparklines.forEach(spark => {
+    spark.remove();
+  });
+
+  
   const radioContainer = document.getElementById(nodeId)
   canvas = document.createElement("canvas")
   canvas.classList.add("aud_canvas")
@@ -47,12 +56,13 @@ function audioSparkline(nodeId){
   bufferLength = analyser.frequencyBinCount;
   dataArray = new Uint8Array(bufferLength);
   barWidth = canvas.width / bufferLength;
-
+  animating = true;
   animate();
 }
 
 
 function animate() {
+    if(!animating) return
     x = 0;
     context.clearRect(0, 0, canvas.width, canvas.height)
     analyser.getByteFrequencyData(dataArray);
