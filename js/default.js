@@ -10,15 +10,23 @@ window.onload = function(e){
 
       if(window.location.pathname !== "/"){
         toggleNav()
+        fetchRadioStations()
       }
       
   };
   xhr.send();
 }
 
-function hideNav(){
-  console.log("hideNav()...")
-  toggleNav()
+function fetchRadioStations(){
+  var xhr= new XMLHttpRequest();
+  xhr.open('GET', 'https://orllewin.uk/stations.json', true);
+  xhr.onreadystatechange= function() {
+      if (this.readyState!==4) return;
+      if (this.status!==200) return;
+      console.log(this.responseText)
+      
+  };
+  xhr.send();
 }
 
 function toggleNav(){
