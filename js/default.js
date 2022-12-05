@@ -35,7 +35,7 @@ function audioSparkline(nodeId){
   canvas = document.createElement("canvas")
 
   radioContainer.appendChild(canvas)
-  context = nodeCanvas.getContext("2d")
+  context = canvas.getContext("2d")
   var audioSource = audioContext.createMediaElementSource(aud);
   analyser = audioContext.createAnalyser();
   
