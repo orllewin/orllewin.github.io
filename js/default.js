@@ -24,6 +24,13 @@ function fetchRadioStations(){
       if (this.readyState!==4) return;
       if (this.status!==200) return;
       console.log(this.responseText)
+
+      const stationsJson = JSON.parse(this.responseText);
+      const stationsArray = stationsJson.stations
+      for (var i = 0; i < stationsArray.length; i++){
+        var station = stationsArray[i];
+        console.log("Station:" + station.title)
+      }
       
   };
   xhr.send();
