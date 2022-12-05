@@ -31,7 +31,7 @@ function audioSparkline(){
   const aud = document.getElementById("aud")
   canvas = document.getElementById("audio_canvas")
   context = canvas.getContext("2d")
-  var audioSource = audioCtx.createMediaElementSource(aud);
+  var audioSource = audioContext.createMediaElementSource(aud);
   analyser = audioContext.createAnalyser();
   
   audioSource.connect(analyser)
