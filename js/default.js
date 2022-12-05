@@ -53,9 +53,14 @@ function animate() {
     analyser.getByteFrequencyData(dataArray);
     context.beginPath();
     context.moveTo(0, 0);
+    var height = 0
     for (let i = 0; i < bufferLength; i++) {
-        context.lineTo(x, map(dataArray[i], 255, 0, 0, canvas.height - 5));
-        x += barWidth
+      height = map(dataArray[i], 255, 0, 0, canvas.height - 5)
+      if(height < 255){
+        context.lineTo(x, height)
+      }
+      
+      x += barWidth
     }
 
     context.lineWidth = 1;
