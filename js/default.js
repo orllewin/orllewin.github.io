@@ -41,6 +41,8 @@ function audioSparkline(){
   const bufferLength = analyser.frequencyBinCount;
   dataArray = new Uint8Array(bufferLength);
   barWidth = canvas.width / bufferLength;
+
+  animate();
 }
 
 
