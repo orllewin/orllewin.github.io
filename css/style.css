@@ -31,7 +31,6 @@ body {
   padding-left: 4pt;
   padding-right: 4pt;
   padding-top: 0pt;
-  max-width: 720px;
   line-height: 1.5;
 }
 
@@ -51,7 +50,11 @@ filter: grayscale(100%);
 }
 
 pre{
-line-height: normal;
+  line-height: normal;
+}
+
+p{
+  max-width: 720px;
 }
 
 code {
