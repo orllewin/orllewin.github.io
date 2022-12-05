@@ -20,6 +20,7 @@ window.onload = function(e){
 }
 
 var canvas = null;
+var context = null;
 var analyser = null;
 var dataArray = null;
 var barWidth = 1.0;
@@ -29,9 +30,9 @@ function audioSparkline(){
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
   const aud = document.getElementById("aud")
   canvas = document.getElementById("audio_canvas")
-  const ctx = canvas.getContext("2d")
+  context = canvas.getContext("2d")
   var audioSource = audioCtx.createMediaElementSource(aud);
-  analyser = audioCtx.createAnalyser();
+  analyser = audioContext.createAnalyser();
   
   audioSource.connect(analyser)
   analyser.connect(audioContext.destination)
@@ -45,7 +46,7 @@ function audioSparkline(){
 
 function animate() {
     x = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    context.clearRect(0, 0, canvas.width, canvas.height)
     analyser.getByteFrequencyData(dataArray);
     for (let i = 0; i < bufferLength; i++) {
         var barHeight = dataArray[i];
