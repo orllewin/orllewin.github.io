@@ -67,12 +67,18 @@ function animate() {
     context.clearRect(0, 0, canvas.width, canvas.height)
     analyser.getByteFrequencyData(dataArray);
     context.beginPath();
-    context.moveTo(0, 0);
+    var hasMoved = false
+    
     var height = 0
     for (let i = 0; i < bufferLength; i++) {
       height = map(dataArray[i], 255, 0, 0, canvas.height - 5)
       if(height < 255){
-        context.lineTo(x, height)
+        if(!hasMoved){
+          hasMoved = true
+          context.moveTo(x, height);
+        }else{
+          context.lineTo(x, height)
+        }
       }
       
       x += barWidth
