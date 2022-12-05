@@ -24,6 +24,7 @@ var context = null;
 var analyser = null;
 var dataArray = null;
 var barWidth = 1.0;
+var bufferLength;
 var x = 0;
 
 function audioSparkline(){
@@ -38,7 +39,7 @@ function audioSparkline(){
   analyser.connect(audioContext.destination)
 
   analyser.fftSize = 128;
-  const bufferLength = analyser.frequencyBinCount;
+  bufferLength = analyser.frequencyBinCount;
   dataArray = new Uint8Array(bufferLength);
   barWidth = canvas.width / bufferLength;
 
