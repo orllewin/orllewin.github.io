@@ -52,7 +52,7 @@ function audioSparkline(nodeId){
   audioSource.connect(analyser)
   analyser.connect(audioContext.destination)
 
-  analyser.fftSize = 64;
+  analyser.fftSize = 32;
   bufferLength = analyser.frequencyBinCount;
   dataArray = new Uint8Array(bufferLength);
   barWidth = canvas.width / bufferLength;
