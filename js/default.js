@@ -12,11 +12,51 @@ window.onload = function(e){
         toggleNav()
       }else{
         fetchRadioStations()
+        audioSparkline()
       }
       
   };
   xhr.send();
 }
+
+var canvas = null;
+var analyser = null;
+var dataArray = null;
+var barWidth = 1.0;
+var x = 0;
+
+function audioSparkline(){
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  const aud = document.getElementById("aud")
+  canvas = document.getElementById("audio_canvas")
+  const ctx = canvas.getContext("2d")
+  var audioSource = audioCtx.createMediaElementSource(aud);
+  analyser = audioCtx.createAnalyser();
+  
+  audioSource.connect(analyser)
+  analyser.connect(audioContext.destination)
+
+  analyser.fftSize = 128;
+  const bufferLength = analyser.frequencyBinCount;
+  dataArray = new Uint8Array(bufferLength);
+  barWidth = canvas.width / bufferLength;
+}
+
+
+function animate() {
+    x = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    analyser.getByteFrequencyData(dataArray);
+    for (let i = 0; i < bufferLength; i++) {
+        var barHeight = dataArray[i];
+        ctx.fillStyle = "white";
+        ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+        x += barWidth;
+    }
+
+    requestAnimationFrame(animate);
+}
+
 
 function fetchRadioStations(){
   var xhr= new XMLHttpRequest();
