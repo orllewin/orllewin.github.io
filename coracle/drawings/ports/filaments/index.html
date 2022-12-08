@@ -9,7 +9,7 @@
 </head>
 <body>
   <nav id="nav"></nav>
-  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Ports / Attractor</p>
+  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Ports / Filaments</p>
   <h1>Basic Tails</h1>
   <canvas id="coracle_canvas"></canvas>
     <p>Ported to Coracle from <a href="https://www.dwitter.net/d/26504">www.dwitter.net/d/26504</a></p>
@@ -21,13 +21,15 @@ import coracle.randomInt
 import kotlin.math.cos
 import kotlin.math.sin
 
-class TestDrawing: Drawing() {
+class Filaments: Drawing() {
 
     private val bg = Colour(0x1d1d1d)
+
     override fun setup() {
         size(800, 450)
         stroke(0xffffff)
     }
+    
     override fun draw() {
         background(bg)
 
