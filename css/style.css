@@ -8,6 +8,9 @@
   --nav_coracle_bg: #303146;
   --nav_coracle_fg: #b3ceec;
 
+  --nav_obsidian_bg:  #4d386c;
+  --nav_obsidian_fg: #efefef;
+
   --nav_playdate_fg: #aa6b3e;
   --nav_playdate_bg: #F4D766;
 
@@ -160,6 +163,16 @@ a{
 }
 
 .nav_coracle:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.nav_obdidian{
+  color: var(--nav_obsidian_fg);
+  background: var(--nav_obsidian_bg);
+}
+
+.nav_obdidian:hover{
   transition: all 0.5s;
   color: white;
 }
