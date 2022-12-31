@@ -167,12 +167,12 @@ a{
   color: white;
 }
 
-.nav_obdidian{
+.nav_obsidian{
   color: var(--nav_obsidian_fg);
   background: var(--nav_obsidian_bg);
 }
 
-.nav_obdidian:hover{
+.nav_obsidian:hover{
   transition: all 0.5s;
   color: white;
 }
