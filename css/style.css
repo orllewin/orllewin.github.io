@@ -60,6 +60,12 @@ body {
   line-height: 1.5;
 }
 
+hr{
+  border: 0;
+    border-bottom: 2px dashed rgb(183 145 30);
+    background: #ff000000;
+}
+
 p, h1, h2, h3, h4, h5, h6, li {
   max-width: 720px;
 }
