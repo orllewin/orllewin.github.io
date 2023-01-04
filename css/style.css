@@ -38,6 +38,11 @@
   --drawing_images_fg: #efefef;
   --drawing_images_bg: #575741;
 
+  --drawing_basic_fg: #efefef;
+  --drawing_basic_bg: #574e41;
+
+  
+
   
 }
 
@@ -105,6 +110,10 @@ a{
 }
 
 .nav{
+  text-decoration: none;
+}
+
+.inline_nav{
   text-decoration: none;
 }
 
@@ -278,6 +287,16 @@ a{
 }
 
 .drawing_images:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_basic{
+  color: var(--drawing_basic_fg);
+  background: var(--drawing_basic_bg);
+}
+
+.drawing_basic:hover{
   transition: all 0.5s;
   color: white;
 }
