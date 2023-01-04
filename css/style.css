@@ -22,8 +22,16 @@
 
   --nav_toggle_fg: #efefef;
   --nav_toggle_bg: #1d1d1d;
-  
-  
+
+  --drawing_3d_fg: #efefef;
+  --drawing_3d_bg: #544670;
+
+  --drawing_vectors_fg: #efefef;
+  --drawing_vectors_bg: #424366;
+
+  --drawing_perlin_fg: #efefef;
+  --drawing_perlin_bg: #415657;
+
 }
 
 body {
@@ -216,5 +224,38 @@ a{
   transition: all 0.5s;
   color: white;
 }
+
+.drawing_3d{
+  color: var(--drawing_3d_fg);
+  background: var(--drawing_3d_bg);
+}
+
+.drawing_3d:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_vectors{
+  color: var(--drawing_vectors_fg);
+  background: var(--drawing_vectors_bg);
+}
+
+.drawing_vectors:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_perlin{
+  color: var(--drawing_perlin_fg);
+  background: var(--drawing_perlin_bg);
+}
+
+.drawing_perlin:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+
+
 
 
