@@ -338,6 +338,12 @@ a{
 }
 
 
+.ytp-chrome-top {
+  visibility: hidden;
+}
 
+.ytp-show-cards-title{
+  visibility: hidden;
+}
 
 
