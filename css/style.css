@@ -32,6 +32,13 @@
   --drawing_perlin_fg: #efefef;
   --drawing_perlin_bg: #415657;
 
+  --drawing_circle_packing_fg: #efefef;
+  --drawing_circle_packing_bg: #415746;
+
+  --drawing_images_fg: #efefef;
+  --drawing_images_bg: #575741;
+
+  
 }
 
 body {
@@ -251,6 +258,26 @@ a{
 }
 
 .drawing_perlin:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_circle_packing{
+  color: var(--drawing_circle_packing_fg);
+  background: var(--drawing_circle_packing_bg);
+}
+
+.drawing_circle_packing:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_images{
+  color: var(--drawing_images_fg);
+  background: var(--drawing_images_bg);
+}
+
+.drawing_images:hover{
   transition: all 0.5s;
   color: white;
 }
