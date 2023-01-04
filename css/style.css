@@ -41,6 +41,8 @@
   --drawing_basic_fg: #efefef;
   --drawing_basic_bg: #574e41;
 
+  --drawing_misc_fg: #efefef;
+  --drawing_misc_bg: #574141;
   
 
   
@@ -297,6 +299,16 @@ a{
 }
 
 .drawing_basic:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_misc{
+  color: var(--drawing_misc_fg);
+  background: var(--drawing_misc_bg);
+}
+
+.drawing_misc:hover{
   transition: all 0.5s;
   color: white;
 }
