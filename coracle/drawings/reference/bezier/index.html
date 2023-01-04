@@ -12,11 +12,12 @@
     </style>
   </head>
   <body>
+    <nav id="nav"></nav>
     <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Bezier</p>
     <h1>Bezier</h1>
     <canvas id="coracle_canvas"></canvas>
     <p>A <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bézier Curve</a></p>
-    <pre><code>import coracle.Drawing
+    <pre><code class="language-kotlin">import coracle.Drawing
 import coracle.random
 import coracle.shapes.Bezier
 import coracle.shapes.Line
@@ -98,7 +99,7 @@ class ReferenceBezier: Drawing() {
     <p><code class="language-kotlin">val bezier = Bezier(anchor1, control1, control2, anchor2, detail)</code></p>
     <p><code class="language-kotlin">val bezier = Bezier(x1, y1, x2, y2, x3, y3, x4, y4)</code></p>
     <p><code class="language-kotlin">val bezier = Bezier(x1, y1, x2, y2, x3, y3, x4, y4, detail)</code></p>
-    <p><br>Bezier has a builtin <code>draw()</code> method: <code class="language-kotlin">bezier.draw()</code></p>
+    <p><br>Bezier has a builtin <code class="language-kotlin">draw()</code> method: <code class="language-kotlin">bezier.draw()</code></p>
     <br>
     <p>The raw lines are also available if you want more control:</p>
     <pre><code class="language-kotlin">val colourA = Color.random()

@@ -12,6 +12,7 @@
     </style>
   </head>
   <body>
+    <nav id="nav"></nav>
     <p class="small"><a href="../../../">Home</a> / <a href="../../">Coracle</a> / <a href="../">Articles</a> / Rad Image Format</p>
     <h1>The RAD Image Format</h1>
     <p>A project I'm working on (codename: RAD) needs to pull artwork from a server, the artwork is simple on/off pixels in a grid and rather than link to an image URL I'm going to embed the image data in the main JSON payload,  I could just base64 encode a PNG, but where's the fun in that?</p>
@@ -38,7 +39,7 @@
     <p>and without having the mode switch:</p>
     <p style="font-family: courier,monospace;font-size: 12px;word-wrap: break-word;">16x16:#0#f:1|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1.2|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1.2|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1.2|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1.2|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1.2|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1.2|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1.2|0|1|0|1|0|1|0|1|0|1|0|1|0|1|0.2|1|0|1|0|1|0|1|0|1|0|1|0|1|0|1</p>
     <p>312 versus 522 characters, and images with fewer than 10 colours will be standard for my use case.</p>
-    <p>With this format the following image can be represented as: <code>16x16:#0#f:0.119|1.2|0.14|1.2|0.119</code></p>
+    <p>With this format the following image can be represented as: <code class="language-kotlin">16x16:#0#f:0.119|1.2|0.14|1.2|0.119</code></p>
     <p><img src="003.png" style="width: 256px;height: auto;"></p>
     <p>You can create images in the RAD Image format using a Coracle drawing:</p>
     <p><a href="https://orllewin.github.io/coracle/drawings/experiments/rad_image/" class="primary_link">RAD Image Creator</a></p>

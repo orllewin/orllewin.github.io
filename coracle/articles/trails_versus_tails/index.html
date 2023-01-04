@@ -7,6 +7,7 @@
     <link href="../../../css/style.css" rel="stylesheet" />
   </head>
   <body>
+    <nav id="nav"></nav>
     <p class="small"><a href="../../../">Home</a> / <a href="../../">Coracle</a> / <a href="../">Articles</a> / 'trails' versus 'tails'</p>
     <h1>'trails' versus 'tails'</h1>
     <canvas id="coracle_canvas_a" style="border:1px solid #ababab"></canvas>&nbsp;&nbsp;
@@ -27,7 +28,7 @@
 }
     </code></pre>
     <h2>Trails</h2>
-    <p>The trick is to simply not clear the canvas at the start of the draw iteration (most sketches have a <code>background(colour)</code> call as the first line in the draw loop to clear the canvas), and then draw a semi-transparent rectangle over the entire canvas at the end. This gives the canvas a memory of objects previous positions that fades over a second or so, depending on the transparency level. </p>
+    <p>The trick is to simply not clear the canvas at the start of the draw iteration (most sketches have a <code class="language-kotlin">background(colour)</code> call as the first line in the draw loop to clear the canvas), and then draw a semi-transparent rectangle over the entire canvas at the end. This gives the canvas a memory of objects previous positions that fades over a second or so, depending on the transparency level. </p>
     <p>This has been added to the Coracle API, call <code class="language-kotlin">foreground(colour, alpha)</code> at the end of the draw method:</p>
     <pre><code class="language-kotlin">override fun draw() {
 
