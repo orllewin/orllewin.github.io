@@ -46,6 +46,14 @@
   
   --drawing_interactive_fg: #efefef;
   --drawing_interactive_bg: #574153;
+
+  --pd_coracle_fg: #957041;
+  --pd_coracle_bg: #eed485;
+
+  --pd_project_fg: #eed485;
+  --pd_project_bg: #8c694b;
+
+  
   
 }
 
@@ -342,6 +350,26 @@ a{
   color: white;
 }
 
+.pd_drawing{
+  color: var(--pd_coracle_fg);
+  background: var(--pd_coracle_bg);
+}
+
+.pd_drawing:hover{
+  transition: all 0.5s;
+  color: var(--pd_coracle_fg);
+}
+
+.pd_project{
+  color: var(--pd_project_fg);
+  background: var(--pd_project_bg);
+}
+
+.pd_project:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
 
 .ytp-chrome-top {
   visibility: hidden;
@@ -350,5 +378,3 @@ a{
 .ytp-show-cards-title{
   visibility: hidden;
 }
-
-
