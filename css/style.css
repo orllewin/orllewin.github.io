@@ -114,6 +114,14 @@ img{
   max-width: 720px;
 }
 
+.subtitled{
+  margin-bottom: 0px;
+}
+
+.subtitle{
+  margin-top: 0px;
+}
+
 .smallImage{
 max-width: 350px;
 padding: 5px;
