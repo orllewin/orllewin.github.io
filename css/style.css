@@ -53,7 +53,8 @@
   --pd_project_fg: #eed485;
   --pd_project_bg: #8c694b;
 
-  
+  --archive_fg: #ffeeee;
+  --archive_bg: #CC6568;
   
 }
 
@@ -370,6 +371,15 @@ a{
   color: white;
 }
 
+.nav_archive{
+  color: var(--archive_fg);
+  background: var(--archive_bg);
+}
+
+.nav_archive:hover{
+  transition: all 0.5s;
+  color: white;
+}
 
 .ytp-chrome-top {
   visibility: hidden;
