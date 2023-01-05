@@ -14,9 +14,46 @@
     #nav{
       padding-bottom: 16px;
     }
+    .iframe_box {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+    }
+
+    .iframe_box .row {
+      border: 1px dotted grey;
+    }
+
+    .iframe_box .row.header {
+      flex: 0 1 auto;
+      /* The above is shorthand for:
+      flex-grow: 0,
+      flex-shrink: 1,
+      flex-basis: auto
+      */
+    }
+
+    .iframe_box .row.content {
+      flex: 1 1 auto;
+    }
+
+    .iframe_box .row.footer {
+      flex: 0 1 16px;
+    }
+
   </style>
 </head>
 <body>
-  <nav id="nav"></nav>
-  <iframe class="embed" src="https://publish.obsidian.md/orllewin/stones/Stones" style="width:100%;height:100%;"></iframe>
+  <div class="iframe_box">
+    <div class="row header">
+      <nav id="nav"></nav>
+    </div>
+    <div class="row content">
+      <iframe class="embed" src="https://publish.obsidian.md/orllewin/stones/Stones" style="width:100%;height:100%;"></iframe>
+    </div>
+    <div class="row footer">
+    </div>
+  </div>
+  
+  
 </html>
