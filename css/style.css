@@ -53,6 +53,9 @@
   --pd_project_fg: #eed485;
   --pd_project_bg: #8c694b;
 
+  --pd_archive_fg: #eed485;
+  --pd_archive_bg: #574c42;
+
   --archive_fg: #ffeeee;
   --archive_bg: #CC6568;
   
@@ -387,6 +390,16 @@ a{
 }
 
 .pd_project:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.pd_archive{
+  color: var(--pd_archive_fg);
+  background: var(--pd_archive_bg);
+}
+
+.pd_archive:hover{
   transition: all 0.5s;
   color: white;
 }
