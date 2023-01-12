@@ -17,8 +17,7 @@
   <p><img class="smallImage" src="pd_sourhall_snow.gif"><img class="smallImage" src="pd_sourhall_snow_settling.gif"></p>
   <p>One of my first drawings for Playdate. The code is confused regarding scope and Lua's pseudo classes/objects,  and it won't run without the earlier Coracle lib, but I'm archiving it here because the results of my home in the snow are quite atmospheric. The use of <code>graphics.setColor(playdate.graphics.kColorXOR)</code> for the snow works well, and the <code>precipitation.lua</code> class has a nice <code>settles</code> flag where the falling snow accumulates at the bottom of the screen.</p>
   <p><h3>main.lua</h3></p>
-  <pre><code class="language-lua">
-import 'CoreLibs/sprites'
+  <pre><code class="language-lua">import 'CoreLibs/sprites'
 import 'CoreLibs/graphics'
 import 'CoreLibs/animation'
 import 'CoreLibs/timer'
@@ -30,7 +29,7 @@ import 'coracle/Vector'
 class('TurbineSprite').extends(playdate.graphics.sprite)
 class('SourhallDrawing').extends(Drawing)
 
-local graphics <const> = playdate.graphics
+local graphics = playdate.graphics
 
 local turbineTable = graphics.imagetable.new("games/todmorden/placeSourhall/images/turbine_sheet")
 
@@ -98,12 +97,9 @@ function SourhallDrawing:draw()
   if(aPressed())then
     onSplashDismiss()
   end
-end
-  </code>
-  </pre>
+end</code></pre>
   <p><h3>precipitation.lua</h3></p>
-  <pre><code class="language-lua">
-PrecipitationDrop = {}
+  <pre><code class="language-lua">PrecipitationDrop = {}
 PrecipitationDrop.__index = PrecipitationDrop
 function PrecipitationDrop:create(location, speed, direction, moleculeSize)
     local precipDrop = {}
@@ -201,10 +197,7 @@ function ring(a, min, max)
     min, max = max, min
   end
   return min + (a-min) % (max-min)
-end
-  </code>
-
-  </pre>
+end</code></pre>
   <script src="/js/prism.js"></script>
 </body>
 </html>
