@@ -408,3 +408,8 @@ a{
 .ytp-show-cards-title{
   visibility: hidden;
 }
+
+.token.operator, .token.url {
+  color: #9a6e3a;
+  background: none;
+}
