@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orllewin: Playdate: Gorpley Clough</title>
+  <meta name="description" content="Orllewin portal">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/css/prism.css" rel="stylesheet" />
+  <script src="/js/default.js"></script>
+</head>
+<body>
+  <nav id="nav"></nav>
+  <p class="small"><a href="../../">Home</a> / Playdate / Gorpley Clough</p>
+  <h1>Gorpley Clough</h1>
+  <p><img class="smallImage" src="pd_gorpley_clough.gif"></p>
+  <p>Another early experiment from before I had a physical Playdate or understood Lua properly (<a href="https://orllewin.github.io/playdate/sourhall/">See the Sourhall page</a> for more information). Uses the same <code>precipitation.lua</code> code but with different parameters to represent falling blossom, a <code>waterfall.lua</code> class for the falling water, and a basic synth implementation for white noise.</p>
+  <p><h3>main.lua</h3></p>
+  <pre><code class="language-lua">import 'CoreLibs/graphics'
+import 'CoreLibs/animation'
+import 'CoreLibs/timer'
+
+import 'coracle/Coracle'
+import 'coracle/Vector'
+import 'coracle/Waterfall'
+import 'coracle/Precipitation'
+
+class('GorpleyCloughDrawing').extends(Drawing)
+
+local graphics <const> = playdate.graphics
+
+local waterfallSmall = Waterfall:create(15, 1, 165, 183, 97, 110)
+local waterfallMain = Waterfall:create(800, 5, 155, 320, 140, 240)
+local pollen = Precipitation:create(false, 15, 2, 1)
+
+local sound <const> = playdate.sound
+local synthFilterResonance = 0.1
+local synthFilterFrequency = 400
+
+local onGorpleyDismiss = nil
+
+local splashImage = playdate.graphics.image.new("games/todmorden/placeGorpleyClough/images/gorpleyclough")
+assert(splashImage)
+
+synth = sound.synth.new(playdate.sound.kWaveNoise)
+filter = sound.twopolefilter.new("lowpass")
+filter:setResonance(synthFilterResonance)
+filter:setFrequency(synthFilterFrequency)
+sound.addEffect(filter)
+synth:setVolume(0.04)
+
+function GorpleyCloughDrawing:init(_onGorpleyDismiss)
+  print("GorpleyCloughDrawing:init")
+  onGorpleyDismiss = _onGorpleyDismiss
+    
+  -- Audio
+  self.start()
+end
+
+function GorpleyCloughDrawing:start()
+  synth:playNote(330)
+end
+
+function GorpleyCloughDrawing:draw()
+  splashImage:draw(0, 0)
+  
+  waterfallSmall:draw(graphics.kColorXOR)
+  waterfallMain:draw(graphics.kColorXOR)
+  
+  graphics.setColor(playdate.graphics.kColorWhite)
+  pollen:draw()
+  
+  if(aPressed())then
+    synth:stop()
+    onGorpleyDismiss()
+  end
+end</code></pre>
+<p><h3>waterfall.lua</h3></p>
+<pre><code>Drop = {}
+Drop.__index = Drop
+function Drop:create(location, speed, direction)
+    local drop = {}
+    setmetatable(drop, Drop)
+    drop.location = location
+    drop.speed = speed
+    drop.direction = direction
+    return drop
+end
+
+Waterfall = {}
+Waterfall.__index = Waterfall
+function Waterfall:create(dropCount, speedMax, xStart, xEnd, yStart, yEnd)
+    local waterfall = {}
+    setmetatable(waterfall, Waterfall)
+    waterfall.xStart = xStart
+    waterfall.xEnd = xEnd
+    waterfall.yStart = yStart
+    waterfall.yEnd = yEnd
+    waterfall.prevColor = playdate.graphics.kColorXOR
+    waterfall.iterations = 0
+    waterfall.droplets = {}
+    for i = 1, dropCount do
+    local drop = Drop:create(Vector:create(math.random(xStart, xEnd), math.random(yStart, yEnd)), math.random(1, speedMax), math.random(-1, 1))
+    table.insert(waterfall.droplets, drop)
+    end
+    return waterfall
+end
+
+function Waterfall:draw(color)
+  
+  self.iterations += 1
+  self.prevColor = playdate.graphics.getColor()
+  playdate.graphics.setColor(color)
+  for i = 1, #self.droplets do
+    local drop = self.droplets[i]
+    line(drop.location.x, drop.location.y, drop.location.x, drop.location.y + 1)
+    --point(drop.location.x, drop.location.y)
+    drop.location.y = drop.location.y + drop.speed
+    drop.location.x = drop.location.x + (drop.direction/4)
+    
+    if(drop.location.y > self.yEnd + 1) then
+      drop.location = Vector:create(math.random(self.xStart, self.xEnd), math.random(self.yStart, self.yEnd))
+    end
+  end
+  
+  playdate.graphics.setColor(self.prevColor)
+end
+
+function ring(a, min, max)
+  if min > max then
+    min, max = max, min
+  end
+  return min + (a-min) % (max-min)
+end</code></pre>
+  <script src="/js/prism.js"></script>
+</body>
+</html>
