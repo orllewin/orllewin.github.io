@@ -8,6 +8,9 @@
   --nav_coracle_bg: #303146;
   --nav_coracle_fg: #b3ceec;
 
+  --nav_obsidian_bg:  #5b5464;
+  --nav_obsidian_fg: #efefef;
+
   --nav_playdate_fg: #aa6b3e;
   --nav_playdate_bg: #F4D766;
 
@@ -19,12 +22,47 @@
 
   --nav_toggle_fg: #efefef;
   --nav_toggle_bg: #1d1d1d;
+
+  --drawing_3d_fg: #efefef;
+  --drawing_3d_bg: #544670;
+
+  --drawing_vectors_fg: #efefef;
+  --drawing_vectors_bg: #424366;
+
+  --drawing_perlin_fg: #efefef;
+  --drawing_perlin_bg: #415657;
+
+  --drawing_circle_packing_fg: #efefef;
+  --drawing_circle_packing_bg: #415746;
+
+  --drawing_images_fg: #efefef;
+  --drawing_images_bg: #575741;
+
+  --drawing_basic_fg: #efefef;
+  --drawing_basic_bg: #574e41;
+
+  --drawing_misc_fg: #efefef;
+  --drawing_misc_bg: #574141;
   
+  --drawing_interactive_fg: #efefef;
+  --drawing_interactive_bg: #574153;
+
+  --pd_coracle_fg: #957041;
+  --pd_coracle_bg: #eed485;
+
+  --pd_project_fg: #eed485;
+  --pd_project_bg: #8c694b;
+
+  --pd_archive_fg: #eed485;
+  --pd_archive_bg: #574c42;
+
+  --archive_fg: #ffeeee;
+  --archive_bg: #CC6568;
   
 }
 
 body {
-  background: rgb(255, 241, 222);
+  background: #f2f8ff;
   font-size: 12pt;
   font-family: Helvetica, Verdana, Arial, sans-serif;
   color: #000000;
@@ -34,8 +72,38 @@ body {
   line-height: 1.5;
 }
 
+.embed{
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666666;
+}
+
+hr{
+  border: 0;
+    border-bottom: 2px dashed rgb(183 145 30);
+    background: #ff000000;
+}
+
+@font-face {
+  font-family: 'Basteleur';
+ font-style: normal;
+ font-weight: 900;
+ font-display: swap;
+ src: url(basteleur-bold.woff2) format('woff2');
+}
+
+h1, h2 {
+	font-family: "Basteleur", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 p, h1, h2, h3, h4, h5, h6, li {
   max-width: 720px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin-top: 22px;
+  margin-bottom: 0px;
 }
 
 canvas{
@@ -59,6 +127,14 @@ canvas{
 
 img{
   max-width: 720px;
+}
+
+.subtitled{
+  margin-bottom: 0px;
+}
+
+.subtitle{
+  margin-top: 0px;
 }
 
 .smallImage{
@@ -87,6 +163,10 @@ a{
 }
 
 .nav{
+  text-decoration: none;
+}
+
+.inline_nav{
   text-decoration: none;
 }
 
@@ -164,6 +244,16 @@ a{
   color: white;
 }
 
+.nav_obsidian{
+  color: var(--nav_obsidian_fg);
+  background: var(--nav_obsidian_bg);
+}
+
+.nav_obsidian:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
 .nav_misc{
   color: var(--nav_misc_fg);
   background: var(--nav_misc_bg);
@@ -204,4 +294,135 @@ a{
   color: white;
 }
 
+.drawing_3d{
+  color: var(--drawing_3d_fg);
+  background: var(--drawing_3d_bg);
+}
 
+.drawing_3d:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_vectors{
+  color: var(--drawing_vectors_fg);
+  background: var(--drawing_vectors_bg);
+}
+
+.drawing_vectors:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_perlin{
+  color: var(--drawing_perlin_fg);
+  background: var(--drawing_perlin_bg);
+}
+
+.drawing_perlin:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_circle_packing{
+  color: var(--drawing_circle_packing_fg);
+  background: var(--drawing_circle_packing_bg);
+}
+
+.drawing_circle_packing:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_images{
+  color: var(--drawing_images_fg);
+  background: var(--drawing_images_bg);
+}
+
+.drawing_images:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_basic{
+  color: var(--drawing_basic_fg);
+  background: var(--drawing_basic_bg);
+}
+
+.drawing_basic:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_misc{
+  color: var(--drawing_misc_fg);
+  background: var(--drawing_misc_bg);
+}
+
+.drawing_misc:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.drawing_interactive{
+  color: var(--drawing_interactive_fg);
+  background: var(--drawing_interactive_bg);
+}
+
+.drawing_interactive:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.pd_drawing{
+  color: var(--pd_coracle_fg);
+  background: var(--pd_coracle_bg);
+}
+
+.pd_drawing:hover{
+  transition: all 0.5s;
+  color: var(--pd_coracle_fg);
+}
+
+.pd_project{
+  color: var(--pd_project_fg);
+  background: var(--pd_project_bg);
+}
+
+.pd_project:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.pd_archive{
+  color: var(--pd_archive_fg);
+  background: var(--pd_archive_bg);
+}
+
+.pd_archive:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.nav_archive{
+  color: var(--archive_fg);
+  background: var(--archive_bg);
+}
+
+.nav_archive:hover{
+  transition: all 0.5s;
+  color: white;
+}
+
+.ytp-chrome-top {
+  visibility: hidden;
+}
+
+.ytp-show-cards-title{
+  visibility: hidden;
+}
+
+.token.operator, .token.url {
+  color: #9a6e3a;
+  background: none;
+}

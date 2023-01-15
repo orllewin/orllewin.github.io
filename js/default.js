@@ -1,5 +1,8 @@
 window.onload = function(e){ 
-  //document.body.style.backgroundColor = "rgb(" + pastel() + ", " + pastel() + ", " + pastel() + ")";
+  var r = pastel(220, 235)
+  var g = pastel(220, 235)
+  var b = pastel(220, 240)
+  document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
 
   var xhr= new XMLHttpRequest();
   xhr.open('GET', '/nav.html', true);
@@ -179,10 +182,6 @@ function toggleNav(){
 
 }
 
-function pastel() {
-  var min = 220
-  var max = 255
-  min = Math.ceil(min);
-  max = Math.floor(max);
+function pastel(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }

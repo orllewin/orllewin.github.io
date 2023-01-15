@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+  <title>Coracle: Tunnel</title>
+  <link href="../../../../css/prism.css" rel="stylesheet" /><link href="../../../../css/style.css" rel="stylesheet" />
+  <style>
+  #coracle_canvas {
+    height: 800px;
+    width: 750px;
+  }
+  </style>
+  <script src="/js/default.js"></script> 
+  </head>
+  <body>
+  <nav id="nav"></nav>
+  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Tunnel</p>
+  <h1>Tunnel</h1>
+  <canvas id="coracle_canvas"></canvas>
+  <pre><code class="language-kotlin">import coracle.Color
+import coracle.Drawing
+import kotlin.math.cos
+import kotlin.math.sin
+
+class TunnelDrawing: Drawing() {
+
+  var z = 0f; var a = 0f; var x = 0f; var y = 0f
+
+  override fun setup() {
+    size(800, 750)
+    noStroke()
+  }
+
+  override fun draw() {
+
+    for(i in 510 downTo 0){
+      z = width * 35f/i
+      a = i * 2f + frame * 2f
+      x = sin(a) * z + (sin(a/width * 1.2f) + 2) * 200
+      y = cos(a) * z + (sin(a/width / 1.2f) + 2) * 200
+      val c = Color.grey(i/3)
+      fill(c)
+      if(i == 510) background(c)
+      circle(x, y, z * 0.32)
+    }
+  }
+}
+  </code></pre>
+  <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
+  </body>
+</html>

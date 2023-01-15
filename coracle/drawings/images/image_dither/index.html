@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
     <title>Coracle</title>
-    <link href="../../../../css/style.css" rel="stylesheet" />
+    <link href="../../../../css/prism.css" rel="stylesheet" /><link href="../../../../css/style.css" rel="stylesheet" />
     <style>
 #input_image {
   border-style: solid;
@@ -21,9 +21,11 @@
   }
 }
     </style>
+    <script src="/js/default.js"></script> 
 </head>
 <body>
-  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Floyd Steinberg Dither</p>
+    <nav id="nav"></nav>
+  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Floyd Steinberg Dither</p>
   <h1>Floyd Steinberg Dither</h1>
   <canvas id="coracle_canvas"></canvas><br>
   <img id="input_image" src="./salts_mill.png" style="width: 550px;height: 414px;" />
@@ -78,6 +80,7 @@ class ImageDither: Drawing() {
     }
 }
   </code></pre>
-  <script src="CoracleWeb.js"></script>
+  <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
 </body>
 </html>

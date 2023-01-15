@@ -16,7 +16,7 @@
             <li>Download the <a href="./coraclelib-release_1_0_0.aar">latest .aar library file</a> to your project app/lib/ directory</li>
             <li>Follow the <a href="https://developer.android.com/studio/projects/android-library#psd-add-aar-jar-dependency">Add your AAR or JAR as a dependency</a> guide.<br><p class="aside">Note: The Android Studio dialog for adding the .aar is unhelpful and doesn't have a file chooser, if you have problems add the full path to the .aar eg. /Users/orllewin/CoracleLibraryTest/app/libs/coraclelib-release_1_0_0.aar</p></li>
             <li>Add a CoracleView to your layout:
-                <pre><code>
+                <pre><code class="language-kotlin">
 &lt;orllewin.coraclelib.CoracleView
     android:id=&quot;@+id/coracle_view&quot;
     android:layout_width=&quot;match_parent&quot;
@@ -24,7 +24,7 @@
                 </code></pre>
             </li>
             <li>Create a Drawing instance, initialise with the Android Renderer and pass the CoracleView:</li>
-                <pre><code>
+                <pre><code class="language-kotlin">
 class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

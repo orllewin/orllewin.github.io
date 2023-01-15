@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orllewin: Playdate: Sourhall</title>
+  <meta name="description" content="Orllewin portal">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/css/prism.css" rel="stylesheet" />
+  <script src="/js/default.js"></script>
+</head>
+<body>
+  <nav id="nav"></nav>
+  <p class="small"><a href="../../">Home</a> / Playdate / Sourhall</p>
+  <h1>Sourhall</h1>
+  <p><img class="smallImage" src="pd_sourhall_snow.gif"><img class="smallImage" src="pd_sourhall_snow_settling.gif"></p>
+  <p>One of my first drawings for Playdate. The code is confused regarding scope and Lua's pseudo classes/objects, and it won't run without the earlier Coracle lib, but I'm archiving it here because the results of my home in the snow are quite atmospheric. The use of <code>graphics.setColor(playdate.graphics.kColorXOR)</code> for the snow works well, and the <code>precipitation.lua</code> class has a nice <code>settles</code> flag where the falling snow accumulates at the bottom of the screen.</p>
+  <p>This was written before I had access to a Playdate unit, it runs very slow on hardware.</p>
+  <p><h3>main.lua</h3></p>
+  <pre><code class="language-lua">import 'CoreLibs/sprites'
+import 'CoreLibs/graphics'
+import 'CoreLibs/animation'
+import 'CoreLibs/timer'
+
+import 'coracle/Coracle'
+import 'coracle/Precipitation'
+import 'coracle/Vector'
+
+class('TurbineSprite').extends(playdate.graphics.sprite)
+class('SourhallDrawing').extends(Drawing)
+
+local graphics = playdate.graphics
+
+local turbineTable = graphics.imagetable.new("games/todmorden/placeSourhall/images/turbine_sheet")
+
+-- Turbines   
+local turbineA = TurbineSprite()
+turbineA:moveTo(42, 77)
+turbineA:setScale(0.50)
+turbineA:add()
+
+local turbineALoop = graphics.animation.loop.new(100, turbineTable)
+turbineALoop.frame = 1
+
+local turbineB = TurbineSprite()
+turbineB:moveTo(60, 84)
+turbineB:setScale(0.35)
+turbineB:add()
+
+local turbineBLoop = graphics.animation.loop.new(100, turbineTable)
+turbineBLoop.frame = 4
+
+local turbineC = TurbineSprite()
+turbineC:moveTo(178, 79)
+turbineC:setScale(0.40)
+turbineC:add()
+
+local turbineCLoop = graphics.animation.loop.new(100, turbineTable)
+turbineCLoop.frame = 8
+
+local turbineD = TurbineSprite()
+turbineD:moveTo(196, 74)
+turbineD:setScale(0.50)
+turbineD:add()
+
+local turbineDLoop = graphics.animation.loop.new(100, turbineTable)
+turbineDLoop.frame = 10
+
+local snow = Precipitation:create(false, 2000, 1, 4)
+
+local onSplashDismiss = nil
+local splashTimer = nil
+
+local splashImage = playdate.graphics.image.new("games/todmorden/placeSourhall/images/sourhall")
+assert(splashImage)
+
+function SourhallDrawing:init(_onSplashDismiss)
+  onSplashDismiss = _onSplashDismiss
+  
+  graphics.sprite.setBackgroundDrawingCallback(
+      function( x, y, width, height )
+          splashImage:draw(0, 0)
+      end
+  )
+end
+
+function SourhallDrawing:draw()
+  turbineA:setImage(turbineALoop:image())
+  turbineB:setImage(turbineBLoop:image())
+  turbineC:setImage(turbineCLoop:image())
+  turbineD:setImage(turbineDLoop:image())
+  
+  graphics.sprite.update()
+  graphics.setColor(playdate.graphics.kColorXOR)
+  snow:draw()
+  
+  if(aPressed())then
+    onSplashDismiss()
+  end
+end</code></pre>
+  <p><h3>precipitation.lua</h3></p>
+  <pre><code class="language-lua">PrecipitationDrop = {}
+PrecipitationDrop.__index = PrecipitationDrop
+function PrecipitationDrop:create(location, speed, direction, moleculeSize)
+    local precipDrop = {}
+    setmetatable(precipDrop, PrecipitationDrop)
+    precipDrop.location = location
+    precipDrop.speed = speed
+    precipDrop.direction = direction
+    precipDrop.moleculeSize = moleculeSize
+    return precipDrop
+end
+
+Precipitation = {}
+Precipitation.__index = Precipitation
+function Precipitation:create(settles, moleculeCount, moleculeSize, maxSpeed)
+    local precipitation = {}
+    setmetatable(precipitation, Precipitation)
+    precipitation.settles = settles
+    precipitation.xEnd = xEnd
+    precipitation.yStart = yStart
+    precipitation.yEnd = yEnd
+    precipitation.prevColor = playdate.graphics.kColorXOR
+    precipitation.iterations = 0
+    precipitation.frame = 0
+    precipitation.windspeed = 0.0
+    precipitation.precipDroplets = {}
+    for i = 1, moleculeCount do
+    local precipDrop = PrecipitationDrop:create(Vector:create(math.random(0, width * 1.25), math.random(-400, 0)), math.random(1, maxSpeed), math.random(-2, 2), moleculeSize)
+    table.insert(precipitation.precipDroplets, precipDrop)
+    end
+    
+    precipitation.settles = settles
+    if(settles)then
+    precipitation.ground = {}
+    for g = 1, width do
+      precipitation.ground[g] = 0
+    end 
+    end
+    return precipitation
+end
+
+function Precipitation:draw()
+  self.frame += 1
+  
+  for i = 1, #self.precipDroplets do
+    local precipDrop = self.precipDroplets[i]
+    
+    if(precipDrop.moleculeSize == 1)then
+      line(precipDrop.location.x + 3 * self.windspeed, precipDrop.location.y - 1, precipDrop.location.x, precipDrop.location.y)
+    else
+      circle(precipDrop.location.x, precipDrop.location.y, precipDrop.moleculeSize)
+    end
+  
+    precipDrop.location.y = precipDrop.location.y + precipDrop.speed
+    
+    local wind = playdate.graphics.perlin(precipDrop.speed, precipDrop.location.y * 0.0055, self.frame * 0.0055) - 0.5
+    precipDrop.location.x = precipDrop.location.x + (wind * precipDrop.speed) + precipDrop.direction
+    if(precipDrop.location.y > height + 1) then
+      precipDrop.location = Vector:create(math.random(0, (width * 1.25)), math.random(-100, 0))
+      
+      if(self.settles and precipDrop.location.x > 0 and precipDrop.location.x < width)then
+        local index = precipDrop.location.x
+        
+        local average = 0
+        average += self.ground[ring(index + 1, 1, 400)]
+        average += self.ground[ring(index + 2, 1, 400)]
+        average += self.ground[ring(index + 3, 1, 400)]
+        
+        average += self.ground[ring(index - 1, 1, 400)]
+        average += self.ground[ring(index - 2, 1, 400)]
+        average += self.ground[ring(index - 3, 1, 400)]
+        
+        average = average / 6
+        if(average > 0)then
+          self.ground[index] = average + 1
+        else
+          self.ground[index] = self.ground[index] + 1
+        end
+      end
+    end
+  end
+  
+  if(self.settles)then
+    playdate.graphics.setColor(playdate.graphics.kColorWhite)
+    for g = 1, #self.ground do
+      local gSize = self.ground[g]
+      if(gSize > 0)then
+        line(g, height - gSize, g, height)
+      end
+    end
+  end
+end
+
+function ring(a, min, max)
+  if min > max then
+    min, max = max, min
+  end
+  return min + (a-min) % (max-min)
+end</code></pre>
+  <script src="/js/prism.js"></script>
+</body>
+</html>

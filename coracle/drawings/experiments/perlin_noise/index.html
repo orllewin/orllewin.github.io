@@ -4,16 +4,18 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
       <title>CORACLE: PERLIN NOISE FLOW FIELD</title>
-      <link href="../../../../css/style.css" rel="stylesheet" />
+      <link href="../../../../css/prism.css" rel="stylesheet" /><link href="../../../../css/style.css" rel="stylesheet" />
       <style>
           #coracle_canvas {
               margin-left:-8px;
               height: 450px;
           }
       </style>
+      <script src="/js/default.js"></script>
   </head>
   <body>
-    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / <a href="../../">Drawings</a> / Perlin Noise Flow Field</p>
+    <nav id="nav"></nav>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Perlin Noise Flow Field</p>
     <h1 id="titl">Perlin Noise Flow Field</h1>
     <canvas id="coracle_canvas"></canvas>
     <pre><code class="language-kotlin">import coracle.*
@@ -80,6 +82,7 @@ class PerlinNoiseDrawing: Drawing() {
     }
 }
     </code></pre>
-    <script src="CoracleWeb.js"></script>
+    <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
   </body>
 </html>
