@@ -81,6 +81,10 @@ body {
   border-color: #666666;
 }
 
+.inner_section{
+  border-radius: 16px;
+}
+
 hr{
   border: 0;
     border-bottom: 2px dashed rgb(183 145 30);
