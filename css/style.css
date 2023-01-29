@@ -112,6 +112,22 @@ h1, h2, h3, h4, h5, h6{
   margin-bottom: 0px;
 }
 
+h1{
+  font-size: 32pt;
+}
+
+h2{
+  font-size: 30pt;
+}
+
+h3{
+  font-size: 28pt;
+}
+
+h3{
+  font-size: 26pt;
+}
+
 canvas{
   border-radius: 16px;
   border-style: solid;
