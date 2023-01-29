@@ -92,15 +92,15 @@ hr{
 }
 
 @font-face {
-  font-family: 'Basteleur';
+  font-family: 'bombfont';
  font-style: normal;
  font-weight: 900;
  font-display: swap;
- src: url(basteleur-bold.woff2) format('woff2');
+ src: url(BOMBFONT.ttf);
 }
 
 h1, h2 {
-	font-family: "Basteleur", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "bombfont", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 p, h1, h2, h3, h4, h5, h6, li {
