@@ -113,19 +113,19 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-  font-size: 32pt;
+  font-size: 64pt;
 }
 
 h2{
-  font-size: 30pt;
+  font-size: 52pt;
 }
 
 h3{
-  font-size: 28pt;
+  font-size: 44pt;
 }
 
 h3{
-  font-size: 26pt;
+  font-size: 36pt;
 }
 
 canvas{
