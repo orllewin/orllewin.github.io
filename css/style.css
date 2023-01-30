@@ -92,15 +92,15 @@ hr{
 }
 
 @font-face {
-  font-family: 'Basteleur';
+  font-family: 'hfont';
  font-style: normal;
  font-weight: 900;
  font-display: swap;
- src: url(basteleur-bold.woff2) format('woff2');
+ src: url(aaaiight.ttf);
 }
 
-h1, h2 {
-	font-family: "Basteleur", "Helvetica Neue", Helvetica, Arial, sans-serif;
+h1, h2, h3, h4 {
+	font-family: "hfont", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 p, h1, h2, h3, h4, h5, h6, li {
@@ -111,6 +111,22 @@ h1, h2, h3, h4, h5, h6{
   margin-top: 22px;
   margin-bottom: 0px;
   color: #535353;
+}
+
+h1{
+  font-size: 46pt;
+}
+
+h2{
+  font-size: 38pt;
+}
+
+h3{
+  font-size: 34pt;
+}
+
+h3{
+  font-size: 30pt;
 }
 
 canvas{
