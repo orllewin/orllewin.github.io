@@ -75,6 +75,18 @@ body {
   line-height: 1.5;
 }
 
+table {
+  font-family: 'Inter', Helvetica, Verdana, Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
 .embed{
   border-radius: 16px;
   border-style: solid;
