@@ -13,6 +13,13 @@
   <nav id="nav"></nav>
   <p class="small"><a href="../../">Home</a> / Playdate / Field Recorder</p>
   <h1>Field Recorder</h1>
+  <p>There's a menu option to change the audio format with 16bit mono being the default. The Playdate has limited memory and doesn't support streaming audio to file so Field Recorder is limited by the size of the buffer the hardware will allow:</p>
+  <ul>
+    <li>16bit Mono:   2 minutes</li>
+    <li>16bit Stereo: 1 minute</li>
+    <li>8bit Mono:    4 minutes</li>
+    <li>8bit Stereo:  2 minutes</li>
+  </ul>
   <p>Example recording using a <a href="https://rode.com/en/microphones/mobile/videomic-me">Rode VideoMic Me</a> (any <a href="https://help.play.date/hardware/supported-inputs/">TRRS</a> setup should work fine):</p>
   <audio controls><source src="example.mp3" type="audio/mpeg"></audio>
   <p>Code: <a href="https://github.com/orllewin/playdate_field_recorder">github.com/orllewin/playdate_field_recorder</a></p>
