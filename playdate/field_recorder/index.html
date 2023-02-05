@@ -13,7 +13,7 @@
   <nav id="nav"></nav>
   <p class="small"><a href="../../">Home</a> / Playdate / Field Recorder</p>
   <h1>Field Recorder</h1>
-  <p>A simple Playdate audio recorder. The Playdate supports recording in 16bit which makes it capable of recording high quality audio, especially when using an external microphone. Note that Field Recorder doesn't support playback of the generated .wav files, to use the recorded audio you need to connect to a computer via USB and put your Playdate into Mass Storage mode (Settings > System > Reboot to Data Disk), it'll then appear as a mounted USB drive with the recorded audio in the Field Recorder Data folder.</p>
+  <p>A simple Playdate audio recorder. The Playdate supports recording in 16bit which makes it capable of recording high quality audio, especially when using an external microphone.</p>
   <img class="embed" src="field_recording.jpeg" style="width: 720px;height: auto;">
   <p>There's a menu option to change the audio format with 16bit mono being the default. The Playdate has limited memory and doesn't support streaming audio to file so Field Recorder is limited by the size of the buffer the hardware will allow:</p>
   <ul>
@@ -22,6 +22,8 @@
     <li>8bit Mono:    4 minutes</li>
     <li>8bit Stereo:  2 minutes</li>
   </ul>
+  <p><b>Note that Field Recorder doesn't support playback of the generated .wav files, to use the recorded audio you need to connect to a computer via USB and put your Playdate into Mass Storage mode (Settings > System > Reboot to Data Disk), it'll then appear as a mounted USB drive with the recorded audio in the Field Recorder Data folder.</b></p>
+  <hr>
   <p>Example recording using a <a href="https://rode.com/en/microphones/mobile/videomic-me">Rode VideoMic Me</a> (any <a href="https://help.play.date/hardware/supported-inputs/">TRRS</a> setup should work fine):</p>
   <audio controls><source src="example.mp3" type="audio/mpeg"></audio>
   <p>Code: <a href="https://github.com/orllewin/playdate_field_recorder">github.com/orllewin/playdate_field_recorder</a></p>
