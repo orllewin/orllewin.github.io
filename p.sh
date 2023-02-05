@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "Saving..."
+timestamp=$(date +%s)
+echo "Saving: $timestamp"
 git add .
 
-timestamp=$(date +%s)
+
 git commit -m '$timestamp'
 
 git push origin main
