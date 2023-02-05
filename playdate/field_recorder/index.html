@@ -16,12 +16,28 @@
   <p>A simple Playdate audio recorder. The Playdate supports recording in 16bit which makes it capable of recording high quality audio, especially when using an external microphone.</p>
   <img class="embed" src="field_recording.jpeg" style="width: 720px;height: auto;">
   <p>There's a menu option to change the audio format with 16bit mono being the default. The Playdate has limited memory and doesn't support streaming audio to file so Field Recorder is limited by the size of the buffer the hardware will allow:</p>
-  <ul>
-    <li>16bit Mono:   2 minutes</li>
-    <li>16bit Stereo: 1 minute</li>
-    <li>8bit Mono:    4 minutes</li>
-    <li>8bit Stereo:  2 minutes</li>
-  </ul>
+  <table>
+    <tr>
+      <th>Format</th>
+      <th>Time</th>
+    </tr>
+    <tr>
+      <td>16bit Mono</td>
+      <td>2 minutes</td>
+    </tr>
+    <tr>
+      <td>16bit Stereo</td>
+      <td>1 minute</td>
+    </tr>
+    <tr>
+      <td>8bit Mono</td>
+      <td>4 minutes</td>
+    </tr>
+    <tr>
+      <td>8bit Stereo</td>
+      <td>2 minutes</td>
+    </tr>
+  </table>
   <p><b>Note that Field Recorder doesn't support playback of the generated .wav files, to use the recorded audio you need to connect to a computer via USB and put your Playdate into Mass Storage mode (Settings > System > Reboot to Data Disk), it'll then appear as a mounted USB drive with the recorded audio in the Field Recorder Data folder.</b></p>
   <hr>
   <p>Example recording using a <a href="https://rode.com/en/microphones/mobile/videomic-me">Rode VideoMic Me</a> (any <a href="https://help.play.date/hardware/supported-inputs/">TRRS</a> setup should work fine):</p>
