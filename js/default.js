@@ -1,8 +1,8 @@
 window.onload = function(e){ 
-  var r = pastel(220, 235)
-  var g = pastel(220, 235)
-  var b = pastel(220, 240)
-  document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+  // var r = pastel(220, 235)
+  // var g = pastel(220, 235)
+  // var b = pastel(220, 240)
+  // document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
 
   var xhr= new XMLHttpRequest();
   xhr.open('GET', '/nav.html', true);
