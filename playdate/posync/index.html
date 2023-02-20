@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orllewin: Playdate: PO-Sync</title>
+  <meta name="description" content="Orllewin portal">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/default.js"></script>
+</head>
+<body>
+  <nav id="nav"></nav>
+  <p class="small"><a href="../../">Home</a> / <a href="../">Playdate</a> / PO-Sync</p>
+  <h1>PO-Sync</h1>
+  <iframe class="embed" width="720" src="https://www.youtube.com/embed/IYVrLS3zW7I" title="Playdate sync to Pocket Operator." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <p>A simple and very reliable implementation of a sync signal that works with Teenage Engineering Pocket operators and Korg Volca devices.</p>
+  <pre><code language="lua">import 'CoreLibs/graphics'
+
+local graphics <const> = playdate.graphics
+
+local bpm = 120
+local sound = playdate.sound
+local synth = sound.synth.new(playdate.sound.kWaveSquare)
+synth:setParameter(1, 0.3)--square wave duty cycle
+synth:setVolume(1)
+
+local clockChannel = playdate.sound.channel.new()
+clockChannel:addSource(synth)
+clockChannel:setPan(-1)--left
+clockChannel:setVolume(1)
+
+synth:playNote((bpm/60) * 2)
+
+function playdate.update()
+  graphics.clear(graphics.kColorWhite)
+  graphics.drawText("PO Sync - BPM: " .. bpm, 12, 12)
+end
+
+function playdate.upButtonDown()
+  bpm += 1
+  synth:playNote((bpm/60) * 2)
+end
+
+function playdate.downButtonDown()
+  bpm -= 1
+  synth:playNote((bpm/60) * 2)
+end
+  </code></pre>
+  <hr>
+  <p>Code: <a href="https://github.com/orllewin/playdate_posync">github.com/orllewin/playdate_posync</a></p>
+</body>
+</html>
