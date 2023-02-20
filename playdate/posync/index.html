@@ -8,14 +8,15 @@
   <meta name="author" content="Orllewin">
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/default.js"></script>
+  <link href="/css/prism.css" rel="stylesheet" />
 </head>
 <body>
   <nav id="nav"></nav>
   <p class="small"><a href="../../">Home</a> / <a href="../">Playdate</a> / PO-Sync</p>
   <h1>PO-Sync</h1>
-  <iframe class="embed" width="720" src="https://www.youtube.com/embed/IYVrLS3zW7I" title="Playdate sync to Pocket Operator." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe class="embed" width="720" height="405" src="https://www.youtube.com/embed/IYVrLS3zW7I" title="Playdate sync to Pocket Operator." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   <p>A simple and very reliable implementation of a sync signal that works with Teenage Engineering Pocket operators and Korg Volca devices.</p>
-  <pre><code language="lua">import 'CoreLibs/graphics'
+  <pre><code class="language-lua">import 'CoreLibs/graphics'
 
 local graphics <const> = playdate.graphics
 
@@ -49,5 +50,6 @@ end
   </code></pre>
   <hr>
   <p>Code: <a href="https://github.com/orllewin/playdate_posync">github.com/orllewin/playdate_posync</a></p>
+  <script src="/js/prism.js"></script>
 </body>
 </html>
