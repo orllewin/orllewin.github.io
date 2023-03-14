@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Observer Magazine 26th October 1969</title>
-    <link href="../../prism.css" rel="stylesheet" />
-    <link href="../../../style_header.css" rel="stylesheet" />
-    <link href="../../style.css" rel="stylesheet" />
+    <title>CORACLE: OBSERVER MAGAZINE 26th OCTOBER 1969</title>
+    <link href="../../../css/style.css" rel="stylesheet" />
     <style>
-        body{
-            background: #f5f2f0;
-        }
         img.half{
             width: 50%;
         }
@@ -18,26 +13,17 @@
             width: 25%;
         }
         .newspaper{
-            padding-top: 12px;
+            padding-top: 6px;
             font-family: serif;
             font-size: 16px;
         }
-        h3{
-            font-style: oblique;
-            max-width: 1100px;
-        }
     </style>
-</head>
-    <body>
-        <header>
-            <a href="../../"><img id="logo" src="../../coracle.svg"></a>
-            <nav>
-                <a href="../../../">från Orllewin</a>
-            </nav>
-        </header>
-    <article>
+  </head>
+  <body>
+    <nav id="nav"></nav>
+    <p class="small"><a href="../../../">Home</a> / <a href="../../">Coracle</a> / <a href="../">Articles</a> / Observer Magazine 26th October 1969</p>
+    <h1>Observer Magazine 26th October 1969</h1>
         <p style="background: #dedbd4;"><img class="half" src="./assets/001.jpg"></p>
-        <h1>Observer Magazine 26th October 1969</h1>
         <p>I spotted this old Observer magazine computer special on eBay while searching for old computer graphic publications. <a href="https://www.theguardian.com/observer">The Observer</a> is a Sunday sister newspaper to <a href="https://www.theguardian.com">The Guardian</a> and is still published with a 'Sunday supplement' magazine today. I posted the picture on Merveilles and it got a little interest, being prone to impulse buying I went back to eBay and bought the old magazine. This webpage has images embedded of all the computer related pages together with the full text.</p>
         <p style="background: #dedbd4;"><img class="half" src="./assets/002.jpg"><img class="half" src="./assets/003a.jpg"></p>
         <h2>REVOLUTION IN THE STREETS</h2>
@@ -106,7 +92,7 @@
         <p class="newspaper">The first problem, obviously, is language. How does an electronic instrument handle and manipulate numbers? The answer is sug gested by the nature of all electrical devices: a light bulb is either on or off. A switch is either open or closed. A magnet has a field in one direction or the opposite. For the purpose of understanding computer language, one can think of the 'on' condition as being equal to 1 and the 'off' state as 0. So the computer, which is made up literally millions of electronic components, has two numbers it can work with. These numbers, 1 and 0, form all the elements needed in the binary system of notation.</p>
         <p class="newspaper">In our more familiar decimal system the right-hand figure records the number of ones; the figure to the left of it counts 10s; the figure to the left of that counts 100s - then thousands, and so on. In binary (two figure) notation instead of recording powers of 10, one counts powers of 2: 1, 2, 4, 8, 16, and so on.</p>
         <p class="newspaper">Take the binary number 10110. This says, again going from right to left, that there is no 1; there is one 2; there is one 4; there is no 8; and there is one 16. If one adds up the powers of 2 that the number says there are 2, 4 and 16 we arrive at its decimal equivalent, 22. Any decimal number can be written in this way. The first eight decimal numbers written in the binary system look like this:</p>
-        <pre><code>
+        <pre><code class="language-kotlin">
     1 =   1    5 =  101
     2 =  10    6 =  110
     3 =  11    7 =  111
@@ -133,18 +119,18 @@
         <p class="newspaper">Since the instruction has been carried out, the train now loops up and around and returns to the instructions area. There it receives the orders for its second trip from box 2. These instructions tell it to take the contents of box 6 to the accumulator for addition. As on its first trip, the train goes to control/ where the two discs meaning 'add' are first unloaded at operations then at the box addresses turntable the box address discs are taken off and the turntable sends the train off on track 6 to box 6. Here it picks up the number 2 a blue, a red and three blue discs. and, as before, proceeds to the operations turntable, where the instruction 'add' is in force. The turntable sends the train down the add track again, and the number 2 is loaded into the accumulator where the number I was previously stored.</p>
         <p class="newspaper">The accumulator, which keeps a running tally of whatever is put into it, instantly adds the new number to the old and produces a total. In a real computer, this trick is accomplished with logic circuits. Because they are electronic and thus always either 'on' (1) or 'off' (0), the circuits can follow absolutely the simple rules of binary addition.</p>
         <p class="newspaper">Incoming pulses are combined, through the logic circuits, to produce a new condition according to this scheme:</p>
-        <pre><code>
+        <pre><code class="language-kotlin">
     0 + 0 = 0, 0 + 1 = 1, 1 + 0 = 1, 1 + 1 = 10
         </code></pre>
         <p class="newspaper">Thus, in our problem:</p>
-        <pre><code>
+        <pre><code class="language-kotlin">
     00001 = 1
     00010 = 2
     _________
     00011 = 3
         </code></pre>
         <p class="newspaper">The logic circuits can carry numbers along from one column to the next, just as in decimal addition. This would have been nec essary if our problem had been</p>
-        <pre><code>
+        <pre><code class="language-kotlin">
     00011 = 3
     00001 = 1
     _________
@@ -193,7 +179,7 @@
         <p class="newspaper">The interim 10 years are littered with heartbreaking stories of companies which leapt into computers before they looked. One consumer product manu facturer, aflame with the 'go-go' aspects of computerisation, in stalled a machine to link its head office sales department with 200 major wholesale customers. The company's financial manager but realised that this would be an extensive undertaking, reasoned that it would be justified by the progressive image' the company would get. Six months and hundreds of thousands of dollars later the computer was shut down for the following reason: 197 of the 200 customers' letters and in voices had been consistently wrongly addressed. The moral of this is that computers are only as good as the humans that program them.</p>
         <p class="newspaper">Three principal management problems lead to computer user's neurosis. The first and most serious is human communication, or rather the lack of it. It is most obviously expressed in the mutual distrust between senior manage ment and the computer staff. Senior executives, by and large, have risen to the top in pre computer days. They have come to understand all the basic functions of the company on the way, and do not find it easy to learn about an entirely new function. Computer managers, conscious of being 'new boys', often use their own technical language and clothe their activities in an unnecessary mysticism. Difficulties of this type often lead to serious misunderstandings.</p>
         <p class="newspaper">Senior management of a group company, for example, may, with little idea of the true costs of data processing, approve the deci sion to rent a medium-sized com puter for about £4,000 a month without putting the matter before the group board. They have, in fact, just authorised a total expenditure of nearly a million pounds. The figures break down like this:</p>
-        <pre><code>
+        <pre><code class="language-kotlin">
     Five years' rent:                        £240,000
     Operating staff for five years:          £300,000    
     Input preparation and output usage:      £100,000
@@ -213,7 +199,7 @@
         <p class="newspaper">Directing the activities of the computer department is the third and very fertile ground for neurosis. Unless senior managers have taken the trouble to educate themselves through seminars, night courses or extensive tech nical reading, they can have little idea of what their machinery can do, and how to apply it to the company's needs. When the computer is in full swing they have little idea of how well it performs its appointed tasks. Parkinson's Law applies fully to the data processing department; if there isn't enough worthwhile work to go around, time-consuming rou tines of dubious value are instal led. This is known in psychological circles as obsessive- compulsive activity, and it is comparable with stepping on cracks in the pavement, or adding up the digits on passing buses.</p>
         <p class="newspaper">In one aerospace. company, while the monthly product analy sis report was regularly five days late and statistically inaccurate, the statistices of the company baseball team were reported within minutes of each game to three decimal points of accuracy. The obsessive-compulsive routine was so well entrenched that to transact the company's real business a new, extremely expen sive computer was added to the existing facilities.</p>
         <p class="newspaper">No panacea has yet been in vented to cure all the ills the computer user can suffer. No national or international organisa tion similar to Alcoholics Anony mous has yet been formed for the executive who finds the stress of working with a computer too great to bear without some form of spiritual help. But we must learn to live with computers, if only because their population grows at a rate that makes the human population explosion negligible. So a mental health programme must be prepared for the executive using or about to use, a computer, who realises that his chances of health and happiness are in his own hands. The programme should be based on the following 10 commandments which should help in reducing the pain, and will make failure less likely. Or, at least, easier to bear.</p>
-        <pre><code>
+        <pre><code class="language-kotlin">
      1. Prepare a careful, overall, long-range plan.
      2. Compare the tenders of many manufacturers.
      3. Allow at least two years and possibly longer for the implementation of the process.
@@ -246,13 +232,6 @@
         <p class="newspaper">Both say firmly that they don't see why they should have to explain to anyone the circum stances of their meeting. 'We've both kept it a secret,' says Derek, 'but we intended letting it out as a happy result in the end.'</p>
         <p class="newspaper">Denise or Fred as she was known in the Hatfield tax office where she was then working didn't mention it to anyone because they were all older than me and I didn't know how they'd take it.' In the end she rang up the day before they married and admitted everything to her closest friend. Later that day a plump girl from the office phoned and wished them a wonderful day and asked could she have Com-Pat's address. </p>
         <p class="newspaper">'It's like finding a needle in a haystack,' said Derek, grinning from sideburn to sideburn. 'I couldn't wish for anything better. She shuts up and knows her place.' 'Bossy boots,' she retorted.</p>
-        <p class="newspaper"></p>
-        <p class="newspaper"></p>
-        <p class="newspaper"></p>
-        <p class="newspaper"></p>
-        <p class="newspaper"></p>
-    </article>
         <script src="CoracleWeb.js"></script>
-        <script src="../prism.js"></script>
     </body>
 </html>

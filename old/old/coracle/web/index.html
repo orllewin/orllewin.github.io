@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <title>Coracle</title>
+    <link href="../../prism.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
+</head>
+    <body>
+        <header>
+            <a href="../"><img id="logo" src="../coracle.svg"></a>
+            <nav>
+                <a href="../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <h1>Web</h1>
+        <p>The web is currently the most developed Coracle renderer and is used to generate all the examples on this website.</p>
+        <h2>Getting Started</h2>
+        <ul>
+            <li><a href="https://github.com/orllewin/coracle">Clone the repository</a></li>
+            <li>Open the web project in <a href="https://www.jetbrains.com/idea/">Jetbrains IDEA</a></li>
+            <li>Open the Coracle.kt file and choose an example drawing to work with:
+                <pre><code class="language-kotlin">
+import examples.basics.HelloCoracleDrawing
+
+fun main() {
+    HelloCoracleDrawing()
+        .renderer(WebRenderer("coracle_canvas"))
+        .start()
+}
+                </code></pre>
+            </li>
+            <li>Create a new Gradle debug/run configuration, click <b>Edit configurations...</b> and click the <b>+</b> icon, choose Gradle from the dropdown type list</li>
+            <li>In the <b>Name</b> field enter <b>Browser Run</b> and in the <b>Tasks and arguments</b> field enter: <b>browserRun</b>, click <b>OK</b></li>
+            <li>Click the main run icon, or keyboard shortcut (Linux: <code>ctrl-R</code> MacOS: <code>⌃R</code>) to compile the drawing and open in your default browser</li>
+        </ul>
+        <h2>Distribute</h2>
+        <ul>
+            <li>Select <b>Build</b> then <b>Build Project</b></li>
+            <li>Once built copy <b>CoracleWeb.js</b> from <code>/coracle/coracleweb/build/distributions</code></li>
+            <li>Make sure your live canvas name matches the one you used in dev, the default is <code>coracle_canvas</code></li>
+        </ul>
+    </article>
+        <script src="CoracleWeb.js"></script>
+        <script src="../prism.js"></script>
+    </body>
+</html>

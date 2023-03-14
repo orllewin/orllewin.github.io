@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
-    <style>
-        .primary_link{
-            margin-left:24px;
-        }
-    </style>
-</head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-        <textarea id="out_area" style="width:256px;height:256px"></textarea>
-        <h1>RAD Image Convertor</h1>
-        <p><a href="https://orllewin.github.io/coracle/articles/rad_image_format/">Read the article</a> for more information.</p>
-        <p class="small">Note. There's a bug in the output, the final 1.2 value is superfluous, I may or may not find time to fix it.</p>
-    <pre><code class="language-kotlin">
-import coracle.Colour
+    <title>CORACLE: RAD CONVERTER</title>
+    <link href="../../../../css/prism.css" rel="stylesheet" /><link href="../../../../css/style.css" rel="stylesheet" />
+    <script src="/js/default.js"></script> 
+  </head>
+  <body>
+    <nav id="nav"></nav>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / RAD Image Convertor</p>
+    <h1>RAD Image Convertor</h1>
+    <canvas id="coracle_canvas" width="256" height="256"></canvas>
+    <textarea id="out_area" style="width:256px;height:256px"></textarea>
+    <p><a href="https://orllewin.github.io/coracle/articles/rad_image_format/">Read the article</a> for more information.</p>
+    <p class="small">Note. There's a bug in the output, the final 1.2 value is superfluous, I may or may not find time to fix it.</p>
+    <pre><code class="language-kotlin">import coracle.Colour
 import coracle.Drawing
 import coracle.Image
 
@@ -115,8 +109,7 @@ class RadImageConverter: Drawing() {
     }
 }
     </code></pre>
-</article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
+  </body>
 </html>

@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+      <title>CORACLE: SPHERE MESH</title>
+      <link href="../../../../css/prism.css" rel="stylesheet" /><link href="../../../../css/style.css" rel="stylesheet" />
     <style>
         #coracle_canvas {
             height: 450px;
         }
     </style>
-</head>
-    <body>
-
-    <article>
+    <script src="/js/default.js"></script> 
+  </head>
+  <body>
+    <nav id="nav"></nav>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Sphere Mesh</p>
+    <h1>Sphere Mesh</h1>
         <canvas id="coracle_canvas"></canvas>
-        <h1>Sphere Mesh</h1>
-        <p class="hwhite">A test drawing using the old deprecated sphere mesh generator</a></p>
-        <br>
-        <pre><code class="language-kotlin">
-import coracle.*
+        <p>A test drawing using the old deprecated sphere mesh generator</a></p>
+        <pre><code class="language-kotlin">import coracle.*
 import coracle.shapes.Mesh
 import coracle.shapes.Point
 
@@ -65,8 +63,7 @@ class SphereMesh: Drawing() {
     }
 }
     </code></pre>
-        </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
+  </body>
 </html>

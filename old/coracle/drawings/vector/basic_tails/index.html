@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+    <title>CORACLE: BASIC TAILS</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/prism.css" rel="stylesheet" />
+    <script src="/js/default.js"></script> 
 </head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-    <h1>Basic Tails</h1>
+<body>
+  <nav id="nav"></nav>
+  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Basic Tails</p>
+  <h1>Basic Tails</h1>
+  <canvas id="coracle_canvas"></canvas>
     <p>Another Perlin Noise flow field but instead of using <code class="language-kotlin">foreground(colour, alpha)</code> to mimic a tail, in this example boids remember their previous coordinates. This removes the blurriness you get when using <code class="language-kotlin">foregroud</code> but adds extra draw operations when drawing the tail (multiple points, instead of just one)</code></p>
     <pre><code class="language-kotlin">
 import coracle.*
@@ -120,9 +121,8 @@ class BasicTails: Drawing() {
         }
     }
 }
-    </code></pre>
-        </article>  
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    </code></pre> 
+    <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
+  </body>
 </html>

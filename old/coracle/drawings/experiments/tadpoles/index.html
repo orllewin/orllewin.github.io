@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
     <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+    <link href="../../../../css/prism.css" rel="stylesheet" /><link href="../../../../css/style.css" rel="stylesheet" />
     <style>
         #coracle_canvas {
-            margin:0px;
+            margin-left:-8px;
             height: 450px;
             border-style: none;
         }
-        article{
-            margin-top: 0px;
-            padding-top: 0px;
-        }
     </style>
-</head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-        <h1>Tadpoles (Original)</h1>
-        <p>This is the original 'tadpole' drawing which was used on the early Coracle homepage. It uses the old <i>trick</i> of drawing a semi-transparent rectangle over the frame at the end of each draw iteration, this gives the effect of the agents/boids having tails, though they really only ever draw a single circle.</p>
-    <pre><code class="language-kotlin">
-import coracle.*
+    <script src="/js/default.js"></script> 
+  </head>
+  <body>
+    <nav id="nav"></nav>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Tadpoles (Original)</p>
+    <h1>Tadpoles (Original)</h1>
+    <canvas id="coracle_canvas"></canvas>
+    <p>This is the original 'tadpole' drawing which was used on the early Coracle homepage. It uses the old <i>trick</i> of drawing a semi-transparent rectangle over the frame at the end of each draw iteration, this gives the effect of the agents/boids having tails, though they really only ever draw a single circle.</p>
+    <pre><code class="language-kotlin">import coracle.*
 
 class TadpolesOriginal: Drawing() {
 
@@ -246,8 +241,7 @@ class TadpolesOriginal: Drawing() {
     }
 }
     </code></pre>
-        </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+    <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
+  </body>
 </html>

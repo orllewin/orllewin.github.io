@@ -1,37 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
-    <title>Orllewin: Radio</title>
-    <link href="../style_b.css" rel="stylesheet" />
-    <style>
-      .screenshot{
-        width: 48%;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #ddcccc;
-      }
-    </style>
-  </head>
-  <body>
-  <article>    
-    <h2>Radio</h2>
-    <br>
-    <h3>MacOS (1.0.2)</h3>
-    <p><a href="./radio_macos_1_0_2.zip">Download MacOS App</a><br>Code: <a href="https://github.com/orllewin/radio_macos">Github</a></p>
-    <br>
-    <h3>Web</h3>
-    <p><a href="../radio/">Launch PWA</a><br>Code: <a href="https://github.com/orllewin/radio_web">Github</a></p>
-    <br>
-    <h3>Android</h3>
-    <p><a href="radio_1_0_0.apk">Download .apk</a><br>Code: <a href="https://github.com/orllewin/radio_android">GitHub</a></p>
-    <br>
-    <p>Radio is a simple app exploring development using <a href="https://developer.android.com/jetpack/compose">Jetpack Compose</a> for native Android, <a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> for MacOS, and <a href="https://kotlinlang.org/docs/js-overview.html">Kotlin/JS</a> to create a web <a href="https://web.dev/progressive-web-apps/">PWA</a>.</p>
-    <br>
-    <p>If you have a little technical know-how you can create your own curated stations list by copying the JSON format in the <a href="https://orllewin.uk/stations.json">main feed</a> and hosting somewhere yourself (<a href="https://pages.github.com/">Github pages</a>, or <a href="https://neocities.org/">Neocities</a> should be fine).</p>
-    <br>
-
-  </article>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RADIO</title>
+  <meta name="description" content="Orllewin portal">
+  <meta name="author" content="Orllewin">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/default.js"></script>
+</head>
+<body>
+  <nav id="nav"></nav>
+  <p class="small"><a href="../">Home</a> / Radio</p>
+  <h1 style="color: var(--nav_radio);">Radio</h1>
+  <p>A simple net radio system.</p>
+  <h2>Versions</h2>
+  <ul>
+    <li>MacOS: <a href="Radio_1_0_4.zip">Install MacOS</a> | <a href="https://github.com/orllewin/radio_macos">Code</a></li>
+    <li>Web/PWA: <a href="../radio/">Website</a> | <a href="https://github.com/orllewin/radio_web">Code</a></li>
+    <li>Flutter: work in progress: <a href="https://github.com/orllewin/radio_flutter">Code</a></li>
+    <li>Android: older Jetpack Compose experiment: <a href="https://github.com/orllewin/radio_android">Code</a></li>
+  </ul>
+  <hr>
+  <h2>Specification</h2>
+  <p>Client implementations read a users station list from a JSON feed, this can be remote, or imported from a local file:</p>
+  <pre><code>{
+  "stations": [
+    {
+      "title": "Do!! You!!",
+      "website": "https://doyou.world",
+      "streamUrl": "https://doyouworld.out.airtime.pro/doyouworld_a",
+      "logoUrl": "https://orllewin.uk/rad/rad_doyou_256.png",
+      "colour": "#f4de7f"
+    },
+    {
+      "title": "Netil Radio",
+      "website": "https://www.netilradio.com/",
+      "streamUrl": "https://netilradio.out.airtime.pro/netilradio_a",
+      "logoUrl": "https://orllewin.uk/rad/netil_radio_256.png",
+      "colour": "#407eee"
+    },
+    {
+      "title": "NTS 1",
+      "website": "https://www.nts.live/",
+      "streamUrl": "https://stream-relay-geo.ntslive.net/stream",
+      "logoUrl": "https://orllewin.uk/rad/rad_nts_256.png",
+      "colour": "#c99dc4"
+    },
+    {
+      "title": "NTS 2",
+      "website": "https://www.nts.live/",
+      "streamUrl": "https://stream-relay-geo.ntslive.net/stream2",
+      "logoUrl": "https://orllewin.uk/rad/rad_nts_256.png",
+      "colour": "#8E81A6"
+    }
+  ]
+}</code></pre>
+<p>A client displays the station list, eg. MacOS version and the installed Chrome <a href="https://web.dev/progressive-web-apps/">PWA</a>:</p>
+<img src="./radio_screenshot.png" loading="lazy">
+</body>
 </html>

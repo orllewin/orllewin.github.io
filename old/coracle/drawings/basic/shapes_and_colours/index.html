@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
     <title>Coracle</title>
-    <link href="../../../../prism.css" rel="stylesheet" />
-    <link href="../../../../style_b.css" rel="stylesheet" />
+    <link href="../../../../css/prism.css" rel="stylesheet" /><link href="../../../../css/style.css" rel="stylesheet" />
     <style>
         #coracle_canvas {
             height: 450px;
         }
     </style>
+    <script src="/js/default.js"></script>
 </head>
-    <body>
-
-    <article>
-        <canvas id="coracle_canvas"></canvas>
-    <h1>Shapes</h1>
-    <pre><code class="language-kotlin">
-import coracle.Drawing
+<body>
+  <nav id="nav"></nav>
+  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Shapes and Colours</p>
+  <h1>Shapes and Colours</h1>
+  <canvas id="coracle_canvas"></canvas>
+  <pre><code class="language-kotlin">import coracle.Drawing
 
 class ShapeDrawing: Drawing() {
     override fun setup() {
@@ -59,9 +58,8 @@ class ShapeDrawing: Drawing() {
         noLoop()
     }
 }
-    </code></pre>
-    </article>
-        <script src="CoracleWeb.js"></script>
-        <script src="../../../../prism.js"></script>
-    </body>
+  </code></pre>
+  <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
+</body>
 </html>

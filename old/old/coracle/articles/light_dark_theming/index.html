@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <title>Coracle</title>
+    <link href="../../../prism.css" rel="stylesheet" />
+    <link href="../../../style_header.css" rel="stylesheet" />
+    <link href="../../style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            margin:0px;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <a href="../../"><img id="logo" src="../../coracle.svg"></a>
+            <nav>
+                <a href="../../../">från Orllewin</a>
+            </nav>
+        </header>
+    <article>
+        <p><iframe width="886" height="554" src="https://www.youtube.com/embed/mvFCj-nBIV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        <h1>Native and Light and Dark Theming</h1>
+        <p>Coracle Drawings can now pull colours from the host page/screen/window and follow the system light/dark (day/night) theme using the <code class="language-kotlin">background()</code> and <code class="language-kotlin">nativeColour("colour_key")</code> API.</p>
+        <br>
+        <p>Native theming is only available on the web renderer at the moment.</p>
+        <h2>Using native colours on the web</h2>
+        <p>For a Coracle Drawing to use a colour from the parent HTML page it needs to be set as the background on an element with an id:</p>
+        <pre><code class="language-html">
+&lt;div id="boid_colour" style="background: #00ff00;visibility: hidden;"&gt;&lt;/div&gt;</code></pre>
+        <p>Coracle can then read that colour using: <code class="language-kotlin">val boidColour = nativeColour("boid_colour")</code>.</p>
+        <br>
+        <p><code class="language-kotlin">background()</code> uses a similar method but reads the background colour of the main web body so can be used to make sure Drawings always work well even when CSS/design changes are made (under the hood the WebRenderer calls: <code class="language-kotlin">window.getComputedStyle(document.body!!).getPropertyValue("background-color")</code>)</p>
+        <br>
+        <p>To react to light/dark day/night theme changes in realtime the website needs to use media queries for the colour:</p>
+        <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;style&gt;
+        #boid_colour{
+            visibility: hidden;
+            background: #1d1d1d;
+        }
+
+        @media (prefers-color-scheme: light) {
+            #boid_colour{
+                background: #1d1d1d;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            #boid_colour{
+                background: #efefef;
+            }
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;div id="boid_colour"&gt;&lt;/div&gt;
+    ...
+    </code></pre>
+    <p>The Coracle <code class="language-kotlin">nativeColour("boid_colour")</code> call needs to happen in the draw loop:</p>
+    <pre><code class="language-kotlin">
+fun draw() {
+    background()
+
+    val colour = nativeColour("boid_colour")
+    stroke(colour, 0.4f)
+    ...
+    </code></pre>
+    <p>There will be some overhead doing that call in the main draw loop, under the hood the WebRenderer has some work to do to get the web colour, and the <code class="language-kotlin">colourConvert(webColour)</code> method involves some String parsing which is relatively expensive:</p>
+    <pre><code class="language-kotlin">
+override fun nativeColour(key: String): Int {
+    val element = document.getElementById(key)
+    return when {
+        element != null -> {
+            val webColour = window.getComputedStyle(element,null).getPropertyValue("background-color")
+            colourConvert(webColour)
+        }
+        else -> 0xff00cc
+    }
+}
+</code></pre>
+    <p>Calling <code class="language-kotlin">colourConvert(webColour)</code> when setting up a Drawing outside the draw loop is preferred, and allows you to decouple all your colours from the compiled Drawing if that's something you need.</p>
+    </article>
+        <script src="../../../prism.js"></script>
+    </body>
+</html>
