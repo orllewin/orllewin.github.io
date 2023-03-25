@@ -10,21 +10,80 @@
 </head>
 <body>
   <header>
-    <p>gogledd orllewin<br>playdate granular</p>
+    <p><b>gogledd orllewin</b><br>playdate granular</p>
   </header>
   <article>
     <p><iframe src="https://itch.io/embed/1965375?linkback=true&amp;border_width=0&amp;link_color=2ebd35" width="100%" height="165" frameborder="0"><a href="https://orllewin.itch.io/granular">Granular by Orllewin</a></iframe></p>
-    <p>Granular is an experimental 'grain sampler' for <a href="https://play.date">Playdate</a> that plays subsamples from a recorded parent sample. It includes various modifiable parameters and effects to change the sound which produces beautiful glitchy ambience that can be used on its own or as a background for other instruments.</p>
+    <p>Granular is an experimental 'grain sampler' for <a href="https://play.date">Playdate</a> that plays subsamples from a recorded parent sample, inspired by the old <a href="https://www.native-instruments.com/en/products/komplete/synths/reaktor-6/">Reaktor</a> 'Travelizer' instrument. Granular includes various modifiable parameters and effects to change the sound which produces beautiful glitchy ambience that can be used on its own or as a background for other instruments.</p>
     <p><b>You really need headphones or to connect to a speaker</b> - this will not sound good through the Playdate's tiny built-in speaker. For best sampling results consider using an external microphone too (see <a href="https://help.play.date/hardware/supported-inputs/">help.play.date/hardware/supported-inputs</a>, the <a href="https://rode.com/en/microphones/mobile/videomic-me">Rode VideoMic Me</a> works really well with Playdate).</p>
-    <p>Sample output using the built-in 'demo organelle' file:<br><br>
+    <p>Sample tracks, one with the built-in <a href="https://www.critterandguitari.com/organelle">Organelle M</a> recording, and the other sampling a piano:<br><br>
       <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=715411792/size=large/bgcol=ffffff/linkcol=2ebd35/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://orllewin.bandcamp.com/album/playdate-granular-demos">Playdate Granular Demos by Orllewin</a></iframe>
       <hr>
-    <p>Controls</p>
-    <p>'A' selects and navigates, 'B' closes and pops the stack back to the previous location, everything should be intuitive with a little exploration. Granular operates on probabilities; when you select 'jump' or 'rev.' (reverse) or other parameters you're telling the underlying engine to allow the possibility of that happening each cycle. The 'global' menu allows you to set a base playback rate, the default is 0.25 which plays samples at 1/4 speed/pitch. Global also has a 'tempo' setting, the lower the tempo the less chance one of the five subsamples has of triggering, when set to 0 the remaining operations will complete which can be used to gently finish playback.</p>
-    <p><img src="images/pd_granular_001.png" />&nbsp;<img src="images/pd_granular_002.png" /></p>
-    <p><img src="images/pd_granular_003.png" />&nbsp;<img src="images/pd_granular_004.png" /></p>
+    <p><b>Introduction</b></p>
+    <p>A note on controls:</p>
+    <p>You don't have rigid control over the playback, most options not related to effects/filters increase or decrease the probability of something happening, either a change in playback rate, or how regular the samples are triggered, it's all fairly random.</p>
+    <p>Generally 'A' selects and navigates, 'B' closes and pops the stack back to the previous location, everything should be intuitive with a little exploration. Granular operates on probabilities; when you select 'jump' or 'rev.' (reverse) or other parameters you're telling the underlying engine to allow the possibility of that happening each cycle.</p>
+    <hr>
+    <p><b>First Run/Home</b></p>
+    <p>After downloading the zip from Itch and <a href="https://help.play.date/games/sideloading/">side-loading onto your Playdate</a>   you're met with an introduction screen where you can either start playing with the built-in demo files or record your own sample. Once you've recorded a sample on subsequent runs Granular will jump straight to the live playback screen. 
+    <p><img src="images/pd_granular2_001.png" /></p>
+    <hr>
+    <p><b>Live Playback View</b></p>
+    <p><img src="images/pd_granular2_002.png" /></p>
+    <p>The five horizontal bars show the current subsample position and size within the parent sample/recording. There are five buttons across the bottom of the screen which launch the filter and effects screens for each channel/subsample. The top of the screen has four options: 
+      <ul>
+        <li><b>Global</b>: controls some aspects of the current session (default octave, sample trigger probability, and a global  delay effect).</li>
+        <li><b>Record</b>: launches a screen to record a new parent sample, this will be saved as recording.pda and will be loaded by default when Granular starts.</li>
+        <li><b>Open</b>: open a previously recorded (and saved) parent sample, including the demo files that come with Granular.</li>
+        <li><b>Save</b>: when you record the sample is saved as recording.pda, if you want to keep your recording save it here with a filename so you can load it again later. If you record a new sample the current recording.pda will be lost otherwise.</li>
+      </ul>
+    <hr>
+    <p><b>Playback and Filters</b></p>
+    <p><img src="images/pd_granular2_effects_screen_1.png">
+    <p>The first effects screen controls some playback parameters of the selected subsample:
+    <ul>
+      <li><b>Position</b>: adjust the subsample position within the parent recording. Note. this control is redundant if you have Jump or Drift active.</li>
+      <li><b>Jump</b>: set the percentage change of the subsample moving to a new random position each update. Lower values give more repetition, higher values are more hectic.</li>
+      <li><b>Reverse</b>: set the percentage change of the subsample playing in reverse.</li>
+      <li><b>ADSR View</b>: none interactive view, a visualisation of the Attack, Decay, Sustain, Release envelope options below.</li>
+      <li><b>Attack</b>: sets the attack for the sample playback.</li>
+      <li><b>Decay</b>: sets the decay for the sample playback.</li>
+      <li><b>Sustain</b>: sets the sustain for the sample playback.</li>
+      <li><b>Release</b>: sets the release for the sample playback.</li>
+      <li><b>The sine octave views</b>: Four switches/toggles that control which octaves the subsample will play in. One will always be greyed-out, this is the global/default octave (see Global menu below) that the sample will <i>mostly</i> play at. If any other of the switches are active the sample will occasionally (randomly) play back at that other octave. The sine-wave graphic is just a space-saving way of getting across which of the four octaves they represent, bigger wavelength is a lower octave, higher frequency is a higher octave.</li>
+      <li><b>Size</b>: the size of subsample. Smaller is more grainy, bigger will include hooks and fragments from the parent.</li>
+      <li><b>Drift</b>: subsample drifts left or right through the parent, wrapping to the other side when it reaches the start or end.</li>
+      <li><b>More</b>: onwards to the effects.</li>
+    </ul>
+    </p>
+    <hr>
+    <p><b>Effects</b></p>
+    <p><img src="images/pd_granular2_effects_screen_2.png">
+    <p>The second subsample screen lets you customise the subsample sound, be careful with these, there's no clipping or limiter, I've not done any damage to anything yet but I'm not ruling out the possibility:</p>
+    <ul>
+    <li><b>Low Pass Switch</b>: switches the low pass filter on or off.</li>
+    <li><b>Low Pass Frequency</b>: low pass frequency...</li>
+    <li><b>Low Pass Resonance</b>: low pass resonance...</li>
+    <li><b>High Pass Switch</b>: switches the high pass filter on or off.</li>
+    <li><b>High Pass Frequency</b>: high pass frequency...</li>
+    <li><b>High Pass Resonance</b>: high pass resonance...</li>
+    <li><b>Delay Length</b>: sets the delay length up to a max of 2.5 seconds</li>
+    <li><b>Delay feedback</b>: how often the delay repeats, higher values can create nice textures</li>
+    <li><b>Delay level</b>: the delay is always on, but its default mix level is 0, turning this dial fully on creates a 50/50 wet/dry mix</li>
+    <li><b>Overdrive</b>: the overdrive is always on, but its default mix level is 0, turning this dial fully on creates a 50/50 wet/dry mix</li>
+    <li><b>Overdrive Gain</b>: amplify the sample</li>
+    <li><b>Bitcrusher</b>: the bitcrusher is always on, but its default mix level is 0, turning this dial fully on creates a 50/50 wet/dry mix</li>
+    <li><b>Bitcrusher Amount</b>: how much to destroy the sample quality by. Higher values do not sound good, but with subtle use you can get a nice distortion with this effect</li>
+    <li><b>Bitcrusher Undersampling</b>: reduces the sample rate, very useful, can create a nice distortion</li>
+    </ul>
+    <hr>
+    <p>Global</p>
+    <p><img src="images/pd_granular2_global_menu.png" />
+    <p>The 'global' menu allows you to set a base playback rate, the default is 0.5 which plays samples at 1/2 speed/pitch (the octaves are listed as 1 to 4 following the Midi convention: 4 being the original rate, 3 is half speed/pitch, 2 is 1/4, and 1 is 1/8 which is really too low for most recordings). </p>
+    <p>The Global menu also has a delay effect for the main channel and a 'tempo' setting, the lower the tempo the less chance one of the five subsamples has of triggering, when set to 0 the remaining operations will complete which can be used to gently finish playback.</p>
     <hr>
     <p>Source: <a href="https://github.com/orllewin/playdate_granular">github.com/orllewin/playdate_granular</a></p>
+    <p style="padding-top: 48px;padding-bottom: 48px"><img src="images/granular.svg"></p>
   </article>
   <footer>
     © Orllewin 2023. Made in Todmorden, Yorkshire.
