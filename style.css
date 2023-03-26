@@ -37,6 +37,7 @@ ul{
 li {
   padding-left: 1em;
   text-indent: -1em;
+  padding-top: 16px
 }
 
 li:before {
@@ -62,5 +63,12 @@ hr {
   src: local(''),
   url('assets/roboto-mono-v21-latin-regular.woff2') format('woff2'),
   url('assets/roboto-mono-v21-latin-regular.woff') format('woff'); 
+}
+
+.guide_inline_image{
+  width: 100px;
+  height: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
