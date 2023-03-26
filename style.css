@@ -65,6 +65,10 @@ hr {
   url('assets/roboto-mono-v21-latin-regular.woff') format('woff'); 
 }
 
+.banner_image{
+  padding-top: 24px;
+}
+
 .guide_inline_image{
   width: 100px;
   height: auto;
