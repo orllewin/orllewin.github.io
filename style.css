@@ -9,6 +9,10 @@ body {
   font-size: 14px;
 }
 
+.small{
+  font-size: 8pt;
+}
+
 #fish_logo {
   width: 100px;
   height: auto;
