@@ -85,7 +85,18 @@
   "next": "/UserPatches/set2/"
 }
 </code></pre></p>
-<h4>USB</h4>
+<h4>Wav Conversion</h4>
+<p>Audio needs to be converted to Playdates own .pda format before you can use it in custom patches:</p> 
+<ul>
+<li>First prepare your samples in <a href="https://sdk.play.date/1.13.7/Inside%20Playdate.html#M-sound-prep">ADPCM .wav format</a></li>
+<li><a href="https://play.date/dev/">Install the Playdate SDK</a>, you'll need to use the pdc command-line Playdate compiler that comes with it</li>
+<li>Add the pdc compiler to your path</li>
+<li>Put your ADPCM .wav files in a directory together with an empty file named <code>main.lua</code></li>
+<li>Compile the fake Playdate game: <code>pdc MySampleSet/</code></li>
+<li>This will create <code>MySampleSet.pdx</code> which although a compiled Playdate game is just a directory. View the contents (MACOS: right click then: 'Show Package Contents') and move the newly converted .pda files to your patch directory</li>
+</ul>
+<hr>
+<h3>USB</h3>
 <p>MAS can be controlled by an Android device connected via USB running <a href="./android/musik_aus_sample_0_0_1.apk">musik_aus_sample_0_0_1.apk</a>. This is an experimental feature and could break if Panic turn off the USB serial <code>eval</code> method in a future Playdate OS release.</p>
 <hr>
 <h3>Attribution</h3>
