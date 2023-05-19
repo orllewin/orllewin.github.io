@@ -15,9 +15,9 @@
   <p><iframe src="https://itch.io/embed/2075691?linkback=true&amp;link_color=b86f50" width="100%" height="167" frameborder="0"><a href="https://orllewin.itch.io/music-aus-sample">Musik aus sample by Orllewin</a></iframe></p>
   <p>MAS is a sample player/live drum machine for <a href="https://play.date">Playdate</a>. Works standalone or with an Android device running the partner app (Note. Android integration makes use of an <a href="https://publish.obsidian.md/orllewin/computers/playdate/Serial+Comms">undocumented Playdate serial API</a> which Panic could disable at any time).</p>
   <p><iframe width="100%" height="543" src="https://www.youtube.com/embed/u_oSNGsQhjo" title="14 May 2023" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+  <h2>Android</h2>
+  <p>Free companion app to trigger samples from a connected Android device:</p>
   <p>Android .apk: <a href="./android/musik_aus_sample_0_0_1.apk">musik_aus_sample_0_0_1.apk</a></p>
-  <p>Source:</p>
-  <p>Playdate: <a href="https://github.com/orllewin/playdate_music_aus_sample">github.com/orllewin/playdate_music_aus_sample</a></p>
   <hr>
   <h2>User Patches</h2>
   <p>Add custom patches to <code>/Disk/Data/orllewin.playdate.musicaussample/UserPatches</code>. Custom patches must be in their own directory and include a config.json file.</p>
@@ -27,7 +27,74 @@
     <li><a href="./patches/MusicBoxAccompaniment.zip">MusicBoxAccompaniment.zip</a></li>
   </ul></p>
   <h3>Make a patch</h3>
-  Coming soon...
+  <p>The patch JSON has a couple of config fields and an array of sample objects, the array size must equal columns x rows.</p>
+  <p><pre><code>
+{
+  "label": "Default Demo Patch",
+  "columns": 4,
+  "rows": 2,
+  "samples": [
+    ...
+  ]
+}
+  </code></pre></p>
+<h4>Sample Object</h4>
+<p><pre><code>
+{
+  "title": "Kick Drum",
+  "path": "/Samples/Kick/Kick 12",
+  "type": "sample",
+  "mode": "hit",
+  "image": "/Images/down",
+  "key": "down",
+  "volume": 0.75,
+  "rate": 1
+}
+</code></pre></p>
+<ul>
+<li><code>title</code>: String. Not truncated so keep it short</li>
+<li><code>path</code>: String, path to the sample, either within the .pda directory or a user patch</li>
+<li><code>type</code>: String: see below. files are streamed from disk. Use sample for anything but long audio files</li>
+<li><code>mode</code>: String, the initial mode, can be one of hit, play, loop - see below for specs for each</li>
+<li><code>image</code>: String optional - path to an image in the .pda directory</li>
+<li><code>key</code>: String optional - one of left, right, up, down, a, b</li>
+<li><code>volume</code>: Float optional - 0.0 to 1.0, default is 1.0</li>
+<li><code>rate</code>: Float optional - playback rate in range 0.0 to 1.0, default is 1.0</li>
+</ul>
+<h4>Type</h4>
+<ul>
+<li><code>empty</code>: make the ui cell a spacer/placeholder, can still have text and/or an image</li>
+<li><code>sample</code>: stored in memory so use for drum hits and short loops</li>
+<li><code>file</code>: audio streamed from disk, use for longer files and background music</li>
+<li><code>transition</code>: plays a file while loading in new player, see below</li>
+</ul>
+<h4>Mode</h4>
+<ul>
+<li><code>play</code>: plays once, a second tap while playing stops, good for longer samples</li>
+<li><code>hit</code>: plays once, a second tap while playing restarts, good for drum hits</li>
+<li><code>loop</code>: loops forever, a second tap should stop playback</li>
+</ul>
+<h4>Transition</h4>
+<p>A transition is a special type that allows you to build up a full set with different sample sets/patches. When triggered an optional sample can be played once while the ui for the new patch is loaded, any other playing samples are stopped immediately, mode is ignored for this type.</p>
+<p><pre><code>
+{
+  "title": "GOTO SET2",
+  "path": "/UserPatches/set1/interlude",
+  "type": "transition",
+  "image": "/UserPatch/set1/transition_image",
+  "next": "/UserPatches/set2/"
+}
+</code></pre></p>
+<h4>USB</h4>
+<p>MAS can be controlled by an Android device connected via USB running <a href="./android/musik_aus_sample_0_0_1.apk">musik_aus_sample_0_0_1.apk</a>. This is an experimental feature and could break if Panic turn off the USB serial <code>eval</code> method in a future Playdate OS release.</p>
+<hr>
+<h3>Attribution</h3>
+<h4>Image Attribution</h4>
+<p>Most of the images have been removed but some of the following remain, all from <a href="https://thenounproject.com/coquet_adrien/">thenounproject.com/coquet_adrien/</a>:</p>
+<p><code style="font-size: 10px">jellyfish.png, frequency.png, sine.png, rain_cloud.png, snow_cloud.png, censored.png, heartbeat.png, bomb.png, recycle.png, octopus.png, snail.png, happy_jellyfish1.png, happy_jellyfish2.png, coronavirus.png, joking.png, tease.png, laugh.png, concentrate.png, pirate.png, grasshopper.png, creature.png</code></p>
+<h4>Sample Attribution</h4>
+The vast majority of audio samples come from MusicRadar: <a href="https://www.musicradar.com/news/tech/free-music-samples-royalty-free-loops-hits-and-multis-to-download">musicradar.com/news/tech/free-music-samples-royalty-free-loops-hits-and-multis-to-download</a>
+
   <hr>
   <h3>Full list of built-in samples</h3>
   You can user these in your patches or convert your own wavs and add them to a patch directory.
