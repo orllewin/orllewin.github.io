@@ -1,0 +1,115 @@
+{
+	"label": "MusicBox Accompaniment",
+	"columns": 6,
+	"rows": 3,
+	"samples": [
+	{
+		"title": "1x1",
+		"path": "UserPatches/MusicBoxAccompaniment/001",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "2x1",
+		"path": "UserPatches/MusicBoxAccompaniment/002",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "3x1",
+		"path": "UserPatches/MusicBoxAccompaniment/003",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "4x1",
+		"path": "UserPatches/MusicBoxAccompaniment/004",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "5x1",
+		"path": "UserPatches/MusicBoxAccompaniment/005",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "6x1",
+		"path": "UserPatches/MusicBoxAccompaniment/006",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "1x2",
+		"path": "UserPatches/MusicBoxAccompaniment/007",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "2x2",
+		"path": "UserPatches/MusicBoxAccompaniment/008",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "3x2",
+		"path": "UserPatches/MusicBoxAccompaniment/009",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "4x2",
+		"path": "UserPatches/MusicBoxAccompaniment/010",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "5x2",
+		"path": "UserPatches/MusicBoxAccompaniment/011",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "6x2",
+		"path": "UserPatches/MusicBoxAccompaniment/012",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "1x3",
+		"path": "UserPatches/MusicBoxAccompaniment/013",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "2x3",
+		"path": "UserPatches/MusicBoxAccompaniment/014",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "3x3",
+		"path": "UserPatches/MusicBoxAccompaniment/015",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "4x3",
+		"path": "UserPatches/MusicBoxAccompaniment/016",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "5x3",
+		"path": "UserPatches/MusicBoxAccompaniment/017",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "6x3",
+		"path": "UserPatches/MusicBoxAccompaniment/018",
+		"type": "sample",
+		"mode": "hit"
+	}
+	]
+}

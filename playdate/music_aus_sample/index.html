@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>orllewin</title>
+  <meta name="description" content="orllewin portal">
+  <meta name="author" content="orllewin">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <p style="padding-top: 48px;"><b>gogledd orllewin</b><br>playdate beetroot</p>
+  <p><br></p>
+  <p>A live drum machine instrument for <a href="https://play.date">Playdate</a>. Works standalone or with an Android device running the Sample Pads partner app. Android integration makes use of an <a href="https://publish.obsidian.md/orllewin/computers/playdate/Serial+Comms">undocumented Playdate serial API</a> which Panic could disable at any time.</p>
+  <p><iframe width="966" height="543" src="https://www.youtube.com/embed/vd0dF0LBIJQ" title="Android to Playdate interface" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+  <p>Source:</p>
+  <p>Playdate: <a href="https://github.com/orllewin/playdate_music_aus_sample">github.com/orllewin/playdate_music_aus_sample</a></p>
+  <p>Android: <a href="https://github.com/orllewin/playdate_android_pads">github.com/orllewin/playdate_android_pads</a></p>
+  <p><iframe width="966" height="571" src="https://www.youtube.com/embed/LnMutK9vMoc" title="&#39;Beetroot&#39; on the Playdates, &#39;Sample Pads&#39; running on the Android phones." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+  <p>
+  Full list of built-in samples:<pre><code>
+Samples/Kick/Kick 05
+Samples/Kick/Kick 11
+Samples/Kick/Kick 10
+Samples/Kick/Kick 04
+Samples/Kick/Kick 12
+Samples/Kick/Kick 06
+Samples/Kick/Kick 07
+Samples/Kick/Kick 13
+Samples/Kick/Kick 17
+Samples/Kick/Kick 03
+Samples/Kick/Kick 02
+Samples/Kick/Kick 16
+Samples/Kick/Kick 14
+Samples/Kick/Kick 15
+Samples/Kick/Kick 01
+Samples/Kick/Kick 18
+Samples/Kick/Kick 24
+Samples/Kick/Kick 25
+Samples/Kick/Kick 19
+Samples/Kick/Kick 22
+Samples/Kick/Kick 23
+Samples/Kick/Kick 21
+Samples/Kick/Kick 09
+Samples/Kick/Kick 08
+Samples/Kick/Kick 20
+Samples/Chords2/chords2_1
+Samples/Chords2/chords2_2
+Samples/Chords2/chords2_3
+Samples/Chords2/chords2_4
+Samples/Snare/Snare 02
+Samples/Snare/Snare 16
+Samples/Snare/Snare 17
+Samples/Snare/Snare 03
+Samples/Snare/Snare 01
+Samples/Snare/Snare 14
+Samples/Snare/Snare 10
+Samples/Snare/Snare 04
+Samples/Snare/Snare 05
+Samples/Snare/Snare 11
+Samples/Snare/Snare 07
+Samples/Snare/Snare 13
+Samples/Snare/Snare 12
+Samples/Snare/Snare 06
+Samples/Snare/Snare 23
+Samples/Snare/Snare 22
+Samples/Snare/Snare 20
+Samples/Snare/Snare 08
+Samples/Snare/Snare 09
+Samples/Snare/Snare 21
+Samples/Snare/Snare 19
+Samples/Snare/Snare 25
+Samples/Snare/Snare 24
+Samples/Snare/Snare 18
+Samples/Perc/Perc 11
+Samples/Perc/Perc 05
+Samples/Perc/Perc 04
+Samples/Perc/Perc 10
+Samples/Perc/Perc 06
+Samples/Perc/Perc 12
+Samples/Perc/Perc 13
+Samples/Perc/Perc 07
+Samples/Perc/Perc 03
+Samples/Perc/Perc 17
+Samples/Perc/Perc 16
+Samples/Perc/Perc 02
+Samples/Perc/Perc 14
+Samples/Perc/Perc 01
+Samples/Perc/Perc 15
+Samples/Perc/Perc 18
+Samples/Perc/Perc 19
+Samples/Perc/Perc 21
+Samples/Perc/Perc 09
+Samples/Perc/Perc 08
+Samples/Perc/Perc 20
+Samples/Default/cb_beat_loop_07_120bpm
+Samples/Default/snare_13
+Samples/Default/broken_loop_03
+Samples/Default/perc_04
+Samples/Default/tape_loop_17
+Samples/Default/tape_loop_03
+Samples/Default/broken_loop_04
+Samples/Default/tape_loop_08
+Samples/Default/tape_loop_20
+Samples/Default/kick_18
+Samples/Default/perc_08
+Samples/Default/kick_21
+Samples/Default/snare_24
+Samples/EffectLoops/tape_loop_1
+Samples/EffectLoops/tape_loop_2
+Samples/EffectLoops/tape_loop_3
+Samples/EffectLoops/tape_loop_4
+Samples/EffectLoops/tape_loop_5
+Samples/EffectLoops/varispeed_loop_2
+Samples/EffectLoops/varispeed_loop_3
+Samples/EffectLoops/varispeed_loop_1
+Samples/EffectLoops/cassete_loop_5
+Samples/EffectLoops/cassete_loop_4
+Samples/EffectLoops/cassete_loop_3
+Samples/EffectLoops/cassete_loop_2
+Samples/EffectLoops/cassete_loop_1
+Samples/Clap/Clap 09
+Samples/Clap/Clap 08
+Samples/Clap/Clap 03
+Samples/Clap/Clap 02
+Samples/Clap/Clap 14
+Samples/Clap/Clap 01
+Samples/Clap/Clap 05
+Samples/Clap/Clap 11
+Samples/Clap/Clap 10
+Samples/Clap/Clap 04
+Samples/Clap/Clap 12
+Samples/Clap/Clap 06
+Samples/Clap/Clap 07
+Samples/Clap/Clap 13
+Samples/Cymbal/Cymbal 22
+Samples/Cymbal/Cymbal 23
+Samples/Cymbal/Cymbal 21
+Samples/Cymbal/Cymbal 09
+Samples/Cymbal/Cymbal 08
+Samples/Cymbal/Cymbal 20
+Samples/Cymbal/Cymbal 18
+Samples/Cymbal/Cymbal 19
+Samples/Cymbal/Cymbal 03
+Samples/Cymbal/Cymbal 17
+Samples/Cymbal/Cymbal 16
+Samples/Cymbal/Cymbal 02
+Samples/Cymbal/Cymbal 14
+Samples/Cymbal/Cymbal 01
+Samples/Cymbal/Cymbal 15
+Samples/Cymbal/Cymbal 11
+Samples/Cymbal/Cymbal 05
+Samples/Cymbal/Cymbal 04
+Samples/Cymbal/Cymbal 10
+Samples/Cymbal/Cymbal 06
+Samples/Cymbal/Cymbal 12
+Samples/Cymbal/Cymbal 13
+Samples/Cymbal/Cymbal 07
+Samples/Chords1/chords1_1
+Samples/Chords1/chords1_3
+Samples/Chords1/chords1_2
+Samples/Chords1/chords1_4
+Samples/Loops/128/tl_oxidebeat_128_01
+Samples/Loops/128/tl_oxidebeat_128_03
+Samples/Loops/128/tl_oxidebeat_128_02
+Samples/Loops/128/tl_oxidebeat_128_06
+Samples/Loops/128/tl_oxidebeat_128_05
+Samples/Loops/128/tl_oxidebeat_128_04
+Samples/Loops/85/TL_PolyAnaSyn_85_Am
+Samples/Loops/85/TL_Drums_85_02
+Samples/Loops/85/TL_ElecPiano_85_Am
+Samples/Loops/85/BeatK01 85-04
+Samples/Loops/85/BeatK01 85-01
+Samples/Loops/85/BeatK01 85-03
+Samples/Loops/85/BeatK01 85-02
+Samples/Loops/85/TL_Mellotron_85_Em
+Samples/Loops/85/TL_ElecPiano_85_Dm
+Samples/Hat/Hat 16
+Samples/Hat/Hat 02
+Samples/Hat/Hat 03
+Samples/Hat/Hat 17
+Samples/Hat/Hat 01
+Samples/Hat/Hat 15
+Samples/Hat/Hat 14
+Samples/Hat/Hat 04
+Samples/Hat/Hat 10
+Samples/Hat/Hat 11
+Samples/Hat/Hat 05
+Samples/Hat/Hat 13
+Samples/Hat/Hat 07
+Samples/Hat/Hat 06
+Samples/Hat/Hat 12
+Samples/Hat/Hat 23
+Samples/Hat/Hat 22
+Samples/Hat/Hat 08
+Samples/Hat/Hat 20
+Samples/Hat/Hat 21
+Samples/Hat/Hat 09
+Samples/Hat/Hat 25
+Samples/Hat/Hat 19
+Samples/Hat/Hat 18
+Samples/Hat/Hat 24
+Samples/Vinyl/Fluff
+Samples/Vinyl/30s
+Samples/Vinyl/OneNote
+Samples/Vinyl/BlibbBlobb
+Samples/Vinyl/UmErr
+Samples/Vinyl/CrackleBeat2
+Samples/Vinyl/ShotStuff
+Samples/Vinyl/Bwardsbee
+Samples/Effects/white_noise
+Samples/Effects/noise_2
+Samples/Effects/tape_stop_2
+Samples/Effects/hum_2
+Samples/Effects/tape_stop_1
+Samples/Effects/hum_1
+Samples/Effects/rewind
+Samples/Effects/tape_start
+Samples/Effects/noise
+    </code></pre>
+  </p>
+    
+</body>
+</html>

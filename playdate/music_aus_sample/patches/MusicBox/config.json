@@ -1,0 +1,119 @@
+{
+	"label": "MusicBox",
+	"columns": 6,
+	"rows": 3,
+	"samples": [
+	{
+		"title": "1x1",
+		"path": "UserPatches/MusicBox/001",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "2x1",
+		"path": "UserPatches/MusicBox/002",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "3x1",
+		"path": "UserPatches/MusicBox/003",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "4x1",
+		"path": "UserPatches/MusicBox/004",
+		"type": "sample",
+		"mode": "hit",
+		"rate": 0.5
+	},
+	{
+		"title": "5x1",
+		"path": "UserPatches/MusicBox/005",
+		"type": "file",
+		"mode": "hit",
+		"volume": 0.5
+	},
+	{
+		"title": "6x1",
+		"path": "UserPatches/MusicBox/006",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "1x2",
+		"path": "UserPatches/MusicBox/007",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "2x2",
+		"path": "UserPatches/MusicBox/008",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "3x2",
+		"path": "UserPatches/MusicBox/009",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "4x2",
+		"path": "UserPatches/MusicBox/010",
+		"type": "sample",
+		"mode": "hit",
+		"rate": 0.5
+	},
+	{
+		"title": "5x2",
+		"path": "UserPatches/MusicBox/011",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "6x2",
+		"path": "UserPatches/MusicBox/012",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "1x3",
+		"path": "UserPatches/MusicBox/013",
+		"type": "sample",
+		"mode": "hit"
+	},
+	{
+		"title": "2x3",
+		"path": "UserPatches/MusicBox/loop004water",
+		"type": "file",
+		"mode": "loop"
+	},
+	{
+		"title": "3x3",
+		"path": "UserPatches/MusicBox/atmos001",
+		"type": "file",
+		"mode": "hit"
+	},
+	{
+		"title": "4x3",
+		"path": "UserPatches/MusicBox/atmos002",
+		"type": "file",
+		"mode": "hit"
+	},
+	{
+		"title": "5x3",
+		"path": "UserPatches/MusicBox/loop001",
+		"type": "file",
+		"mode": "loop"
+	},
+	{
+		"title": "6x3",
+		"path": "UserPatches/MusicBox/loop003",
+		"type": "file",
+		"mode": "loop",
+		"rate": 0.5
+	}
+	]
+}
