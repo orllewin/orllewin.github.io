@@ -18,6 +18,10 @@
   <p><iframe src="https://itch.io/embed/2075691?linkback=true&amp;link_color=b86f50" width="100%" height="167" frameborder="0"><a href="https://orllewin.itch.io/music-aus-sample">Musik aus sample by Orllewin</a></iframe></p>
   <p>MAS is a sample player/live drum machine for <a href="https://play.date">Playdate</a>. Works standalone or with an Android device running the partner app (Note. Android integration makes use of an <a href="https://publish.obsidian.md/orllewin/computers/playdate/Serial+Comms">undocumented Playdate serial API</a> which Panic could disable at any time).</p>
   <p><iframe width="100%" height="543" src="https://www.youtube.com/embed/u_oSNGsQhjo" title="14 May 2023" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+  <h2>Main Controls</h2>
+  <p>When you select a patch from the chooser MAS will be in edit mode, in this mode you use the direction pad to move around the grid, B changes the sample mode (hit/play/loop), A button triggers playback. If you move the crank to the live position all the Playdate buttons become sample triggers if they've been assigned (in the patch JSON) to a sample. It's a difficult feature to describe but intuitive when you're using MAS.</p>
+  <p><b>When using a patch with buttons assigned to trigger samples you move between 'Live' and 'Edit/Manual' mode by moving the crank: 0 - 180 degrees are edit/manual mode, 180 - 360 are live where all 6 input buttons can trigger samples (depending on the patch set-up)</b></p>
+  <hr>
   <h2>Android</h2>
   <p>Free companion app to trigger samples from a connected Android device:</p>
   <p>Android .apk: <a href="./android/musik_aus_sample_0_0_1.apk">musik_aus_sample_0_0_1.apk</a></p>
