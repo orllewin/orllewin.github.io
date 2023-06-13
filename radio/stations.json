@@ -1,0 +1,53 @@
+{
+  "stations": [
+    {
+      "title": "Do!! You!!",
+      "website": "https://doyou.world",
+      "streamUrl": "https://doyouworld.out.airtime.pro/doyouworld_a",
+      "logoUrl": "https://orllewin.uk/rad/rad_doyou_256.png",
+      "colour": "#f4de7f"
+    },
+    {
+      "title": "Netil Radio",
+      "website": "https://www.netilradio.com/",
+      "streamUrl": "https://netilradio.out.airtime.pro/netilradio_a",
+      "logoUrl": "https://orllewin.uk/rad/netil_radio_256.png",
+      "colour": "#407eee"
+    },
+    {
+      "title": "NTS 1",
+      "website": "https://www.nts.live/",
+      "streamUrl": "https://stream-relay-geo.ntslive.net/stream",
+      "logoUrl": "https://orllewin.uk/rad/rad_nts_256.png",
+      "colour": "#c99dc4"
+    },
+    {
+      "title": "NTS 2",
+      "website": "https://www.nts.live/",
+      "streamUrl": "https://stream-relay-geo.ntslive.net/stream2",
+      "logoUrl": "https://orllewin.uk/rad/rad_nts_256.png",
+      "colour": "#8E81A6"
+    },
+    {
+      "title": "IDA Helsinki",
+      "website": "https://idaidaida.ee",
+      "streamUrl": "https://streams.radio.co/s053b51423/listen",
+      "logoUrl": "https://orllewin.uk/rad/ida_helsinki_256.png",
+      "colour": "#ecb7ad"
+    },
+    {
+      "title": "IDA Tallinn",
+      "website": "https://idaidaida.ee",
+      "streamUrl": "https://stream.radio.co/s435d71fd8/listen",
+      "logoUrl": "https://orllewin.uk/rad/ida_tallinn_256.png",
+      "colour": "#c77062"
+    },
+    {
+      "title": "rinse.fm",
+      "website": "https://rinse.fm/channels/uk/",
+      "streamUrl": "https://streamer-uk.rinse.fm:8443/stream",
+      "logoUrl": "https://orllewin.uk/rad/rinse_fm_256.png",
+      "colour": "#5382e6"
+    }
+  ]
+}
