@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <title>CORACLE: CIRCLE</title>
+    <link href="../../../../css/prism.css" rel="stylesheet" /><link href="/style.css" rel="stylesheet" />
+    <style>
+        #coracle_canvas {
+            height: 450px;
+        }
+    </style>
+    <script src="/js/default.js"></script> 
+  </head>
+  <body>
+    <nav id="nav"></nav>
+    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Circle</p>
+    <h1>Circle</h1>
+    <canvas id="coracle_canvas"></canvas>
+    <pre><code class="language-kotlin">import coracle.Drawing
+import coracle.random
+import coracle.shapes.Circle
+import coracle.shapes.Line
+
+class ReferenceCircle: Drawing() {
+
+    private val w = 450
+    private val h = 450
+    private val circleA = Circle(random(80, w-80), random(80, h - 80), random(30, 80))
+    private val circleB = Circle(random(80, w-80), random(80, h - 80), random(30, 80))
+
+    private val worldColour = 0xf5f2f0
+    private val collideColour = 0x6d6d6d
+    private val circleColour = 0xacacac
+    private val lineColour = 0x000000
+
+    private val aSpeed = random(1,4).toInt()
+    private val bSpeed = random(1,4).toInt()
+
+    private var line = Line()
+
+    private var aXDirection = 1
+    private var aYDirection = 1
+    private var bXDirection = -1
+    private var bYDirection = -1
+
+    override fun setup() {
+        size(450, 450)
+    }
+
+    override fun draw() {
+        background(worldColour)
+
+        //Move A
+        when {
+            circleA.x > width - circleA.r || circleA.x < circleA.r -> aXDirection *= -1
+        }
+        when {
+            circleA.y > height - circleA.r || circleA.y < circleA.r -> aYDirection *= -1
+        }
+
+        circleA.x = circleA.x + ( aSpeed * aXDirection )
+        circleA.y = circleA.y + ( aSpeed * aYDirection )
+
+        //Move B
+        when {
+            circleB.x > width - circleB.r || circleB.x < circleB.r -> bXDirection *= -1
+        }
+        when {
+            circleB.y > height - circleB.r || circleB.y < circleB.r -> bYDirection *= -1
+        }
+
+        circleB.x = circleB.x + ( bSpeed * bXDirection )
+        circleB.y = circleB.y + ( bSpeed * bYDirection )
+
+        when {
+            circleA.collides(circleB) -> fill(collideColour)
+            else -> fill(circleColour)
+        }
+
+        noStroke()
+        circleA.draw()
+        circleB.draw()
+
+        //Distances
+        stroke(lineColour)
+        line.update(circleA.origin(), circleB.origin())
+        line.draw()
+
+        noStroke()
+
+        fill(lineColour)
+        val edgePointA = circleA.edgePoint(circleB.origin())
+        circle(edgePointA, 5)
+
+        val edgePointB = circleB.edgePoint(circleA.origin())
+        circle(edgePointB, 5)
+    }
+}
+    </code></pre>
+    <hr>
+    <h2>Syntax</h2>
+    <p><code class="language-kotlin">val circle = Circle(x, y, radius)</code></p>
+    <p><br><code class="language-kotlin">circle.draw()</code> - draws the circle with the current fill and stroke properties</p>
+    <p><br><code class="language-kotlin">circle.origin()</code> - <code class="language-kotlin">Point</code> at center of circle</p>
+    <p><code class="language-kotlin">circle.contains(point)</code> - <code class="language-kotlin">Boolean</code>, true if point is within the circle circumference</p>
+    <p><code class="language-kotlin">circle.collides(otherCircle)</code> - <code class="language-kotlin">Boolean</code>, true if there's a collision</p>
+    <p><code class="language-kotlin">val d = circle.originDistance(otherCircle)</code> - <code class="language-kotlin">Float</code>, distance from x,y to other circle origin</p>
+    <p><code class="language-kotlin">val d = circle.edgeDistance(otherCircle)</code> - <code class="language-kotlin">Float</code>, distance the edge of this circe to the edge of another, or 0f if they're touching</p>
+    <p><code class="language-kotlin">val p = circle.edgePoint(otherPoint)</code> - <code class="language-kotlin">Point</code> on circumference between circle origin and another point</p>  
+    <script src="../../../../js/prism.js"></script>
+<script src="CoracleWeb.js"></script>
+  </body>
+</html>
