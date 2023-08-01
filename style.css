@@ -13,6 +13,11 @@ body {
   font-size: 8pt;
 }
 
+.modular_patch{
+  border-radius: 25px;
+  border: 2px solid #1d1d1d;
+}
+
 #fish_logo {
   width: 100px;
   height: auto;

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>orllewin</title>
+  <meta name="description" content="orllewin portal">
+  <meta name="author" content="orllewin">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header>
+    <img id="fish_logo" src="../../assets/fish.png">
+    <p><b>gogledd orllewin</b><br>playdate modular play</p>
+  </header>
+  <p><br></p>
+  <h1>Overview</h1>
+  <p>Modular Play is a casual playground game on <a href="https://play.date">Playdate</a> for building little music making patches by connecting modules with cables.</p> It's meant to be fun and not really for serious use but it can create some beautiful sounding music.
+  <h1>Planned Roadmap</h1>
+  <ul>
+    <li>v1.0.0 - initial release with a good selection of modules and features</li>
+    <li>v1.0.1+ - inevitable bug-fix releases</li>
+    <li>v2.0.0 - additional modules that didn't make 1.0.0 (a more advanced arpeggiator/sequencer)</li>
+    <li>v3.0.0 - Android keyboard app. Using the same technique as <a href="https://orllewin.github.io/playdate/musik_aus_sample/">Musik aus Sample</a> add support for a standard touchscreen keyboard on Android (and supply the necessary files for anyone to port to iOS or other platforms)</li>
+  </ul>
+  <h1>Performance</h1>
+  <p>The Playdate does incredibly well considering how under powered it is, and for most patches it'll perform fine without extra steps, but on larger patches with dozens of modules and automation you will get some UI slowdown; the bigger the patch the bigger the performance hit. Thankfully the audio fidelity isn't impacted and there are some settings you can access to improve things: from the main runtime menu (tap Ⓐ in empty space on the patch) scroll down to System, from this menu category you should first try 'Throttling On', this will reduce the amount of animation updates automated modules have. For an even bigger saving select 'Animation Off' which will replace the animation completely with a static icon, the downside being you don't get visual feedback from the automated sliders and knobs.
+  <h1>Patch Recipes</h1>
+  <ul>
+    <li><a href="./patch_recipes/wind/">Wind</a> - one of the built-in patches</li>
+  </ul>
+</body>
+</html>
