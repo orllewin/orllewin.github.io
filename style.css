@@ -82,7 +82,8 @@ hr {
 }
 
 .banner_image{
-  padding-top: 24px;
+  border-radius: 25px;
+  border: 2px solid #1d1d1d;
 }
 
 .guide_inline_image{
@@ -90,5 +91,32 @@ hr {
   height: auto;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+
+.flexbox-column {
+  display: flex;
+  width: 100%;
+}
+
+.flexbox-content {
+  display: flex;
+  padding-right: 0px;
+}
+
+@media (min-width: 768px) {
+  .flexbox-container {
+      display: flex;
+   }
+.flexbox-content {
+     display: flex;
+     padding-right: 24px;
+   }
+}
+
+
+
+.flexbox-container > div:first-child {
+
 }
 

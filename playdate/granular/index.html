@@ -12,21 +12,34 @@
   <header>
     <a href="/"><img id="fish_logo" src="../../assets/fish.png"></a>
     <p><b>gogledd orllewin</b><br>playdate granular</p>
-    <iframe class="modular_patch" width="480" height="860" src="https://www.youtube.com/embed/zes8yx-X2K8" title="Noodling With Playdate Granular + Musicbox" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <img class="banner_image" src="images/banner.png" />
+    <p><iframe src="https://itch.io/embed/1965375?linkback=true&amp;border_width=0&amp;link_color=2ebd35" width="100%" height="165" frameborder="0"><a href="https://orllewin.itch.io/granular">Granular by Orllewin</a></iframe></p>
+    <p></p>
+    <div class="flexbox-container">
+     
+      <div class="flexbox-column">
+        <div class="flexbox-content">
+        <p>Granular is an experimental 'grain sampler' for <a href="https://play.date">Playdate</a> that plays subsamples from a recorded parent sample, it's inspired by the old <a href="https://www.native-instruments.com/en/products/komplete/synths/reaktor-6/">Reaktor</a> 'Travelizer' instrument. Granular includes various modifiable parameters and effects to change the sound which produces beautiful glitchy ambience that can be used on its own or as a background for other instruments.<br><br><b>You really need headphones or to connect to a speaker</b> - this will not sound good through the Playdate's tiny built-in speaker.<br><br>
+        You don't have rigid control over the playback, most options not related to effects/filters increase or decrease the probability of something happening, either a change in playback rate, or how regular the samples are triggered, it's all fairly random.<br><br>
+        Generally 'A' selects and navigates, 'B' closes and pops the stack back to the previous location, everything should be intuitive with a little exploration. Granular operates on probabilities; when you select 'jump' or 'rev.' (reverse) or other parameters you're telling the underlying engine to allow the possibility of that happening each cycle.
+      </p>
+        </div>
+      </div>
+      <div class="flexbox-column">
+      
+       <iframe class="modular_patch" width="480" height="860" src="https://www.youtube.com/embed/zes8yx-X2K8" title="Noodling With Playdate Granular + Musicbox" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      
+      </div>
+    </div>
+       
+    
   </header>
   <article>
-    <p><iframe src="https://itch.io/embed/1965375?linkback=true&amp;border_width=0&amp;link_color=2ebd35" width="100%" height="165" frameborder="0"><a href="https://orllewin.itch.io/granular">Granular by Orllewin</a></iframe></p>
-    <p>Granular is an experimental 'grain sampler' for <a href="https://play.date">Playdate</a> that plays subsamples from a recorded parent sample, inspired by the old <a href="https://www.native-instruments.com/en/products/komplete/synths/reaktor-6/">Reaktor</a> 'Travelizer' instrument. Granular includes various modifiable parameters and effects to change the sound which produces beautiful glitchy ambience that can be used on its own or as a background for other instruments.</p>
-    <p><b>You really need headphones or to connect to a speaker</b> - this will not sound good through the Playdate's tiny built-in speaker.</p>
+
+    
     <p>Sample tracks, one with the built-in <a href="https://www.critterandguitari.com/organelle">Organelle M</a> recording, and the other sampling a piano:<br><br>
-      <iframe style="border: 0; width: 400px; height: 572px;" src="https://bandcamp.com/EmbeddedPlayer/album=715411792/size=large/bgcol=ffffff/linkcol=2ebd35/transparent=true/" seamless><a href="https://orllewin.bandcamp.com/album/playdate-granular-demos">Playdate Granular Demos by Orllewin</a></iframe>
+     <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=715411792/size=large/bgcol=ffffff/linkcol=2ebd35/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://orllewin.bandcamp.com/album/playdate-granular-demos">Playdate Granular Demos by Orllewin</a></iframe></p>
       <hr>
-    <p><b>Introduction</b></p>
-    <p>A note on controls:</p>
-    <p>You don't have rigid control over the playback, most options not related to effects/filters increase or decrease the probability of something happening, either a change in playback rate, or how regular the samples are triggered, it's all fairly random.</p>
-    <p>Generally 'A' selects and navigates, 'B' closes and pops the stack back to the previous location, everything should be intuitive with a little exploration. Granular operates on probabilities; when you select 'jump' or 'rev.' (reverse) or other parameters you're telling the underlying engine to allow the possibility of that happening each cycle.</p>
-    <hr>
     <p><b>First Run/Home</b></p>
     <p>After downloading the zip from Itch and <a href="https://help.play.date/games/sideloading/">side-loading onto your Playdate</a>   you're met with an introduction screen where you can either start playing with the built-in demo files or record your own sample. Once you've recorded a sample on subsequent runs Granular will jump straight to the live playback screen. 
     <p><img src="images/pd_granular2_001.png" /></p>
@@ -85,10 +98,7 @@
     <p>The 'global' menu allows you to set a base playback rate, the default is 0.5 which plays samples at 1/2 speed/pitch (the octaves are listed as 1 to 4 following the Midi convention: 4 being the original rate, 3 is half speed/pitch, 2 is 1/4, and 1 is 1/8 which is really too low for most recordings). </p>
     <p>The Global menu also has a delay effect for the main channel and a 'tempo' setting, the lower the tempo the less chance one of the five subsamples has of triggering, when set to 0 the remaining operations will complete which can be used to gently finish playback.</p>
     <hr>
-    <p><b>First proof-of-concept clip</b></p>
-    <iframe width="100%" height="380px" src="https://www.youtube.com/embed/5OVr8od4gfY" title="Granular early proof-of-concept" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <p>Source: <a href="https://github.com/orllewin/playdate_granular">github.com/orllewin/playdate_granular</a></p>
-    <p style="padding-top: 48px;padding-bottom: 48px"><img src="images/granular.svg"></p>
   </article>
   <footer>
     © Orllewin 2023. Made in Todmorden, Yorkshire.
