@@ -12,6 +12,13 @@ body {
   margin: auto;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 .small{
   font-size: 8pt;
 }
