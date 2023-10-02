@@ -52,7 +52,11 @@ blob {
   threshold clock
 
   #for (i,0,64)
-     sphere{ &lt;rand(seeed)*(ub - lb),  rand(seeed)*(ub - lb), rand(seeed)*(ub - lb)&gt; ,   rand(seeed) * clock, 5.5  } 
+    sphere{ &lt;rand(seeed)*(ub - lb),
+      rand(seeed)*(ub - lb), 
+      rand(seeed)*(ub - lb)&gt;,
+      rand(seeed) * clock, 5.5
+    } 
   #end
 
   finish {
