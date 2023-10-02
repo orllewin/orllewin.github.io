@@ -27,11 +27,11 @@
 global_settings { assumed_gamma 2.2 }
 
 //Green background for chroma key removal
-background { color rgb <0, 1, 0> }
+background { color rgb &lt;0, 1, 0&gt; }
 camera {
     angle 15
-    location <0,0,-43>
-    look_at <0,0,0>
+    location &lt;0,0,-43&gt;
+    look_at &lt;0,0,0&gt;
  }
 
 sphere{
@@ -51,7 +51,7 @@ blob {
   threshold clock
 
   #for (i,0,64)
-     sphere{ <rand(seeed)*(ub - lb),  rand(seeed)*(ub - lb), rand(seeed)*(ub - lb)> ,   rand(seeed) * clock, 5.5  } 
+     sphere{ &lt;rand(seeed)*(ub - lb),  rand(seeed)*(ub - lb), rand(seeed)*(ub - lb)&gt; ,   rand(seeed) * clock, 5.5  } 
   #end
 
   finish {
@@ -60,8 +60,8 @@ blob {
     reflection .86
   }
 
-  rotate <clock*360, 0, 0>
-  translate <-3, -2.5, 0>
+  rotate &lt;clock*360, 0, 0&gt;
+  translate &lt;-3, -2.5, 0&gt;
 } </code></pre>
 <p><img src="clock_settings.png" /></p>
   </article>
