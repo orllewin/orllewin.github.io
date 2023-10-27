@@ -10,28 +10,31 @@
 </head>
 <body>
   <header>
-    <img id="fish_logo" src="../../assets/fish.png">
+    <img src="images/modular_play_logo.png">
     <p><b>Gogledd Orllewin</b><br>playdate modular play</p>
   </header>
   <p><br></p>
+  
   <h1>Overview</h1>
   <p>Modular Play is a casual playground game on <a href="https://play.date">Playdate</a> for building little music making patches by connecting modules with cables. It's meant to be fun and not really for serious use but it can create some beautiful sounding music.</p> 
   <p><i>"Cool stuff!"</i> - Teenage Engineering</p>
   <p><img class="modular_patch" src="./dronescape.gif"></p>
   <h1>Planned Roadmap</h1>
+  Although the Alpha is a paid app on itch.io you'll get all future upgrades and improvements. Only purchase if you understand there will be some rough edges.
   <ul>
-    <li>v1.0.0 - initial release with a good selection of modules and features (<b>Coming soon-ish</b>)</li>
-    <li>v1.0.1+ - inevitable bug-fix releases</li>
-    <li>v2.0.0 - additional modules that didn't make 1.0.0 (a more advanced arpeggiator/sequencer)</li>
-    <li>v3.0.0 - Android keyboard app. Using the same technique as <a href="https://orllewin.github.io/playdate/musik_aus_sample/">Musik aus Sample</a> add support for a standard touchscreen keyboard on Android (and supply the necessary files for anyone to port to iOS or other platforms)</li>
+    <li>0.0.9 Alpha - initial release for early adopters, will have too many bugs, some unfinished modules are hidden. Here be dragons.</li>
+    <li>0.0.10+ Alpha - patch releases with regular fixes over the first month or two</li>
+    <li>0.1.0 Beta - a release candidate, approaching stability</li>
+    <li>1.0.0 - Fewer unwelcome surprises</li>
+    <li>?.?.? - Desktop midi to serial bus</li>
+    <li>?.?.? - Companion Android app (code will be freely available if anyone wants to port to iOS, I may try myself if I can find the time)</li>
+    <li>?.?.? - Hardware foot pedal project with instructions and code for recording samples</li>
   </ul>
-  <h1>Performance</h1>
-  <p>The Playdate does incredibly well considering how under powered it is, and for most patches it'll perform fine without extra steps, but on larger patches with dozens of modules and automation you will get some UI slowdown; the bigger the patch the bigger the performance hit. Thankfully the audio fidelity isn't impacted and there are some settings you can access to improve things: from the main runtime menu (tap Ⓐ in empty space on the patch) scroll down to System, from this menu category you should first try 'Throttling On', this will reduce the amount of animation updates automated modules have. For an even bigger saving select 'Animation Off' which will replace the animation completely with a static icon, the downside being you don't get visual feedback from the automated sliders and knobs.
-  <h1>Patch Recipes</h1>
-  <ul>
-    <li><a href="./patch_recipes/wind/">Wind</a> - built-in demo patch</li>
-    <li><a href="./patch_recipes/dorian_melodic/">Dorian Melodic</a> - built-in demo patch</li>
-    <li><a href="./patch_recipes/dronescape/">Dronescape</a> - built-in demo patch</li>
-  </ul>
+  <h1>Performance and Limitations</h1>
+  <p><i>This is lengthy and won't be of interest for everyone, if you just want to make nice melodies while sitting on the train or whatever you can skip all of the information below.</i></p>
+  <p>The Playdate does incredibly well considering how tiny it is, and for most patches it'll perform fine without extra steps, but on larger patches with dozens of modules and automation you will get some UI slowdown; the bigger the patch the bigger the performance hit. Thankfully the audio fidelity isn't impacted, there's no audible artefacts, but the clock may emit slower occasionally making syncing to external sequenced music impossible. I've spent a lot of time optimising the modules themselves but one easy thing you can do to minimise the amount of work done when rendering the patches is to keep the length of cables sensible, if a cable is wider than the screen you're likely to see some performance issues if the patch is doing lots of other work too.</p>
+  <p>Modular Play is primarily a wrapper around the Playdate's audio API, it's not a true simulation of a modular synth setup in that you can't route audio wherever you like. Once audio leaves a synth it can only be routed through effects modules before finally escaping to your ear via one of the amp/speaker modules. The clock bangs are however produced within Modular Play and can be manipulated however we like. You should be prevented from doing things that don't work in Modular Play, like routing a clock signal into an audio-in socket, but there may be missing logic in some modules; if you find anything that doesn't seem correct raise an issue.</p>
+  <p>Another limitation of the Playdate is that audio input can only be done by the built-in condenser microphone and the levels may be fairly low compared to the output of the synths. The Playdate should be able to record from a line-in with a TRRS cable but this has been broken since launch and there's no sign of a fix yet. I will try and offer a desktop 'WAV to Playdate audio' utility if you want to use your own samples instead of recording with the Sample Record module.</p>
+  <br>
 </body>
 </html>
