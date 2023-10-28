@@ -10,7 +10,7 @@
 </head>
 <body>
   <header>
-    <img src="images/modular_play_logo.png">
+    <img src="images/modular_play_logo.png">&nbsp;&nbsp;&nbsp;&nbsp;<img style="height:50px;width:auto;" src="../../assets/fish.png">
     <p><b>Gogledd Orllewin</b><br>playdate modular play</p>
   </header>
   <p><br></p>
@@ -31,10 +31,13 @@
     <li>?.?.? - Companion Android app (code will be freely available if anyone wants to port to iOS, I may try myself if I can find the time).</li>
     <li>?.?.? - Hardware foot pedal project with instructions and code for recording samples.</li>
   </ul>
+  <h2>Hidden Modules</h2>
+  <p>There are a number of buggy and/or incomplete modules hidden from the Alpha release, these include an arpeggiator sequencer with more control than the current Micro Sequencer, a 909 drum machine, and a random number to midi note module.
+  </p>
   <h1>Performance and Limitations</h1>
   <p><i>This is lengthy and won't be of interest for everyone, if you just want to make nice melodies while sitting on the train or whatever you can skip all of the information below.</i></p>
   <p>The Playdate does incredibly well considering how tiny it is, and for most patches it'll perform fine without extra steps, but on larger patches with dozens of modules and automation you will get some UI slowdown; the bigger the patch the bigger the performance hit. Thankfully the audio fidelity isn't impacted, there's no audible artefacts, but the clock may emit slower occasionally making syncing to external sequenced music impossible. I've spent a lot of time optimising the modules themselves but one easy thing you can do to minimise the amount of work done when rendering the patches is to keep the length of cables sensible, if a cable is wider than the screen you're likely to see some performance issues if the patch is doing lots of other work too.</p>
-  <p>Modular Play is primarily a wrapper around the Playdate's audio API, it's not a true simulation of a modular synth setup in that you can't route audio wherever you like. Once audio leaves a synth it can only be routed through effects modules before finally escaping to your ear via one of the amp/speaker modules. The clock bangs are however produced within Modular Play and can be manipulated however we like. You should be prevented from doing things that don't work in Modular Play, like routing a clock signal into an audio-in socket, but there may be missing logic in some modules; if you find anything that doesn't seem correct raise an issue.</p>
+  <p>Modular Play is primarily a wrapper around the Playdate's audio API, it's not a true simulation of a modular synth setup in that you can't route signals wherever you like. Once audio leaves a synth it can only be routed through effects modules before finally escaping to your ear via one of the amp/speaker modules. The clock bangs are however produced within Modular Play and can be manipulated however we like. You should be prevented from doing things that don't work in Modular Play, like routing a clock signal into an audio-in socket, but there may be missing logic in some modules; if you find anything that doesn't seem correct raise an issue.</p>
   <p>Another limitation of the Playdate is that audio input can only be done by the built-in condenser microphone and the levels may be fairly low compared to the output of the synths. The Playdate should be able to record from a line-in with a TRRS cable but this has been broken since launch and there's no sign of a fix yet. I will try and offer a desktop 'WAV to Playdate audio' utility if you want to use your own samples instead of recording with the Sample Record module.</p>
   <hr>
   <h1>Modules</h1>
@@ -43,115 +46,170 @@
   <!-- Clock ------------------------------------------------------------------------------ -->
   <h1>Clock</h1>
   <h2>Clock</h2>
-  <img class="modular_patch" src="images/clock.png" /><br>
+  <img class="modular_patch" src="images/clock.png" loading="lazy"/><br>
   <p>The first module you'll add to most patches, generates a periodic 'bang' that's passed from module to module until it finds something that transforms clock events to a midi note or controls some other parameter. There's a single encoder to control the tempo, and four sockets to connect to other clock routing modules.</p>
   <hr>
   
   <h2>Clock Delay</h2>
-  <img class="modular_patch" src="images/clock_delay.png" /><br>
+  <img class="modular_patch" src="images/clock_delay.png" loading="lazy"/><br>
   <p>Randomly holds on to a note for precise interval, the chance of this happening controlled by the right-hand encoder. Useful for adding a little randomness to sequenced melodies and drum patterns.</p>
   <hr>
   
   <h2>Clock Divider</h2>
-  <img class="modular_patch" src="images/clock_divider.png" /><br>
+  <img class="modular_patch" src="images/clock_divider.png" loading="lazy"/><br>
   <p>Swallows every other clock event, halving the tempo.</p>
   <hr>
   
   <h2>Clock Delay</h2>
-  <img class="modular_patch" src="images/clock_delay.png" /><br>
+  <img class="modular_patch" src="images/clock_delay.png" loading="lazy"/><br>
   <p>Randomly holds on to a note for precise interval, the chance of this happening controlled by the right-hand encoder. Useful for adding a little randomness to sequenced melodies and drum patterns.</p>
   <hr>
   
   <!-- Core -------------------------------------------------------------------------------- -->
   <h1>Core</h1>
   <h2>Midi Keyboard</h2>
-  <img class="modular_patch" src="images/midi_keyboard.png" /><br>
+  <img class="modular_patch" src="images/midi_keyboard.png" loading="lazy"/><br>
   <p>Emits midi notes. Not practical but useful for trying out synth sounds quickly. Try <i>System > Midi/Serial Input</i> with external hardware instead.</p>
   <hr>
   
   <h2>Pedal</h2>
-  <img class="modular_patch" src="images/pedal.png" /><br>
+  <img class="modular_patch" src="images/pedal.png" loading="lazy"/><br>
   <p>Emits a single event when pressed, and another when released. Used for controlling the sampler, or toggling a switch. The default mode emulates a momentary pedal: fires an event when pressed and another when released. To switch modes tap the top header area where you can change the pedal to fire a single event when clicked.</p>
   <hr>
   
   <h2>Random</h2>
-  <img class="modular_patch" src="images/random.png" /><br>
+  <img class="modular_patch" src="images/random.png" loading="lazy"/><br>
   <p>Emits a random number from 0.0 to 1.0 when it receives a bang. Limited use currently.</p>
   <hr>
   
   <h2>Oscillator</h2>
-  <img class="modular_patch" src="images/oscillator.png" /><br>
+  <img class="modular_patch" src="images/oscillator.png" loading="lazy"/><br>
   <p>Pseudo-oscillator for controlling various parameters. Top encoder controls centre position (in range 0.0 to 1.0), middle encoder controls width (0.0 to 1.0), and bottom encoder sets the period.</p>
   <hr>
   
   <h2>Oscillator 2</h2>
-  <img class="modular_patch" src="images/oscillator2.png" /><br>
+  <img class="modular_patch" src="images/oscillator2.png" loading="lazy"/><br>
   <p>Same as Oscillator but uses less space on the screen, switch between encoders by tapping and selecting from the popup menu.</p>
   <hr>
   
   <h2>Bifurcate x2</h2>
-  <img class="modular_patch" src="images/bifurcate2.png" /><br>
+  <img class="modular_patch" src="images/bifurcate2.png" loading="lazy"/><br>
   <p>Splits a clock signal into two allowing you to extend your patch. Can be rotated via a menu option before the first cable is connected.</p>
   <hr>
   
   <h2>Bifurcate x4</h2>
-  <img class="modular_patch" src="images/bifurcate4.png" /><br>
+  <img class="modular_patch" src="images/bifurcate4.png" loading="lazy"/><br>
   <p>As above but splits a clock signal into four.</p>
   <hr>
   
   <h2>Blackhole</h2>
-  <img class="modular_patch" src="images/blackhole.png" /><br>
+  <img class="modular_patch" src="images/blackhole.png" loading="lazy"/><br>
   <p>Swallows events. Encoder controls gravity, the higher the gravity the lower the chance an event will escape.</p>
   <hr>
   
   <h2>XY Tilt</h2>
-  <img class="modular_patch" src="images/xy_tilt.png" /><br>
+  <img class="modular_patch" src="images/xy_tilt.png" loading="lazy"/><br>
   <p>Physically tilt your Playdate to emit events along the X and Y axis. Useful for live control of synth parameters. This is a fairly intensive module so limit to one per patch if possible.</p>
   <hr>
   
   <h2>Y Tilt</h2>
-  <img class="modular_patch" src="images/y_tilt.png" /><br>
+  <img class="modular_patch" src="images/y_tilt.png" loading="lazy"/><br>
   <p>Same as XY Tilt but only operates on the Y axis.</p>
   <hr>
   
   <h2>Print/Log</h2>
-  <img class="modular_patch" src="images/print_log.png" /><br>
+  <img class="modular_patch" src="images/print_log.png" loading="lazy"/><br>
   <p>Displays event value and relays it on to next module. Only really useful for debugging.</p>
   <hr>
   
   <!-- Sequencing --------------------------------------------------------------------------- -->
   <h1>Sequencing</h1>
   <h2>Generative</h2>
-  <img class="modular_patch" src="images/generative.png" /><br>
+  <img class="modular_patch" src="images/generative.png" loading="lazy"/><br>
   <p>A key module, Generative combines a handful of modules internally, when it receives a clock event if decides whether to delay the bang, swallow it in a black hole, then converts it to a random midi note in the given scale. Combine in a simple patch with a Clock, a Synth, and a Speaker/Output to generate a random arpeggiated sequence.</p>
   <hr>
   
   <h2>Drone Seq</h2>
-  <img class="modular_patch" src="images/droneseq.png" /><br>
+  <img class="modular_patch" src="images/droneseq.png" loading="lazy"/><br>
   <p>Emits up to four midi notes which never turn off. Combine with a synth with automated parameters to generate unending evolving drones.</p>
   <hr>
   
   <h2>Micro Sequencer</h2>
-  <img class="modular_patch" src="images/micro_sequencer.png" /><br>
+  <img class="modular_patch" src="images/micro_sequencer.png" loading="lazy"/><br>
   <p>16 step sequencer. Write simple melodies. Put a Clock Delay and/or Blackhole before this module to add some variation to timings. A more versatile variable step sequencer is under development, not quite ready for the Alpha release.</p>
   <hr>
   
   <h2>Linear Switch</h2>
-  <img class="modular_patch" src="images/linear_switch.png" /><br>
+  <img class="modular_patch" src="images/linear_switch.png" loading="lazy"/><br>
   <p>Control if clock events reach a section of your patch with a Linear Switch, can be toggled manually or automated with the bottom socket.</p>
   <hr>
   
   <h2>Dual Switch</h2>
-  <img class="modular_patch" src="images/dual_switch.png" /><br>
+  <img class="modular_patch" src="images/dual_switch.png" loading="lazy"/><br>
   <p>Switch between two different paths, can be toggled manually or automated with the bottom socket.</p>
   <hr>
   
   <h2>Timed Switch</h2>
-  <img class="modular_patch" src="images/timed_switch.png" /><br>
+  <img class="modular_patch" src="images/timed_switch.png" loading="lazy"/><br>
   <p>Automate toggling areas of your patch with a timed switch controlled by a number of clock events. <code>mm.</code> is musical notation for a bar. Use a Timed Switch to automate a Dual Switch to move between two areas of a patch every n bars.</p>
   <hr>
   
-  timed_switch
+  <!-- Drum Machines -------------------------------------------------------------------- -->
+  <h1>Drum Machines</h1>
+  <h2>Orl Drum Machine</h2>
+  <img class="modular_patch" src="images/orl_drum_machine.png" loading="lazy"/><br>
+  <p>A 16 step drum machine. Use the encoders to choose from the built-in 606, 808, and 909 sample sets. Use a Clock Delay and/or Blackhole to add randomness to your patterns.</p>
+  <hr>
+  
+  <h2>OR-606</h2>
+  <img class="modular_patch" src="images/or606.png" loading="lazy"/><br>
+  <p>A simple emulation of the classic Roland TR-606.</p>
+  <hr>
+  
+  <h2>OR-808</h2>
+  <img class="modular_patch" src="images/or808.png" loading="lazy"/><br>
+  <p>A simple emulation of the classic Roland TR-808.</p>
+  <hr>
+  
+  <!-- Synths -------------------------------------------------------------------- -->
+  <h1>Synths</h1>
+  <p><i>Tip - in most cases synths sound best when combined with a Delay effect module.</i></p>
+  <h2>Wavetable</h2>
+  <img class="modular_patch" src="images/wavetable.png" loading="lazy"/><br>
+  <p>A wavetable synth with a single dimension modifier. This allows you to morph the sound in the X axis. The axis position can be automated with one of the accelerometer modules or an oscillator.</p>
+  <hr>
+  
+  <h2>2D Wavetable</h2>
+  <img class="modular_patch" src="images/wavetable_2d.png" loading="lazy"/><br>
+  <p>Same as Wavetable but allows morphing the sound across the X and Y axis.</p>
+  <hr>
+  
+  <h2>ORL Sample Synth</h2>
+  <img class="modular_patch" src="images/orl_sample_synth.png" loading="lazy"/><br>
+  <p>A simple synth that pitches samples to midi notes. There's a variety of built-in categories but you can also use your own samples (record samples tuned to C with the Sampler module), this is limited somewhat by the gain of the condenser microphone, a method to import pre-recorded WAVs will come soon.</p>
+  <hr>
+  
+  <h2>ORL Synth</h2>
+  <img class="modular_patch" src="images/orl_synth.png" loading="lazy"/><br>
+  <p>A basic synth with the usual waveform primitives (Sine, Square, Triangle, Saw) plus three Teenage Engineering presets from their Pocket Operator series. The Teenage Engineering synths have two additional parameters which can be automated from the two input sockets</p>
+  <hr>
+  
+  <h2>Noise Box</h2>
+  <img class="modular_patch" src="images/noise_box.png" loading="lazy"/><br>
+  <p>Generates evolving noise. Internally a low-pass filter with oscillator modulates the sound.</p>
+  <hr>
+  
+  <h2>Micro synth</h2>
+  <img class="modular_patch" src="images/micro_synth.png" loading="lazy"/><br>
+  <p>Same sounds as the Orl Synth but without envelope or parameter controls, tap to open the menu and change the waveform. Useful for larger patches with multiple synths to lower the strain on the processor (it uses less resources to draw).</p>
+  <hr>
+  
+  <h2>Stochastic Primitives</h2>
+  <img class="modular_patch" src="images/stochastic_primitives.png" loading="lazy"/><br>
+  <p>A trio of synth modules developed for use in the onboarding/introduction patches. Internally they have a simple synth controlled by a random number generator, clock delay, a blackhole and a delay effect, they play random melodies in C Major.</p>
+  <hr>
+  
+  
   </article>
 </body>
 </html>
