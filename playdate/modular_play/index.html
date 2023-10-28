@@ -34,25 +34,7 @@
   <li>If you create a nice patch and want to share a screenshot you can go to <code>System > Screenshot</code>, this will hide the reticle cross and pan around the patch capturing screenshots before stitching them together (see the patch images on this page). The screenshot is saved under <code>Disk/Data/orllewin.playdate.modularplay/images</code> - you'll need to put your Playdate into mass storage mode and copy the images from your computer. Alternatively you can run Modular Play in the Playdate simulator where the images are easily retrieved from the simulator menu (on MacOS: <code>Playdate Simulator > Reveal Data folder in Finder)</code></li>
   <li>Patches are saved in <code>.orlam</code> files, you can share patches by putting the Playdate into mass storage mode and finding the files under <code>Disk/Data/orllewin.playdate.modularplay/</code></li>
   </ul>
-  <h1>Planned Roadmap</h1>
-  Although the Alpha is a paid app on itch.io you'll get all future upgrades and improvements. <b>Only purchase if you understand there will be rough edges and occasional crashes</b> - there are no refunds unless the software is utterly non-functional.
-  <ul>
-    <li>0.0.9 Alpha - initial release for early adopters, will have too many bugs, some unfinished modules are hidden. Here be dragons.</li>
-    <li>0.0.10+ Alpha - patch releases with regular fixes over the first month or two, including adding currently unfinished new modules.</li>
-    <li>0.1.0 Beta - a release candidate, approaching stability.</li>
-    <li>1.0.0 - Fewer unwelcome surprises.</li>
-    <li>?.?.? - Desktop midi to serial bus.</li>
-    <li>?.?.? - Companion Android app (code will be freely available if anyone wants to port to iOS, I may try myself if I can find the time).</li>
-    <li>?.?.? - Hardware foot pedal project with instructions and code for recording samples.</li>
-  </ul>
-  <h2>Hidden Modules</h2>
-  <p>There are a number of buggy and/or incomplete modules hidden from the Alpha release, these include an arpeggiator sequencer with more control than the current Micro Sequencer, a 909 drum machine, and a random number to midi note module.
-  </p>
-  <h1>Performance and Limitations</h1>
-  <p><i>This is lengthy and won't be of interest for everyone, if you just want to make nice melodies while sitting on the train or whatever you can skip all of the information below.</i></p>
-  <p>The Playdate does incredibly well considering how tiny it is, and for most patches it'll perform fine without extra steps, but on larger patches with dozens of modules and automation you will get some UI slowdown; the bigger the patch the bigger the performance hit. Thankfully the audio fidelity isn't impacted, there's no audible artefacts, but the clock may emit slower occasionally making syncing to external sequenced music impossible. I've spent a lot of time optimising the modules themselves but one easy thing you can do to minimise the amount of work done when rendering the patches is to keep the length of cables sensible, if a cable is wider than the screen you're likely to see some performance issues if the patch is doing lots of other work too.</p>
-  <p>Modular Play is primarily a wrapper around the Playdate's audio API, it's not a true simulation of a modular synth setup in that you can't route signals wherever you like. Once audio leaves a synth it can only be routed through effects modules before finally escaping to your ear via one of the amp/speaker modules. The clock bangs are however produced within Modular Play and can be manipulated however we like. You should be prevented from doing things that don't work in Modular Play, like routing a clock signal into an audio-in socket, but there may be missing logic in some modules; if you find anything that doesn't seem correct <a href="https://github.com/orllewin/modular_play_public/issues">raise an issue</a>.</p>
-  <p>Another limitation of the Playdate is that audio input can only be done by the built-in condenser microphone and the levels may be fairly low compared to the output of the synths. The Playdate should be able to record from a line-in with a TRRS cable but this has been broken since launch and there's no sign of a fix yet. I will try and offer a desktop 'WAV to Playdate audio' utility if you want to use your own samples instead of recording with the Sample Record module.</p>
+
   <img class="modular_patch" src="another_patch.png">
   <p class=small>Screenshot features Arp Sequencer module coming soon, not available in the first Alpha release.</p>
   <hr>
@@ -330,6 +312,26 @@
   <p>For use with external hardware - more on this soon.<br>
   <i>Note. will not work with standard USB Midi, though it'd be amazing if Panic added support for that</i>.</p>
   <hr>
+  
+  <h1>Planned Roadmap</h1>
+  Although the Alpha is a paid app on itch.io you'll get all future upgrades and improvements. <b>Only purchase if you understand there will be rough edges and occasional crashes</b> - there are no refunds unless the software is utterly non-functional.
+  <ul>
+    <li>0.0.9 Alpha - initial release for early adopters, will have too many bugs, some unfinished modules are hidden. Here be dragons.</li>
+    <li>0.0.10+ Alpha - patch releases with regular fixes over the first month or two, including adding currently unfinished new modules.</li>
+    <li>0.1.0 Beta - a release candidate, approaching stability.</li>
+    <li>1.0.0 - Fewer unwelcome surprises.</li>
+    <li>?.?.? - Desktop midi to serial bus.</li>
+    <li>?.?.? - Companion Android app (code will be freely available if anyone wants to port to iOS, I may try myself if I can find the time).</li>
+    <li>?.?.? - Hardware foot pedal project with instructions and code for recording samples.</li>
+  </ul>
+  <h2>Hidden Modules</h2>
+  <p>There are a number of buggy and/or incomplete modules hidden from the Alpha release, these include an arpeggiator sequencer with more control than the current Micro Sequencer, a 909 drum machine, and a random number to midi note module.
+  </p>
+  <h1>Performance and Limitations</h1>
+  <p><i>This is lengthy and won't be of interest for everyone, if you just want to make nice melodies while sitting on the train or whatever you can skip all of the information below.</i></p>
+  <p>The Playdate does incredibly well considering how tiny it is, and for most patches it'll perform fine without extra steps, but on larger patches with dozens of modules and automation you will get some UI slowdown; the bigger the patch the bigger the performance hit. Thankfully the audio fidelity isn't impacted, there's no audible artefacts, but the clock may emit slower occasionally making syncing to external sequenced music impossible. I've spent a lot of time optimising the modules themselves but one easy thing you can do to minimise the amount of work done when rendering the patches is to keep the length of cables sensible, if a cable is wider than the screen you're likely to see some performance issues if the patch is doing lots of other work too.</p>
+  <p>Modular Play is primarily a wrapper around the Playdate's audio API, it's not a true simulation of a modular synth setup in that you can't route signals wherever you like. Once audio leaves a synth it can only be routed through effects modules before finally escaping to your ear via one of the amp/speaker modules. The clock bangs are however produced within Modular Play and can be manipulated however we like. You should be prevented from doing things that don't work in Modular Play, like routing a clock signal into an audio-in socket, but there may be missing logic in some modules; if you find anything that doesn't seem correct <a href="https://github.com/orllewin/modular_play_public/issues">raise an issue</a>.</p>
+  <p>Another limitation of the Playdate is that audio input can only be done by the built-in condenser microphone and the levels may be fairly low compared to the output of the synths. The Playdate should be able to record from a line-in with a TRRS cable but this has been broken since launch and there's no sign of a fix yet. I will try and offer a desktop 'WAV to Playdate audio' utility if you want to use your own samples instead of recording with the Sample Record module.</p>
   
   
   </article>
