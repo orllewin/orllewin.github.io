@@ -28,6 +28,7 @@ body {
 .itch_iframe{
   border-radius: 25px;
   border: 1px solid #cdcdcd;
+  padding: 8px;
 }
 
 .modular_patch{
