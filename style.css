@@ -49,12 +49,10 @@ body {
 
 header{
   padding-top: 48px;
-  background-color: #ffffff;
 }
 article{
   padding-top: 12px;
   margin-top: 0px;
-  background-color: #ffffff;
 }
 footer{
   padding-top: 32px;
@@ -106,13 +104,6 @@ hr {
   margin-bottom: 2em;
 }
 
-@font-face {
-  font-family: 'Roboto Mono'; font-style: normal; font-weight: 400;
-  src: local(''),
-  url('assets/roboto-mono-v21-latin-regular.woff2') format('woff2'),
-  url('assets/roboto-mono-v21-latin-regular.woff') format('woff'); 
-}
-
 .banner_image{
   border-radius: 25px;
   border: 2px solid #1d1d1d;
@@ -150,5 +141,51 @@ hr {
 
 .flexbox-container > div:first-child {
 
+}
+
+@media (prefers-color-scheme: light) {
+  html { background-color: #dadada; }
+  body {
+    background-color:#ffffff; 
+    color: #16161d; 
+  }
+  header{
+    background-color: #ffffff;
+  }
+  article{
+    background-color: #ffffff;
+  }
+  a {
+    color: #000000;
+  }
+  a:hover {
+    color:#000000;
+  }
+  .modular_patch{
+    border: 2px solid #1d1d1d;
+  }
+
+}
+@media (prefers-color-scheme: dark) {
+  html { background-color: #2b2932; }
+  body {
+    background-color:#1c1b21; 
+    color: #ffffff; 
+  }
+  header{
+    background-color: #1c1b21;
+  }
+  article{
+    background-color: #1c1b21;
+  }
+  a {
+    color: #ffffff;
+  }
+  a:hover {
+    color:#ffffff;
+  }
+  .modular_patch{
+    border: 2px solid #dedede;
+  }
 }
 
