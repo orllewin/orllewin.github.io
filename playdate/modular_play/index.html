@@ -26,7 +26,10 @@
   <p><img class="modular_patch" src="./dronescape.gif"></p>
   <p class="small">Screenshots on this site might include unfinished or older versions of modules.</p>
   <h1>Found a bug?</h1>
-  <p>This is a complex piece of software, there will be bugs, especially in the Alpha and Beta releases. <a href="https://github.com/orllewin/modular_play_public/issues">Please open a ticket</a></p>
+  <p>This is a complex piece of software, there will be bugs, especially in the Alpha and Beta releases. <a href="https://github.com/orllewin/modular_play_public/issues">Please open a ticket on Github</a> or <a href="https://itch.io/t/3248289/bug-reports">comment in the itch.io community thread</a></p>
+  <h2>Kinopio</h2>
+  <p>Development is managed using Kinopio, <a href="https://kinopio.club/orllewin-modular-play-hobVkZawudc7bwByphsLx">you can track progress there.</a></p>
+  <hr>
   <h1>General Info and Instructions</h1>
   <ul>
   <li>When you tap (A) in empty space a context menu appears where you can navigate around all the available patch options: save, load, delete, and browse all the module categories. (A) drills down into a menu until you hit a leaf node. (B) closes and dismisses the menu with no action.</li>
@@ -55,11 +58,16 @@
   <p>The first module you'll add to most patches, generates a periodic 'bang' that's passed from module to module until it finds something that transforms clock events to a midi note or controls some other parameter. There's a single encoder to control the tempo, and four sockets to connect to other clock routing modules.</p>
   <hr>
   
+  <h2>Bubble Chamber</h2>
+  <img class="modular_patch" src="images/bubble_chamber.png" loading="lazy"/><br>
+  <p>Balls/Particles/Molecules bounce around a box, when they hit the sides a clock event is emitted. Change the velocity and add and remove balls from the menu to change the random tempo.</p>
+  <hr>
+  
   <h2>Clock Delay</h2>
   <img class="modular_patch" src="images/clock_delay.png" loading="lazy"/><br>
   <p>Randomly holds on to a note for a precise interval, the chance of this happening controlled by the right-hand encoder. Useful for adding a little randomness to sequenced melodies and drum patterns.</p>
   <hr>
-  
+
   <h2>Clock Divider</h2>
   <img class="modular_patch" src="images/clock_divider.png" loading="lazy"/><br>
   <p>Swallows every other clock event, halving the tempo.</p>
@@ -124,9 +132,24 @@
   
   <!-- Sequencing --------------------------------------------------------------------------- -->
   <h1>Sequencing</h1>
-  <h2>Generative</h2>
+  <h2>Generative Standard</h2>
   <img class="modular_patch" src="images/generative.png" loading="lazy"/><br>
   <p>A key module, Generative combines a handful of modules internally, when it receives a clock event it decides whether to delay the bang, maybe swallow it in a black hole, and then converts it to a random midi note in the given scale. Combine in a simple patch with a Clock, a Synth, and a Speaker/Output to generate a random arpeggiated sequence.</p>
+  <hr>
+  
+  <h2>Generative Random</h2>
+  <img class="modular_patch" src="images/generative_random.png" loading="lazy"/><br>
+  <p>Combines Bubble Chamber with the logic of Generative Standard: every time a ball/particle/molecule hits a wall a random note is emitted from the selected scale.</p>
+  <hr>
+  
+  <h2>Arpseq</h2>
+  <img class="modular_patch" src="images/arpseq.png" loading="lazy"/><br>
+  <p>A traditional 'piano roll'/'swimlane' arpeggiator style sequencer. Create short melodies/hooks in otherwise random patches. Works well with Bubble Chamber as a clock event source.</p>
+  <hr>
+  
+  <h2>Micro Sequencer</h2>
+  <img class="modular_patch" src="images/micro_sequencer.png" loading="lazy"/><br>
+  <p>16 step sequencer. Write simple melodies. Put a Clock Delay and/or Blackhole before this module to add some variation to timings. A more versatile variable step sequencer is under development, not quite ready for the Alpha release.</p>
   <hr>
   
   <h2>Drone Seq</h2>
@@ -134,9 +157,17 @@
   <p>Emits up to four midi notes which never turn off. Combine with a synth with automated parameters to generate unending evolving drones. If you change a synth preset you'll need to re-trigger the note in this module.</p>
   <hr>
   
-  <h2>Micro Sequencer</h2>
-  <img class="modular_patch" src="images/micro_sequencer.png" loading="lazy"/><br>
-  <p>16 step sequencer. Write simple melodies. Put a Clock Delay and/or Blackhole before this module to add some variation to timings. A more versatile variable step sequencer is under development, not quite ready for the Alpha release.</p>
+  
+  <h1>Midi/Seq Utils</h1>
+  
+  <h2>Random Repeater</h2>
+  <img class="modular_patch" src="images/random_repeater.png" loading="lazy"/><br>
+  <p>Spread midi note events across multiple synths; when a note event is received it's emitted at one of the connected output sockets, chosen at random</p>
+  <hr>
+
+  <h2>Random Shifter</h2>
+  <img class="modular_patch" src="images/random_shifter.png" loading="lazy"/><br>
+  <p>When Random Shifter receives a midi note event it randomly decides whether to emit at the original pitch, up and octave, or down an octave - each with 33.3% probability.</p>
   <hr>
   
   <h2>Linear Switch</h2>
@@ -207,6 +238,11 @@
   <h2>Stochastic Primitives</h2>
   <img class="modular_patch" src="images/stochastic_primitives.png" loading="lazy"/><br>
   <p>A trio of synth modules developed for use in the onboarding/introduction patches. Internally they have a simple synth controlled by a random number generator, clock delay, a blackhole and a delay effect, they play random melodies in C Major.</p>
+  <hr>
+  
+  <h2>Wavetable Sigen</h2>
+  <img class="modular_patch" src="images/wavetable_sig_gen.png" loading="lazy"/><br>
+  <p>Another test module that's been left in, was used to debug x-axis wavetable interpolation.</p>
   <hr>
 
   <!-- Sampling -------------------------------------------------------------------- -->
