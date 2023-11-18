@@ -238,5 +238,10 @@ hr {
   .modular_patch{
     border: 2px solid #dedede;
   }
+  
+  .home_link_icon{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+  }
 }
 
