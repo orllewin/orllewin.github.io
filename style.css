@@ -25,6 +25,11 @@ body {
   break-inside: avoid;
 }
 
+.column_image{
+  width: 300px;
+  padding-top: 12px;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     padding-left: 24px;
