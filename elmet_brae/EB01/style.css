@@ -17,11 +17,6 @@
   /* column-rule: 1px solid #cecece; */
 }
 
-.column_section{
-  break-inside: avoid;
-  margin-bottom: 24px;
-}
-
 .eb_column_section{
   break-inside: avoid;
   margin-bottom: 24px;
@@ -38,6 +33,25 @@
   background: #534848;
   color: white;
 }
+
+@media (prefers-color-scheme: dark) {
+  .eb_column_section {
+    background: #2f3039;
+  }
+  
+  .eb_track{
+    background: #443c4f;
+  }
+}
+
+.column_section{
+  break-inside: avoid;
+  margin-bottom: 24px;
+}
+
+
+
+
 
 .eb_h1{
   padding-top: 8px;
@@ -236,66 +250,17 @@ hr {
 
 }
 @media (prefers-color-scheme: dark) {
-  html { background-color: #2b2932; }
+  html { background-color: #242328; }
   body {
-    background-color:#1c1b21; 
+    background-color:#242328; 
     color: #ffffff; 
   }
   
-  .modular_play_body{
-    background-image: radial-gradient(circle at 1px 1px, rgb(64, 64, 64) 1px, transparent 0);
-    background-size: 25px 25px;
-  }
-  
-  .mod_clock_background{
-    background: rgb(61, 43, 63);
-  }
-  
-  .mod_core_background{
-    background: rgb(69, 92, 58);
-  }
-  
-  .mod_sequencing_background{
-    background: rgb(92, 71, 58);
-  }
-  
-  .midi_utils_background{
-    background: rgb(63, 48, 99);
-  }
-  
-  .drum_machines_background{
-    background: rgb(92, 48, 99);
-  }
-  
-  .synths_background{
-    background: rgb(99, 48, 67);
-  }
-  
-  .samplers_background{
-    background: rgb(33, 65, 36);
-  }
-  
-  .effects_background{
-    background: rgb(47, 74, 65);
-  }
-  
-  .ouput_background{
-    background: rgb(27, 64, 68);
-  }
-  
-  .ui_background{
-    background: rgb(27, 47, 68);
-  }
-  
-  .system_background{
-    background: rgb(52, 52, 52);
-  }
-  
   header{
-    background-color: #1c1b21;
+    background-color: #242328;
   }
   article{
-    background-color: #1c1b21;
+    background-color: #242328;
   }
   a {
     color: #ffffff;
