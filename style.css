@@ -210,6 +210,7 @@ h3 {
 h4 {
   font-family: Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
 }
+
 hr {
   margin-top: 1.5em; 
   border: none; 
@@ -218,6 +219,8 @@ hr {
   height: 1px;
   margin-bottom: 2em;
 }
+
+
 
 .banner_image{
   border-radius: 25px;
@@ -362,5 +365,9 @@ hr {
     -webkit-filter: invert(1);
     filter: invert(1);
   }
+  
+  hr {
+    background-color: #424242; 
+  } 
 }
 
