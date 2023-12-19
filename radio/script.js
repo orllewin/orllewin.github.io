@@ -1,8 +1,7 @@
 function playStream(label, url){
 	console.log("playStream(): " + label + ": " + url)
 	var audio = document.getElementById('audio');
-	var source = document.getElementById('audio_source');
-	source.src = url;
+	audio.src = url;
 	audio.load();
 	audio.play();
 	
