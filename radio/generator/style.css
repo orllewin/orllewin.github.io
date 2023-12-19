@@ -15,10 +15,6 @@ a:hover, a:active {
 	max-width: 400px;
 }
 
-#editor{
-	display: none;
-}
-
 
 
 #stations_container {
@@ -46,6 +42,10 @@ a:hover, a:active {
 
 hr {
 	border: 0.5px solid #9a9a9a;
+}
+
+#editor{
+	display: block;
 }
 
 input{
