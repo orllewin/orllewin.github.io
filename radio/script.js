@@ -18,6 +18,11 @@ function playStream(label, url, iconUrl){
 			artwork: [
 				{
 					src: iconUrl,
+					sizes: "96x96",
+					type: "image/png",
+				},
+				{
+					src: iconUrl,
 					sizes: '256x256',
 					type: 'image/jpeg'
 				},
