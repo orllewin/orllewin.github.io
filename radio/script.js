@@ -1,5 +1,4 @@
 function playStream(label, url, iconUrl){
-	console.log("playStream(): " + label + ": " + url)
 	var audio = document.getElementById('audio');
 	audio.src = url;
 	audio.load();
@@ -12,24 +11,38 @@ function playStream(label, url, iconUrl){
 	var stopButton = document.getElementById("stop_button");
 	stopButton.style.display = "inline";
 	
+	var mime = "image/*"
+	
+	if (iconUrl.endsWith('.png')){
+		mime = "image/png"
+	}else if(iconUrl.endsWith('.jpg') || iconUrl.endsWith('.jpeg')){
+		mime = "image/jpg"
+	}
+	
 	if('mediaSession' in navigator) {
 		navigator.mediaSession.metadata = new MediaMetadata({
 			title: label,
+			artist: "Radio",
 			artwork: [
 				{
 					src: iconUrl,
 					sizes: "96x96",
-					type: "image/png",
+					type: mime
+				},
+				{
+					src: iconUrl,
+					sizes: "128x128",
+					type: mime
 				},
 				{
 					src: iconUrl,
 					sizes: '256x256',
-					type: 'image/jpeg'
+					type: mime
 				},
 				{
 					src: iconUrl,
 					sizes: '512x512',
-					type: 'image/jpeg'
+					type: mime
 				}
 			]
 		});
@@ -39,6 +52,8 @@ function playStream(label, url, iconUrl){
 function stop(){
 	var audio = document.getElementById('audio');
 	audio.pause()
+	
+	//from: https://gist.github.com/novwhisky/8a1a0168b94f3b6abfaa
 	audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
 	
 	var stopButton = document.getElementById("stop_button");
@@ -64,48 +79,10 @@ function decodeUrl(){
 		
 		let stationsJson = JSON.parse(atob(encodedStations));
 		
-		const labels = [
-			stream1label, 
-			stream2label, 
-			stream3label,
-			stream4label,
-			stream5label,
-			stream6label,
-			stream7label,
-			stream8label
-		]
-		const urls = [
-			stream1url, 
-			stream2url, 
-			stream3url,
-			stream4url,
-			stream5url,
-			stream6url,
-			stream7url,
-			stream8url
-		]
-		
-		const iconUrls = [
-			stream1icon, 
-			stream2icon, 
-			stream3icon,
-			stream4icon,
-			stream5icon,
-			stream6icon,
-			stream7icon,
-			stream8icon
-		]
-		
-		const colours = [
-			stream1colour, 
-			stream2colour, 
-			stream3colour,
-			stream4colour,
-			stream5colour,
-			stream6colour,
-			stream7colour,
-			stream8colour
-		]
+		const labels = [stream1label, stream2label, stream3label, stream4label, stream5label, stream6label, stream7label, stream8label]
+		const urls = [stream1url, stream2url, stream3url, stream4url, stream5url, stream6url, stream7url, stream8url]
+		const iconUrls = [stream1icon, stream2icon, stream3icon, stream4icon, stream5icon, stream6icon, stream7icon, stream8icon]
+		const colours = [stream1colour, stream2colour, stream3colour, stream4colour, stream5colour, stream6colour, stream7colour, stream8colour]
 		
 		for (var i = 0, size = stationsJson.length; i < size; i++){
 			//Update editor
@@ -153,48 +130,10 @@ function decodeUrl(){
 }
 
 function encodeUrl(){
-	console.log("buildUrl()")
-	
-	const labels = [
-		stream1label.value, 
-		stream2label.value, 
-		stream3label.value,
-		stream4label.value,
-		stream5label.value,
-		stream6label.value,
-		stream7label.value,
-		stream8label.value
-	]
-	const urls = [
-		stream1url.value, 
-		stream2url.value, 
-		stream3url.value,
-		stream4url.value,
-		stream5url.value,
-		stream6url.value,
-		stream7url.value,
-		stream8url.value
-	]
-	const iconUrls = [
-		stream1icon.value, 
-		stream2icon.value, 
-		stream3icon.value,
-		stream4icon.value,
-		stream5icon.value,
-		stream6icon.value,
-		stream7icon.value,
-		stream8icon.value
-	]
-	const colours = [
-		stream1colour.value, 
-		stream2colour.value, 
-		stream3colour.value,
-		stream4colour.value,
-		stream5colour.value,
-		stream6colour.value,
-		stream7colour.value,
-		stream8colour.value
-	]
+	const labels = [stream1label.value, stream2label.value, stream3label.value, stream4label.value, stream5label.value, stream6label.value, stream7label.value, stream8label.value]
+	const urls = [stream1url.value, stream2url.value, stream3url.value, stream4url.value, stream5url.value, stream6url.value, stream7url.value, stream8url.value]
+	const iconUrls = [stream1icon.value, stream2icon.value, stream3icon.value, stream4icon.value, stream5icon.value, stream6icon.value, stream7icon.value, stream8icon.value]
+	const colours = [stream1colour.value, stream2colour.value, stream3colour.value, stream4colour.value, stream5colour.value, stream6colour.value, stream7colour.value, stream8colour.value]
 	
 	var stationsJson = [];
 	
@@ -204,7 +143,6 @@ function encodeUrl(){
 		let iconUrl = iconUrls[i];
 		let colour = colours[i];
 		
-
 		if (url){
 			let station = {}
 			if(label){
@@ -226,7 +164,4 @@ function encodeUrl(){
 	
 	const linkPreview = document.getElementById("generated_link");
 	linkPreview.innerHTML = "Generated Url: <a href=\"https://orllewin.github.io/radio/?stations=" + encodedStations + "\">orllewin.github.io/radio/?stations=...</a>";
-	
-
 }
-
