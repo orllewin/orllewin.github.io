@@ -1,3 +1,12 @@
+function playStream(label, url){
+	console.log("playStream(): " + label + ": " + url)
+	var audio = document.getElementById('audio');
+	var source = document.getElementById('audio_source');
+	source.src = url;
+	audio.load();
+	audio.play();
+}
+
 function toggleEditor(){
 	var editor = document.getElementById("editor");
 	if (editor.style.display === "none") {
@@ -74,15 +83,26 @@ function decodeUrl(){
 			//Add player
 			const stationDiv = document.createElement("div");
 			stationDiv.style.backgroundColor = station.colour;
+			
+			var stationLink = document.createElement('a');
+			stationLink.setAttribute("data-value", station.url);
+			stationLink.href = "#"
+			
+			const play = "playStream(\"" + station.label + "\", \"" + station.url + "\");";
+			stationLink.setAttribute("onclick", play); 
+			
 			if(station.iconUrl){
 				const stationIcon = document.createElement('img');
 				stationIcon.src = station.iconUrl
 				stationIcon.classList.add('station_icon');
-				stationDiv.appendChild(stationIcon);
+				stationLink.appendChild(stationIcon);
+				
 			}else{
 				const stationLabel = document.createTextNode(station.label);
-				stationDiv.appendChild(stationLabel);
+				stationLink.appendChild(stationLabel);
 			}
+			
+			stationDiv.appendChild(stationLink);
 			
 			document.getElementById("stations_container").appendChild(stationDiv);
 		};

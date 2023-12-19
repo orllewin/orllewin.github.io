@@ -1,14 +1,10 @@
-a:link, a:visited {
+.ui_button {
 	background-color: rgb(143, 143, 143);
 	color: white;
 	padding: 14px 25px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-}
-
-a:hover, a:active {
-	background-color: rgb(143, 143, 143);
 }
 
 #player{
