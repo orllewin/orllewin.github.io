@@ -5,6 +5,25 @@ function playStream(label, url){
 	source.src = url;
 	audio.load();
 	audio.play();
+	
+	var nowPlayingSpan = document.getElementById("now_playing");
+	nowPlayingSpan.style.display = "block";
+	nowPlayingSpan.innerHTML = "Now playing: " + label;
+	
+	var stopButton = document.getElementById("stop_button");
+	stopButton.style.display = "inline";
+}
+
+function stop(){
+	var audio = document.getElementById('audio');
+	audio.pause()
+	audio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAVFYAAFRWAAABAAgAZGF0YQAAAAA=';
+	
+	var stopButton = document.getElementById("stop_button");
+	stopButton.style.display = "none";
+	
+	var nowPlayingSpan = document.getElementById("now_playing");
+	nowPlayingSpan.style.display = "none";
 }
 
 function toggleEditor(){
