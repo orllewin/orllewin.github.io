@@ -1,4 +1,4 @@
-function playStream(label, url){
+function playStream(label, url, iconUrl){
 	console.log("playStream(): " + label + ": " + url)
 	var audio = document.getElementById('audio');
 	audio.src = url;
@@ -11,6 +11,24 @@ function playStream(label, url){
 	
 	var stopButton = document.getElementById("stop_button");
 	stopButton.style.display = "inline";
+	
+	if('mediaSession' in navigator) {
+		navigator.mediaSession.metadata = new MediaMetadata({
+			title: label,
+			artwork: [
+				{
+					src: iconUrl,
+					sizes: '256x256',
+					type: 'image/jpeg'
+				},
+				{
+					src: iconUrl,
+					sizes: '512x512',
+					type: 'image/jpeg'
+				}
+			]
+		});
+	}
 }
 
 function stop(){
@@ -106,7 +124,7 @@ function decodeUrl(){
 			stationLink.setAttribute("data-value", station.url);
 			stationLink.href = "#"
 			
-			const play = "playStream(\"" + station.label + "\", \"" + station.url + "\");";
+			const play = "playStream(\"" + station.label + "\", \"" + station.url + "\", \"" + station.iconUrl + "\");";
 			stationLink.setAttribute("onclick", play); 
 			
 			if(station.iconUrl){
