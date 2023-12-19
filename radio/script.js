@@ -74,10 +74,19 @@ function toggleEditor(){
 
 function decodeUrl(){
 	const urlParams = new URLSearchParams(window.location.search);
-	if(urlParams.has("stations")){
-		const encodedStations = urlParams.get('stations');
+	if(urlParams.has("radio")){
+		const encodedRadio = urlParams.get('radio');
 		
-		let stationsJson = JSON.parse(atob(encodedStations));
+		const radioJson = JSON.parse(atob(encodedRadio));
+		
+		const title = radioJson.title
+		if(title){
+			var titleHeader = document.getElementById("title");
+			titleHeader.innerHTML = title
+			radioname.value = title
+		}
+		
+		let stationsJson = radioJson.stations;
 		
 		const labels = [stream1label, stream2label, stream3label, stream4label, stream5label, stream6label, stream7label, stream8label]
 		const urls = [stream1url, stream2url, stream3url, stream4url, stream5url, stream6url, stream7url, stream8url]
@@ -157,11 +166,15 @@ function encodeUrl(){
 		}
 	}
 	
-	const encodedStations = btoa(JSON.stringify(stationsJson));
+	var radioObject = {}
+	radioObject.title = radioname.value
+	radioObject.stations = stationsJson
+	
+	const encodedRadio = btoa(JSON.stringify(radioObject));
 	const urlElement = document.getElementById("radio_url");
 	
-	radio_url.value = "https://orllewin.github.io/radio/?stations=" + encodedStations;
+	radio_url.value = "https://orllewin.github.io/radio/?radio=" + encodedRadio;
 	
 	const linkPreview = document.getElementById("generated_link");
-	linkPreview.innerHTML = "Generated Url: <a href=\"https://orllewin.github.io/radio/?stations=" + encodedStations + "\">orllewin.github.io/radio/?stations=...</a>";
+	linkPreview.innerHTML = "Generated Url: <a href=\"https://orllewin.github.io/radio/?radio=" + encodedRadio + "\">orllewin.github.io/radio/?radio=...</a>";
 }
