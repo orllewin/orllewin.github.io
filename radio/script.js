@@ -201,6 +201,10 @@ function encodeUrl(){
 	const urlElement = document.getElementById("radio_url");
 	
 	radio_url.value = "https://orllewin.github.io/radio/?stations=" + encodedStations;
+	
+	const linkPreview = document.getElementById("generated_link");
+	linkPreview.innerHTML = "Generated Url: <a href=\"https://orllewin.github.io/radio/?stations=" + encodedStations + "\">orllewin.github.io/radio/?stations=...</a>";
+	
 
 }
 
