@@ -35,10 +35,10 @@
 }
 
 #stations_container div {
-	background-color: darkgreen;
+	background-color: cornsilk;
 	max-width: 200px;
 	aspect-ratio: 1;
-	color: white;
+	color: gray;
 	display: flex;
 	justify-content: center;
 	align-items: center;
