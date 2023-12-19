@@ -74,8 +74,10 @@ function toggleEditor(){
 
 function decodeUrl(){
 	const urlParams = new URLSearchParams(window.location.search);
-	if(urlParams.has("radio")){
-		const encodedRadio = urlParams.get('radio');
+	const encodedRadio = urlParams.toString()
+	
+	if(encodedRadio){
+		
 		
 		const radioJson = JSON.parse(atob(encodedRadio));
 		
@@ -173,8 +175,8 @@ function encodeUrl(){
 	const encodedRadio = btoa(JSON.stringify(radioObject));
 	const urlElement = document.getElementById("radio_url");
 	
-	radio_url.value = "https://orllewin.github.io/radio/?radio=" + encodedRadio;
+	radio_url.value = "https://orllewin.github.io/radio/?" + encodedRadio;
 	
 	const linkPreview = document.getElementById("generated_link");
-	linkPreview.innerHTML = "Generated Url: <a href=\"https://orllewin.github.io/radio/?radio=" + encodedRadio + "\">orllewin.github.io/radio/?radio=...</a>";
+	linkPreview.innerHTML = "Generated Url: <a href=\"https://orllewin.github.io/radio/?" + encodedRadio + "\">orllewin.github.io/radio/?...</a>";
 }
