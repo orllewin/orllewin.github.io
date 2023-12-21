@@ -1,10 +1,16 @@
+:root {
+	color-scheme: light dark;
+}
+
 body{
 	font-family: Sans-Serif;
+	background-color: light-dark(#272c29, #ffeeee);
+	background-color: light-dark(#ffeeee, #272c29);
 }
 
 .ui_button {
-	background-color: rgb(143, 143, 143);
-	color: white;
+	background-color: light-dark(#d7c6c6, #4c4747);
+	color: light-dark( #4c4747, #e0e0ca);
 	padding: 14px 25px;
 	text-align: center;
 	text-decoration: none;
