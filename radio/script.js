@@ -78,7 +78,7 @@ function decodeUrl(){
 	
 	if(encodedRadio){
 		
-		
+		console.log(">> " + encodedRadio)
 		const radioJson = JSON.parse(atob(encodedRadio));
 		
 		const title = radioJson.title
