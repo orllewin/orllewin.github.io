@@ -76,7 +76,7 @@ function decodeUrl(){
 	
 	const searchString =  window.location.search
 
-	if(encodedRadio){
+	if(searchString){
 		const encodedRadio = window.location.search.substring(1);
 		console.log(">>" + encodedRadio)
 		
