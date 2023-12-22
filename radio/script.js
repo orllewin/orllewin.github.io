@@ -78,13 +78,11 @@ function decodeUrl(){
 	
 	if(encodedRadio){
 		
-		console.log(">> " + encodedRadio)
+		console.log(">>" + encodedRadio)
 		
-		const decodedRadio = atob(encodedRadio)
-		
-		console.log(">> " + decodedRadio)
-		
-		const radioJson = JSON.parse(decodedRadio);
+		const decodedArgStr = atob(encodedRadio)
+		const urlDecodedJsonString = decodeURIComponent(decodedArgStr)
+		const radioJson = JSON.parse(urlDecodedJsonString);
 		
 		const title = radioJson.title
 		if(title){
@@ -177,7 +175,10 @@ function encodeUrl(){
 	radioObject.title = radioname.value
 	radioObject.stations = stationsJson
 	
-	const encodedRadio = btoa(JSON.stringify(radioObject));
+	const jsonString = JSON.stringify(radioObject)
+	const urlEncodedJsonString = encodeURIComponent(jsonString)
+	
+	const encodedRadio = btoa(urlEncodedJsonString);
 	const urlElement = document.getElementById("radio_url");
 	
 	radio_url.value = "https://orllewin.github.io/radio/?" + encodedRadio;
