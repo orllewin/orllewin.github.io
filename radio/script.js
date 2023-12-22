@@ -73,11 +73,11 @@ function toggleEditor(){
 }
 
 function decodeUrl(){
-	const urlParams = new URLSearchParams(window.location.search);
-	const encodedRadio = urlParams.toString()
 	
+	const searchString =  window.location.search
+
 	if(encodedRadio){
-		
+		const encodedRadio = window.location.search.substring(1);
 		console.log(">>" + encodedRadio)
 		
 		const decodedArgStr = atob(encodedRadio)
