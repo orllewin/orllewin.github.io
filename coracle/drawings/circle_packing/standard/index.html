@@ -2,103 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORACLE: STANDARD CIRCLE PACKING</title>
-    <link href="../../../../css/prism.css" rel="stylesheet" /><link href="/style.css" rel="stylesheet" />
-    <script src="/js/default.js"></script> 
+    <style>
+        body{
+          margin: 0px;
+          padding: 0px;
+        }
+    </style>
   </head>
   <body>
-    <nav id="nav"></nav>
-    <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Standard Circle Packing</p>
-    <h1>Standard Circle Packing</h1>
-        <canvas id="coracle_canvas"></canvas>
-        <p>The common circle packing implementation: start at max circle size, exhaust available space, reduce radius, repeat</p>
-    <pre><code class="language-kotlin">import coracle.Drawing
-import coracle.TWO_PI
-import coracle.Vector
-import coracle.random
-import coracle.shapes.Point
-import kotlin.math.cos
-import kotlin.math.sin
-import kotlin.math.sqrt
-
-class StandardCirclePacking: Drawing() {
-
-    val worldColour = 0xf5f2f0
-    val boundsColour = 0xE5E2E0
-    val black = 0x000000
-
-    val circles = mutableListOf<Circle>()
-    var currentRadius = 15
-    var attemptCycles = 300
-    var emptyCycles = 0
-
-    override fun setup() {
-        size(450, 450)
-    }
-
-    override fun draw() {
-        background(worldColour)
-
-        fill(boundsColour)
-        noStroke()
-        circle(width / 2, height / 2, 200)
-
-        repeat(50) {
-            val point = coordWithinCircle()
-            val rndCircle = Circle(point.x.toInt(), point.y.toInt(), currentRadius)
-            when {
-                collision(rndCircle) -> emptyCycles++
-                else -> {
-                    emptyCycles = 0
-                    circles.add(rndCircle)
-                }
-            }
-        }
-
-        if(emptyCycles >= attemptCycles){
-            currentRadius--
-            emptyCycles = 0
-            attemptCycles += 100
-        }
-
-        noFill()
-        stroke(black, 0.5f)
-        circles.forEach { circle -> circle.draw() }
-
-        circles.sortByDescending { c ->
-            c.r
-        }
-
-        if(currentRadius == 0) noLoop()
-    }
-
-    private fun coordWithinCircle(): Point {
-        val a = random(0f, 1f) * TWO_PI
-        val r = 200f * sqrt(random(0f, 1f))
-        val x = r * cos(a)
-        val y = r * sin(a)
-        return Point(width/2 + x.toFloat(), height/2 + y.toFloat())
-    }
-
-    fun collision(circle: Circle): Boolean{
-        circles.forEach { other ->
-            if(other != circle && circle intersects other) return true
-        }
-
-        return false
-    }
-
-    inner class Circle(x: Int, y: Int, var r: Int){
-        val location = Vector(x, y)
-
-        infix fun intersects(other: Circle): Boolean = location.distance(other.location) <= r + other.r
-
-        fun draw() = circle(location.x, location.y, r)
-    }
-}        
-    </code></pre>
-    <script src="../../../../js/prism.js"></script>
-<script src="CoracleWeb.js"></script>
+      <canvas id="coracle_canvas"></canvas>
+      <script src="CoracleWeb.js"></script>
   </body>
 </html>
