@@ -2,48 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f7e082" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORACLE: TUNNEL</title>
-    <link href="/style.css" rel="stylesheet" />
-    <link href="/css/prism.css" rel="stylesheet" />
-    <script src="/js/default.js"></script> 
+    <style>
+        body{
+          margin: 0px;
+          padding: 0px;
+        }
+    </style>
 </head>
 <body>
-  <nav id="nav"></nav>
-  <p class="small"><a href="../../../../">Home</a> / <a href="../../../">Coracle</a> / Drawings / Ports / Tunnel</p>
-  <h1>Tunnel</h1>
   <canvas id="coracle_canvas"></canvas>
-    <p>Ported to Coracle from <a href="https://www.dwitter.net/d/26555">www.dwitter.net/d/26555</a></p>
-    <pre><code class="language-kotlin">
-import coracle.Drawing
-import coracle.Math.map
-import kotlin.math.cos
-import kotlin.math.sin
-import kotlin.math.tan
-
-class Tunnel: Drawing() {
-
-    val bg = 0x1d1d1d
-    override fun setup() {
-        size(550, 550)
-        noStroke()
-        fill(0xffffff)
-    }
-
-    override fun draw() {
-        background(bg)
-        for(i in 800 downTo 0){
-            val T = frame * 2
-            val z = width * 39/(i - (T.toFloat() % 1))
-            val a = i + T - (T.toFloat() % 1)
-            val x = sin(a) * z + (sin(a/(width.toFloat()) * 1.1) + 2) * 200
-            val y = cos(a.toDouble()) *z+(sin(a/(width.toFloat()) / 1.1 ) + 2) * 100
-            circle(x - width/4, y, width/(i))
-        }
-    }
-}
-    </code></pre> 
-    <script src="../../../../js/prism.js"></script>
-<script src="CoracleWeb.js"></script>
+  <script src="CoracleWeb.js"></script>
   </body>
 </html>
