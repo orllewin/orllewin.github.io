@@ -40,6 +40,44 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"id" : "obj-114",
+					"maxclass" : "comment",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 216.0, 590.5, 71.0, 20.0 ],
+					"suppressinlet" : 1,
+					"text" : "filter",
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"id" : "obj-113",
+					"maxclass" : "comment",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 292.5, 590.5, 71.0, 20.0 ],
+					"suppressinlet" : 1,
+					"text" : "feedback",
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-112",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 677.0, 950.0, 150.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"floatoutput" : 1,
 					"id" : "obj-107",
 					"maxclass" : "dial",
@@ -47,7 +85,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 459.0, 716.0, 40.0, 40.0 ],
+					"patching_rect" : [ 235.0, 615.0, 40.0, 40.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "20", "20000" ],
@@ -75,7 +113,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 503.0, 715.0, 40.0, 40.0 ],
+					"patching_rect" : [ 308.0, 615.0, 40.0, 40.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "dial[2]",
@@ -99,7 +137,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "multichannelsignal" ],
-					"patching_rect" : [ 392.0, 788.0, 118.0, 22.0 ],
+					"patching_rect" : [ 169.0, 671.0, 118.0, 22.0 ],
 					"text" : "infiniverb"
 				}
 
@@ -110,7 +148,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 349.0, 833.0, 161.0, 22.0 ],
+					"patching_rect" : [ 126.0, 716.0, 161.0, 22.0 ],
 					"text" : "dac~"
 				}
 
@@ -396,7 +434,7 @@
 					"patching_rect" : [ 533.0, 84.0, 143.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 533.0, 84.0, 143.0, 21.0 ],
-					"size" : 191993.0
+					"size" : 216137.0
 				}
 
 			}
@@ -543,7 +581,7 @@
 					"patching_rect" : [ 380.0, 84.0, 143.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 380.0, 84.0, 143.0, 21.0 ],
-					"size" : 191993.0
+					"size" : 216137.0
 				}
 
 			}
@@ -857,12 +895,13 @@
 				"box" : 				{
 					"fontsize" : 9.0,
 					"id" : "obj-152",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.0, 230.5, 206.0, 19.0 ],
-					"text" : "20240331_wood_at_chapel_yat_zoom_h1.mp3"
+					"patching_rect" : [ 55.0, 230.5, 206.0, 29.0 ],
+					"text" : "hc106_07_fletcher_moss_by_blue_sky_research.mp3"
 				}
 
 			}
@@ -1241,6 +1280,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-90", 1 ],
+					"midpoints" : [ 277.5, 703.0, 546.516460905349732, 703.0, 546.516460905349732, 637.0, 723.532921810699463, 637.0 ],
 					"order" : 0,
 					"source" : [ "obj-104", 1 ]
 				}
@@ -1249,6 +1289,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-90", 0 ],
+					"midpoints" : [ 178.5, 703.0, 531.016460905349732, 703.0, 531.016460905349732, 637.0, 651.532921810699463, 637.0 ],
 					"order" : 0,
 					"source" : [ "obj-104", 0 ]
 				}
@@ -1357,6 +1398,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-104", 1 ],
+					"midpoints" : [ 448.0, 604.5, 211.5, 604.5 ],
 					"source" : [ "obj-141", 1 ]
 				}
 
@@ -1364,6 +1406,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-104", 0 ],
+					"midpoints" : [ 376.5, 593.5, 178.5, 593.5 ],
 					"order" : 1,
 					"source" : [ "obj-141", 0 ]
 				}
@@ -1723,6 +1766,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-104", 1 ],
+					"midpoints" : [ 490.0, 662.0, 211.5, 662.0 ],
 					"source" : [ "obj-76", 0 ]
 				}
 
