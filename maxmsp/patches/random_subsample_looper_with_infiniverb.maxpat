@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 84.0, 712.0, 56.0, 22.0 ],
+					"text" : "tape"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"id" : "obj-114",
 					"maxclass" : "comment",
@@ -90,8 +102,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "20", "20000" ],
 							"parameter_longname" : "dial[3]",
-							"parameter_mmax" : 20000.0,
-							"parameter_mmin" : 20.0,
+							"parameter_mmax" : 19980.0,
 							"parameter_modmode" : 4,
 							"parameter_shortname" : "dial[2]",
 							"parameter_type" : 0
@@ -148,7 +159,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 126.0, 716.0, 161.0, 22.0 ],
+					"patching_rect" : [ 126.0, 754.0, 161.0, 22.0 ],
 					"text" : "dac~"
 				}
 
@@ -434,7 +445,7 @@
 					"patching_rect" : [ 533.0, 84.0, 143.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 533.0, 84.0, 143.0, 21.0 ],
-					"size" : 216137.0
+					"size" : 141509.0
 				}
 
 			}
@@ -581,7 +592,7 @@
 					"patching_rect" : [ 380.0, 84.0, 143.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 380.0, 84.0, 143.0, 21.0 ],
-					"size" : 216137.0
+					"size" : 141509.0
 				}
 
 			}
@@ -895,13 +906,12 @@
 				"box" : 				{
 					"fontsize" : 9.0,
 					"id" : "obj-152",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.0, 230.5, 206.0, 29.0 ],
-					"text" : "hc106_07_fletcher_moss_by_blue_sky_research.mp3"
+					"patching_rect" : [ 55.0, 230.5, 206.0, 19.0 ],
+					"text" : "20240306_flower_scar_hill_turbine_geofon.mp3"
 				}
 
 			}
@@ -1263,35 +1273,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"order" : 1,
+					"source" : [ "obj-104", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-104", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-73", 1 ],
-					"order" : 1,
-					"source" : [ "obj-104", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-73", 0 ],
-					"order" : 1,
-					"source" : [ "obj-104", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-90", 1 ],
-					"midpoints" : [ 277.5, 703.0, 546.516460905349732, 703.0, 546.516460905349732, 637.0, 723.532921810699463, 637.0 ],
 					"order" : 0,
 					"source" : [ "obj-104", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-90", 0 ],
-					"midpoints" : [ 178.5, 703.0, 531.016460905349732, 703.0, 531.016460905349732, 637.0, 651.532921810699463, 637.0 ],
-					"order" : 0,
-					"source" : [ "obj-104", 0 ]
 				}
 
 			}
@@ -1698,6 +1697,38 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-73", 1 ],
+					"order" : 2,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-73", 0 ],
+					"order" : 3,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-90", 1 ],
+					"order" : 0,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-90", 0 ],
+					"order" : 1,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-56", 0 ],
 					"source" : [ "obj-60", 0 ]
 				}
@@ -1836,6 +1867,13 @@
 				"name" : "infiniverb.maxpat",
 				"bootpath" : "~/projects/orllewin.github.io/maxmsp/patches",
 				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "tape.maxpat",
+				"bootpath" : "~/Desktop",
+				"patcherrelativepath" : "../../../../Desktop",
 				"type" : "JSON",
 				"implicit" : 1
 			}
