@@ -22,9 +22,8 @@ body {
 }
 
 
-li {
-	margin: 0px;
-	padding: 0px;
+ul {
+	padding: 16px;
 }
 
 hr {
